@@ -7,10 +7,10 @@
     "GENCO_reference_tasks": 3
   },
   "tests": {
-    "results_only": "SUPPORTED_TEST_PENDING_FRESH_CHECKOUT",
+    "results_only": "PASS_IN_ISOLATED_TORCH_FREE_GIT_CHECKOUT",
     "goc_model_demo": "SUPPORTED",
     "texas_model_demo": "PRIVATE_INPUT_ONLY_LOCAL_TEST",
-    "bounded_ops_demo": "UNDER_VALIDATION",
+    "bounded_ops_demo": "PASS_REAL_GOC500_CPU_CALLS_DISTINCT_DEMO_IDENTITY",
     "exact_reference": "REAL_ADAPTER_COMMAND_CONTRACT_TESTED_NUMERICAL_RUN_UNTESTED",
     "full_historical_recomputation": "NOT_RELEASE_QUALIFIED"
   },

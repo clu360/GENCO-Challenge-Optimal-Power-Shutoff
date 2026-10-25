@@ -1,6 +1,6 @@
 {
   "development_base_commit": "fb44ef3ec448c9b99474067e9f08330252cac961",
-  "originating_research_checkpoint_commit": "aabfd754e4ff5d652f726a4eb57cae30ddd486fd",
+  "originating_research_checkpoint_commit": "14266c69802249ef95ae2f03d65e63d013398b80",
   "files": {
     "src/genco_ops/model_loading.py": {
       "original_relative": "stage_m_fine_tuning/genco_model_loading.py",
@@ -345,7 +345,7 @@
     },
     "experiments/texas2k/results/stage_l/tables/finalist_native_and_exact.csv": {
       "source_sha256": "d8f6b78f23ea853705d6cdfa9c9fa6e312efdcd3b93975fa22621f503d19eb9f",
-      "published_sha256": "94da27fa4f93cb0ab9f12477098fd889c5f8fb6d8fc7864e4d8715c6a646e429",
+      "published_sha256": "7db4eb1f2c8541d3744592a224cbe13134e4e167688cae14ffc0855ea910f0bb",
       "rows": 15,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
@@ -373,7 +373,7 @@
     },
     "experiments/texas2k/results/stage_l/tables/k2_parents.csv": {
       "source_sha256": "7836bfa0222ca44ef5b1b0c3f094a444e3ce4f2f12285bcd2371f723f922b5aa",
-      "published_sha256": "98bff1e0b4891d2e4195a7d4800bac6617cdeb29192d0e74c2fe764ee02d2349",
+      "published_sha256": "81b4ba087c482a4d404cad1c3103cc53ed559f977a5fca95a3fc8d793d3c5ead",
       "rows": 75,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
@@ -387,7 +387,7 @@
     },
     "experiments/texas2k/results/stage_l/tables/native_nondominated_candidates.csv": {
       "source_sha256": "d6ca868701f60e4c4a58df25d906e181799cd1c82c661d639fce43e0568131f6",
-      "published_sha256": "8d3cd43ccfbe71f60e7c9ac907fd3965e3a58cbdea97c3a5367e2f596bef481d",
+      "published_sha256": "e1d085f61c96a76e50ba9dca73775b233feb8db977d3e2d727002426e6c2f829",
       "rows": 3,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
@@ -611,7 +611,7 @@
     },
     "experiments/goc_500/results/ft3_ft4/compare_warm.parquet": {
       "source_sha256": "91ad1ccfc20e0f4bacd363446728de8ae90bbb512496210b1164f16cd3dae0c9",
-      "published_sha256": "333c7e409c2b5a81c6bb66022da09748d29eba88be863764eacdd8fd697f74d9",
+      "published_sha256": "3b6ac583b571f21ffe8e8962fb213a33a084a3dd488ab10bd158e7042de71ddb",
       "rows": 375,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
@@ -653,7 +653,7 @@
     },
     "experiments/goc_500/results/ft3_ft4/guided_warm_start_speedups.parquet": {
       "source_sha256": "f54abab7a5072f3d527a6308636479be6c69812e039c82591ad74311c48f295b",
-      "published_sha256": "3e23f6125060ae01eb9be225cd9fddb627d3f14b06021e2dabd4600e1bc9d6ed",
+      "published_sha256": "b807a9839c6c367920a887f431638bec614cae95fe7cfbaf05667625a70c20a6",
       "rows": 375,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
@@ -737,7 +737,7 @@
     },
     "experiments/goc_500/results/ft3_ft4/warm_start_crossed.parquet": {
       "source_sha256": "b579b5ed38e754f29b590e08447c8523c32fb6c702f02bfdc549b02fcf463fb0",
-      "published_sha256": "5d3e7392398c8be19b4c3fc69b8ae9daee70f1a232f67f6280db287a03a11912",
+      "published_sha256": "c30935fcde1ad44bef0ff58d325e7e4ad893bafc853f7adb184bbda68c5bbe44",
       "rows": 375,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
@@ -750,5 +750,6 @@
       "sanitization": "Private text locators only; originals retained privately"
     }
   },
-  "source_export_sha256": "1a8f1fdd06c4dde6a2f2eeda9ae257dd2d8508b622e9d82f3f86beab71e86b9b"
+  "source_export_sha256": "1a8f1fdd06c4dde6a2f2eeda9ae257dd2d8508b622e9d82f3f86beab71e86b9b",
+  "sanitization": "Private locator fields/keys only; structured numeric metadata retained"
 }

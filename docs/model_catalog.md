@@ -22,7 +22,7 @@ are represented by recorded Stage L results, not bundled as new fine-tunes.
 | goc500.m3 | opengridsfm | PUBLISHED_ADAPTATION | `4ec89d36de80081be2fc26c14a1bc5a5369d7423b557d71b9dd4a254462f302d` |
 | goc500.base | opengridsfm | RELEASED_BASE | `f8a4396122e603e8303afdebe3b093819c0f64dac0878394aed0bd63205fd831` |
 
-Original research checkpoint: `aabfd754e4ff5d652f726a4eb57cae30ddd486fd`.
+Original research checkpoint: `14266c69802249ef95ae2f03d65e63d013398b80`.
 
 Native G500: pending certification; native final OPS/AC: pending. Phase II held.
 CPU loader/parity evidence and separate fresh-checkout evidence must not be conflated.
