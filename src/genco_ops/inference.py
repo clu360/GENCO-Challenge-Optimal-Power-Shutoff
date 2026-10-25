@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import time
 
-from .artifacts import checked_path,sha
+from .artifacts import checked_path,sha,configure_native_cache
 
 
 def predict_saved_case(root,model_id,output):
@@ -33,6 +33,7 @@ def predict_saved_case(root,model_id,output):
         predictions={k:v.detach().cpu() for k,v in predictions.items()}
         schema='GraphKit bus [Vm,Va,Pg,Qg], generator [Pg]; released power normalization'
     else:
+        configure_native_cache(root)
         import gridsfm
         model=gridsfm.load_model(checkpoint,device='cpu');model.eval()
         if fixture.name.endswith('.pyg.json'):

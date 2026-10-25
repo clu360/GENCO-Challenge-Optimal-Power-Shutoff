@@ -8,9 +8,19 @@ import pytest
 from genco_ops.published.search import sequential_powell,ALPHA_SEARCH_ID
 from genco_ops.published.journal import SurrogateJournal,UncertainSurrogateCall
 from genco_ops.published.io import atomic_json
+from genco_ops.artifacts import configure_native_cache
 
 
 ROOT=Path(__file__).resolve().parents[1]
+
+
+def test_native_cache_uses_only_the_explicit_checkout(tmp_path,monkeypatch):
+    import os
+    monkeypatch.setenv('XDG_CACHE_HOME','unused-old-cache')
+    path=configure_native_cache(tmp_path)
+    assert path==tmp_path/'outputs/runtime_cache'
+    assert os.environ['XDG_CACHE_HOME']==str(path)
+    assert path.exists()
 
 
 def test_numerical_exports_match_their_scoped_source_manifest():

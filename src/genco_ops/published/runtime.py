@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 import sys
 
-from ..artifacts import checked_path,sha
+from ..artifacts import checked_path,sha,configure_native_cache
 
 
 COMMITS={'gridfm-graphkit':'95b90eecc7f5c2c86a9dd776f0c3f40434def22f',
@@ -22,6 +22,7 @@ def load_runtime(root,model_id,device,*,probe):
     # These are the existing worker's environment values, not new numerical tuning.
     os.environ['CUBLAS_WORKSPACE_CONFIG']=':4096:8'
     os.environ['HF_HUB_OFFLINE']='1'
+    configure_native_cache(root)
     import torch
     for package,expected in COMMITS.items():
         actual=json.loads(metadata.distribution(package).read_text('direct_url.json'))
@@ -88,8 +89,8 @@ class ResidentGridSFM:
     def __init__(self,root,model_id,*,identity,output,request_sha256,device,probe):
         from .native_raw import build_raw_gridsfm_case
         from ..demo_physics import build_goc500_identity
-        import gridsfm
         spec,checkpoint,torch,target=load_runtime(root,model_id,device,probe=probe)
+        import gridsfm
         self.identity,self.output,self.request_sha256=identity,Path(output).resolve(),request_sha256
         self.request=dict(family='opengridsfm',checkpoint_sha256=spec['sha256'],r_base=32.975425699285616)
         self.raw=build_raw_gridsfm_case(identity)

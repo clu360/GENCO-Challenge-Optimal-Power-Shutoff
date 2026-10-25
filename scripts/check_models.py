@@ -7,7 +7,7 @@ from pathlib import Path
 import platform
 
 import torch
-from genco_ops.artifacts import checked_path,sha
+from genco_ops.artifacts import checked_path,sha,configure_native_cache
 from genco_ops.model_loading import build_native_task
 
 parser=argparse.ArgumentParser(description=__doc__)
@@ -26,6 +26,7 @@ for model_id,spec in catalog.items():
         request=dict(spec['loader_request'],normalizer=str(normalizer))
         model,_=build_native_task(request,spec['loader_contract'],checkpoint)
     else:
+        configure_native_cache(root)
         import gridsfm
         model=gridsfm.load_model(checkpoint,device='cpu')
     model.eval()

@@ -11,7 +11,7 @@ from scipy.optimize import minimize
 from scipy.sparse import csr_matrix
 from scipy.sparse.csgraph import connected_components
 
-from .artifacts import checked_path, sha
+from .artifacts import checked_path, sha, configure_native_cache
 from .demo_physics import (
     SOURCE_SHA256, build_goc500_identity, compute_ac_loading_two_ended,
     compute_j_trade, compute_r_base, mutate_raw_case_for_candidate,
@@ -203,6 +203,7 @@ def search_topology(evaluate, load_ids, control_ids, budget, model_call_count=No
 
 
 def run_demo(root, model_id, output, config_path=None):
+    configure_native_cache(root)
     import gridsfm
     import torch
     root, output = Path(root).resolve(), Path(output).resolve()

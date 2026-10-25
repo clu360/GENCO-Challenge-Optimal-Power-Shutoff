@@ -4,6 +4,8 @@ import hashlib
 import json
 from pathlib import Path, PurePosixPath, PureWindowsPath
 import zipfile
+import os
+import sys
 
 
 def sha(path):
@@ -11,6 +13,17 @@ def sha(path):
     with Path(path).open('rb') as stream:
         for block in iter(lambda:stream.read(1048576),b''):digest.update(block)
     return digest.hexdigest()
+
+
+def configure_native_cache(root):
+    """Use the official cache API under this checkout, never a hidden user cache."""
+    cache=checked_path(root,'outputs/runtime_cache')
+    cache.mkdir(parents=True,exist_ok=True)
+    os.environ['XDG_CACHE_HOME']=str(cache)
+    module=sys.modules.get('gridsfm.cycle_basis')
+    if module is not None:
+        module.DEFAULT_CYCLE_CACHE=module.CycleBasisCache(cache_dir=cache/'gridsfm/cycle_basis')
+    return cache
 
 
 def checked_path(root,relative):

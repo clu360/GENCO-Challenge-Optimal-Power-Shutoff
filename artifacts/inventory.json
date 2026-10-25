@@ -661,8 +661,8 @@
       "bytes": 708
     },
     "scripts/check_models.py": {
-      "sha256": "bd6c7798dca90316d761103d708d6569b54ca939823f4d9470c8ef99f4487b24",
-      "bytes": 2078
+      "sha256": "4bb538761f8ce5b3d80ac1d434d53164fb37e435c8c303901421b66784a2caaf",
+      "bytes": 2138
     },
     "scripts/check_texas_contract.py": {
       "sha256": "08e22dfcb12b6798c4f2467d8ed28da30ff135532c9df787154cec6fe990deb0",
@@ -685,8 +685,8 @@
       "bytes": 5531
     },
     "src/genco_ops/artifacts.py": {
-      "sha256": "c6656598b1c891bb2f67497ef9235cc5212fe2fb394ce0aec36eb8cbcb2645ad",
-      "bytes": 2130
+      "sha256": "8021ffbfb8825257d5c9ee6ab3c17dd1e67a73414ce414ed980d1716c6667cb7",
+      "bytes": 2604
     },
     "src/genco_ops/cli.py": {
       "sha256": "da69bcc90aca8a39418ce54c80713525388258586cbc5aa65bfa283c68d0c5ae",
@@ -697,8 +697,8 @@
       "bytes": 22971
     },
     "src/genco_ops/goc500_demo.py": {
-      "sha256": "4aa364da760aaf6e0e4f34b57b7b083d81184a4d49125885571a8fe5ab57c010",
-      "bytes": 15612
+      "sha256": "8bb0faf412c4346573c9ed6393070685cc3e39028394168b3da8093357542092",
+      "bytes": 15669
     },
     "src/genco_ops/gridsfm_flow_repair_v013.py": {
       "sha256": "81a05ce935c1d9af754062d21fb72ba30bbafb983ba1260218ea88e5e35e5065",
@@ -709,8 +709,8 @@
       "bytes": 1778
     },
     "src/genco_ops/inference.py": {
-      "sha256": "facbd85bf80a40df80339c495d483d3cd0f39afc1431288042469f2365641d62",
-      "bytes": 3302
+      "sha256": "0e955d8e0939f9f6de363744dd012f02701e8d463facbda9913195a22cacd512",
+      "bytes": 3362
     },
     "src/genco_ops/model_loading.py": {
       "sha256": "892f5beebb2702267a0f4074d02f7baa75c790d7513ebdd681f0e6d292e82650",
@@ -789,8 +789,8 @@
       "bytes": 6809
     },
     "src/genco_ops/published/runtime.py": {
-      "sha256": "4529c870263e338ab3981e3b8f6d59fd3a83b5d0b028e2266becef5995c12b05",
-      "bytes": 5421
+      "sha256": "063611d4da0b9e9898eb645e98ffcac464d0f621652e7226e2aa170aed2a1672",
+      "bytes": 5477
     },
     "src/genco_ops/published/schemas.py": {
       "sha256": "5bb622b16c69eb22b2a5f23d7035461ad465bdfaa4c8c968a7b4431bdb70feb0",
@@ -845,8 +845,8 @@
       "bytes": 8425
     },
     "tests/test_published_numerics.py": {
-      "sha256": "2d089c7db35a587313fa77a129b0b0aee3a03bf3a6d770989e37813e184b7654",
-      "bytes": 2444
+      "sha256": "ee189fb30bd602ae9eb42292c0b2d2943dec8df8f41d1f0c879a33bfbc53a7a9",
+      "bytes": 2820
     },
     "tests/test_published_results.py": {
       "sha256": "25ce9ca0a2c48035f46843d8029eacc97b7a2432870fee6031da1accd1b9d102",
