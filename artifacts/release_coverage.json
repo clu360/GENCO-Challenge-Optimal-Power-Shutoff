@@ -1,0 +1,23 @@
+{
+  "phase_i_complete": false,
+  "phase_ii": "HELD_BY_USER",
+  "completed": {
+    "certified_phase_i_fits": 7,
+    "GENCO_full_searches": 3,
+    "GENCO_reference_tasks": 3
+  },
+  "tests": {
+    "results_only": "SUPPORTED_TEST_PENDING_FRESH_CHECKOUT",
+    "goc_model_demo": "SUPPORTED",
+    "texas_model_demo": "PRIVATE_INPUT_ONLY_LOCAL_TEST",
+    "bounded_ops_demo": "UNDER_VALIDATION",
+    "exact_reference": "REAL_ADAPTER_COMMAND_CONTRACT_TESTED_NUMERICAL_RUN_UNTESTED",
+    "full_historical_recomputation": "NOT_RELEASE_QUALIFIED"
+  },
+  "limitations": [
+    "Texas electrical/weather input redistribution permission unresolved",
+    "Public remote model bundle not yet hosted; checksum-bound local export provided",
+    "Native G500 not yet certified; native full OPS and references pending",
+    "Full historical executor port not yet certified; configuration export is not execution"
+  ]
+}

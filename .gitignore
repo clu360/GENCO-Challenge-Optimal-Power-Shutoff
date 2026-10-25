@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.ipynb_checkpoints/
+build/
+dist/
+outputs/
+artifacts/cache/
+artifacts/private_inputs/
+*.pt
+*.pth
+*.ckpt
+*.zip
+*.sqlite*
+*.log

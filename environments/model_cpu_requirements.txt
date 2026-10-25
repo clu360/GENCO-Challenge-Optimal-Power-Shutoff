@@ -1,0 +1,16 @@
+# Portable CPU release checks, not a replacement for frozen PACE training environments.
+--find-links https://data.pyg.org/whl/torch-2.8.0+cpu.html
+torch==2.8.0
+torchvision==0.23.0
+torchaudio==2.8.0
+numpy==2.2.6
+scipy==1.16.2
+pandas==2.3.3
+torch-geometric==2.6.1
+torch-scatter==2.1.2+pt28cpu
+huggingface_hub==0.34.4
+lightning==2.5.5
+networkx==3.4.2
+gridfm-graphkit @ git+https://github.com/gridfm/gridfm-graphkit.git@95b90eecc7f5c2c86a9dd776f0c3f40434def22f
+# Upstream's packaging entry point is model/, not the repository root.
+gridsfm @ git+https://github.com/microsoft/GridSFM.git@1ca775fd436d7ce013a1c0ab946e61ac7ef59ad6#subdirectory=model

@@ -1,0 +1,4 @@
+model,native_overloaded_lines,a_overloaded_ltrans,b_overloaded_ltrans
+GENCO G100 -> R400,302,0,0
+GENCO G100 -> W400,323,0,0
+GENCO G500,298,0,0

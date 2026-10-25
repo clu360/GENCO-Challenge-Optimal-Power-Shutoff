@@ -1,0 +1,125 @@
+{
+  "format": "PUBLISHED_PHASE_I_CONFIGURATION_V070_EXPORT",
+  "fresh_full_recomputation_status": "UNAVAILABLE_PUBLIC_TEXAS_INPUT_PERMISSION_AND_FULL_EXECUTOR_PORT",
+  "study": "modifiedTexas2k",
+  "scenario": 16,
+  "lambda_r": 0.8,
+  "seed": 0,
+  "hazard": "2023-06-23T16:00:00-05:00 cumulative environmental proxy",
+  "risk_base": 32.975425699285616,
+  "topology": {
+    "K0": 1,
+    "K1": 50,
+    "K2_max": 250,
+    "K1_parents": 5
+  },
+  "controls": "alpha_only",
+  "continuous_objective_calls_per_topology_max": 20,
+  "full_search_recomputed_in_release_test": false,
+  "phase_ii": "HELD_BY_USER",
+  "datasets": {
+    "train": {
+      "Grid": 500,
+      "Random": 400,
+      "Wildfire": 400
+    },
+    "validation_per_distribution": 100
+  },
+  "selected_final_regimes": [
+    "G500",
+    "G100_to_R400",
+    "G100_to_W400"
+  ],
+  "training_fits": [
+    {
+      "task_id": "v070.genco_opf.G100.s0",
+      "family": "genco_opf",
+      "recipe": {
+        "batch_size": 1,
+        "epochs": 20,
+        "learning_rate": 1e-05,
+        "num_workers": 0,
+        "precision": "32-true",
+        "shuffle": false
+      },
+      "request_sha256": "bf6028cd1e752bfc09453b84a10ac7420da687259d6d37a14859477736278011"
+    },
+    {
+      "task_id": "v070.genco_opf.G100_to_R400.s0",
+      "family": "genco_opf",
+      "recipe": {
+        "batch_size": 1,
+        "epochs": 20,
+        "learning_rate": 1e-05,
+        "num_workers": 0,
+        "precision": "32-true",
+        "shuffle": false
+      },
+      "request_sha256": "8c014b83fbb96d66182493eb9669af3c3f344433a662fb89f3006661d70bd867"
+    },
+    {
+      "task_id": "v070.genco_opf.G100_to_W400.s0",
+      "family": "genco_opf",
+      "recipe": {
+        "batch_size": 1,
+        "epochs": 20,
+        "learning_rate": 1e-05,
+        "num_workers": 0,
+        "precision": "32-true",
+        "shuffle": false
+      },
+      "request_sha256": "f528c245597d1a34db89e4a9c3e0d95e999e9f13e7c27efddd7afa2a9245d76e"
+    },
+    {
+      "task_id": "v070.genco_opf.G500.s0",
+      "family": "genco_opf",
+      "recipe": {
+        "batch_size": 1,
+        "epochs": 20,
+        "learning_rate": 1e-05,
+        "num_workers": 0,
+        "precision": "32-true",
+        "shuffle": false
+      },
+      "request_sha256": "d3e52ebf2fd8041d92000ba22d4c0181cfa6b6ba367e0589b589aa9294a7f5dc"
+    },
+    {
+      "task_id": "v070.opengridsfm.G100.s0",
+      "family": "opengridsfm",
+      "recipe": {
+        "batch_size": 1,
+        "epochs": 20,
+        "lr": 0.0001,
+        "shuffle": false,
+        "weight_decay": 0.0001
+      },
+      "request_sha256": "dcd7dfdc6867f1bfc9bed4625de7aa105738f6640f9290a82b63a87ca85b500a"
+    },
+    {
+      "task_id": "v070.opengridsfm.G100_to_R400.s0",
+      "family": "opengridsfm",
+      "recipe": {
+        "batch_size": 1,
+        "epochs": 20,
+        "lr": 0.0001,
+        "shuffle": false,
+        "weight_decay": 0.0001
+      },
+      "request_sha256": "c3842ce469f1eb9ee021a85c9e78077562c5484d107893fc2bdf3cc980358198"
+    },
+    {
+      "task_id": "v070.opengridsfm.G100_to_W400.s0",
+      "family": "opengridsfm",
+      "recipe": {
+        "batch_size": 1,
+        "epochs": 20,
+        "lr": 0.0001,
+        "shuffle": false,
+        "weight_decay": 0.0001
+      },
+      "request_sha256": "2bb9e91dc7d6370fb73115d8236532ec3e74d7e6dc420c7ce705b829c0d4b3a5"
+    }
+  ],
+  "no_implicit_execution": true,
+  "exact_reference_numerical_source_sha256": "0f68ce857b0d5d527095bb1e19f5343d2a7d4ca270c12056a92fe4f719892fc6"
+}

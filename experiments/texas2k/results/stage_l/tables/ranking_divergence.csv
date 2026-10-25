@@ -1,0 +1,16 @@
+left,right,lambda_r,spearman,top5_jaccard,finalist_jaccard
+genco_opf,genco_pf_transfer,0.0,,1.0,1.0
+genco_opf,genco_pf_contingency,0.0,,1.0,1.0
+genco_pf_transfer,genco_pf_contingency,0.0,,1.0,1.0
+genco_opf,genco_pf_transfer,0.2,,0.1111111111111111,0.0
+genco_opf,genco_pf_contingency,0.2,,0.1111111111111111,0.0
+genco_pf_transfer,genco_pf_contingency,0.2,,0.0,0.0
+genco_opf,genco_pf_transfer,0.5,,0.1111111111111111,0.0
+genco_opf,genco_pf_contingency,0.5,,0.0,0.0
+genco_pf_transfer,genco_pf_contingency,0.5,,0.0,0.0
+genco_opf,genco_pf_transfer,0.8,,0.1111111111111111,0.0
+genco_opf,genco_pf_contingency,0.8,,0.1111111111111111,0.3333333333333333
+genco_pf_transfer,genco_pf_contingency,0.8,,0.0,0.0
+genco_opf,genco_pf_transfer,1.0,,0.1111111111111111,0.0
+genco_opf,genco_pf_contingency,1.0,,0.0,0.3333333333333333
+genco_pf_transfer,genco_pf_contingency,1.0,,0.0,0.0

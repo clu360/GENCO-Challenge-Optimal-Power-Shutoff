@@ -1,0 +1,8 @@
+{
+  "demo_id": "GOC500_SAMPLE_BOUNDED_ALPHA_POWELL_DEMO_V1",
+  "max_calls_per_topology": 8,
+  "control_load_count": 2,
+  "lambda_r": 0.8,
+  "offline_branch_id": null,
+  "hazard_policy": "SYNTHETIC_UNIFORM_NOT_GEOGRAPHIC"
+}

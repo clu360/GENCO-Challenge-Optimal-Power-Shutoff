@@ -1,0 +1,429 @@
+{
+  "models": {
+    "texas2k.genco_opf.G100": {
+      "family": "genco_opf",
+      "weights": "artifacts/cache/texas2k.genco_opf.G100.pt",
+      "sha256": "d952811fc2fd329d2ab7c076987dec094c99c6b89036e3053b818afbcc0c4adb",
+      "demo_input": "artifacts/private_inputs/texas2k/v070.genco_opf.G100.s0.pt",
+      "demo_input_sha256": "dfa6c674af0f17db57abed98a32cb9b114f0cd796ecc7065681d315df621974e",
+      "input_distribution": "PRIVATE_PENDING_REDISTRIBUTION_REVIEW",
+      "scientific_certification": "PASS",
+      "ops": "NOT_A_FINAL_REPRESENTATIVE",
+      "parent_checkpoint_sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343",
+      "selected_epoch": 18,
+      "normalizer": "artifacts/cache/genco_opf.normalizer.pt",
+      "normalizer_sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+      "loader_request": {
+        "recipe": {
+          "batch_size": 1,
+          "epochs": 20,
+          "learning_rate": 1e-05,
+          "num_workers": 0,
+          "precision": "32-true",
+          "shuffle": false
+        }
+      },
+      "loader_contract": {
+        "backend": "graphkit",
+        "source_commit": "95b90eecc7f5c2c86a9dd776f0c3f40434def22f",
+        "release_repository": "gridfm/genco-opf-datakit",
+        "release_revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+        "checkpoint_sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343",
+        "normalizer_sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+        "normalizer_policy": "RELEASED_SOURCE_GRID_STATS_NOT_TARGET_REFIT",
+        "task": "OptimalPowerFlow",
+        "task_module": "gridfm_graphkit.tasks.opf_task",
+        "task_class": "OptimalPowerFlowTask",
+        "transform": "OptimalPowerFlowTransforms",
+        "recipe": "examples/config/HGNS_OPF_datakit_case2000.yaml",
+        "losses": [
+          "LayeredWeightedPhysics",
+          "MaskedGenMSE",
+          "MaskedBusMSE",
+          "QgViolationPenalty"
+        ],
+        "loss_weights": [
+          0.1,
+          0.1,
+          0.75,
+          0.001
+        ],
+        "loss_args": [
+          {
+            "base_weight": 0.5
+          },
+          {},
+          {},
+          {}
+        ],
+        "redispatch_input": false,
+        "input_policy": "Economic OPF demand/cost/bounds and native OPF masks; generator Pg and PV/REF Vm unknown. No commanded PF redispatch interface.",
+        "target_policy": "Economic AC-OPF labels required; PF response labels cannot substitute. Native loss implementation is preserved, including its task-dispatch behavior; gradient/loss audit still required.",
+        "output_policy": "Native bus [Vm,Va,Pg,Qg], generator [Pg]; radians and released power scaling."
+      }
+    },
+    "texas2k.genco_opf.G100_to_R400": {
+      "family": "genco_opf",
+      "weights": "artifacts/cache/texas2k.genco_opf.G100_to_R400.pt",
+      "sha256": "e64b22da3c8fa92a6c959f355e269e815d2c422bc3809fefa33db47ab11c8bcd",
+      "demo_input": "artifacts/private_inputs/texas2k/v070.genco_opf.G100_to_R400.s0.pt",
+      "demo_input_sha256": "d5e370ca779b53a485cc194b8a105acd5c3df4ee40fd1908160b0f8d1e5fe767",
+      "input_distribution": "PRIVATE_PENDING_REDISTRIBUTION_REVIEW",
+      "scientific_certification": "PASS",
+      "ops": "COMPLETE",
+      "parent_checkpoint_sha256": "d952811fc2fd329d2ab7c076987dec094c99c6b89036e3053b818afbcc0c4adb",
+      "selected_epoch": 16,
+      "normalizer": "artifacts/cache/genco_opf.normalizer.pt",
+      "normalizer_sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+      "loader_request": {
+        "recipe": {
+          "batch_size": 1,
+          "epochs": 20,
+          "learning_rate": 1e-05,
+          "num_workers": 0,
+          "precision": "32-true",
+          "shuffle": false
+        }
+      },
+      "loader_contract": {
+        "backend": "graphkit",
+        "source_commit": "95b90eecc7f5c2c86a9dd776f0c3f40434def22f",
+        "release_repository": "gridfm/genco-opf-datakit",
+        "release_revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+        "checkpoint_sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343",
+        "normalizer_sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+        "normalizer_policy": "RELEASED_SOURCE_GRID_STATS_NOT_TARGET_REFIT",
+        "task": "OptimalPowerFlow",
+        "task_module": "gridfm_graphkit.tasks.opf_task",
+        "task_class": "OptimalPowerFlowTask",
+        "transform": "OptimalPowerFlowTransforms",
+        "recipe": "examples/config/HGNS_OPF_datakit_case2000.yaml",
+        "losses": [
+          "LayeredWeightedPhysics",
+          "MaskedGenMSE",
+          "MaskedBusMSE",
+          "QgViolationPenalty"
+        ],
+        "loss_weights": [
+          0.1,
+          0.1,
+          0.75,
+          0.001
+        ],
+        "loss_args": [
+          {
+            "base_weight": 0.5
+          },
+          {},
+          {},
+          {}
+        ],
+        "redispatch_input": false,
+        "input_policy": "Economic OPF demand/cost/bounds and native OPF masks; generator Pg and PV/REF Vm unknown. No commanded PF redispatch interface.",
+        "target_policy": "Economic AC-OPF labels required; PF response labels cannot substitute. Native loss implementation is preserved, including its task-dispatch behavior; gradient/loss audit still required.",
+        "output_policy": "Native bus [Vm,Va,Pg,Qg], generator [Pg]; radians and released power scaling."
+      }
+    },
+    "texas2k.genco_opf.G100_to_W400": {
+      "family": "genco_opf",
+      "weights": "artifacts/cache/texas2k.genco_opf.G100_to_W400.pt",
+      "sha256": "b4af8c9e6383ff75168b08967a0d7c125653b5dbc432328b53912e7b9aa3da74",
+      "demo_input": "artifacts/private_inputs/texas2k/v070.genco_opf.G100_to_W400.s0.pt",
+      "demo_input_sha256": "a605c839cdaa0641b5451ede1b5521cbb9e89505bb8dc43dd4bb7a36f687bb89",
+      "input_distribution": "PRIVATE_PENDING_REDISTRIBUTION_REVIEW",
+      "scientific_certification": "PASS",
+      "ops": "COMPLETE",
+      "parent_checkpoint_sha256": "d952811fc2fd329d2ab7c076987dec094c99c6b89036e3053b818afbcc0c4adb",
+      "selected_epoch": 18,
+      "normalizer": "artifacts/cache/genco_opf.normalizer.pt",
+      "normalizer_sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+      "loader_request": {
+        "recipe": {
+          "batch_size": 1,
+          "epochs": 20,
+          "learning_rate": 1e-05,
+          "num_workers": 0,
+          "precision": "32-true",
+          "shuffle": false
+        }
+      },
+      "loader_contract": {
+        "backend": "graphkit",
+        "source_commit": "95b90eecc7f5c2c86a9dd776f0c3f40434def22f",
+        "release_repository": "gridfm/genco-opf-datakit",
+        "release_revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+        "checkpoint_sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343",
+        "normalizer_sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+        "normalizer_policy": "RELEASED_SOURCE_GRID_STATS_NOT_TARGET_REFIT",
+        "task": "OptimalPowerFlow",
+        "task_module": "gridfm_graphkit.tasks.opf_task",
+        "task_class": "OptimalPowerFlowTask",
+        "transform": "OptimalPowerFlowTransforms",
+        "recipe": "examples/config/HGNS_OPF_datakit_case2000.yaml",
+        "losses": [
+          "LayeredWeightedPhysics",
+          "MaskedGenMSE",
+          "MaskedBusMSE",
+          "QgViolationPenalty"
+        ],
+        "loss_weights": [
+          0.1,
+          0.1,
+          0.75,
+          0.001
+        ],
+        "loss_args": [
+          {
+            "base_weight": 0.5
+          },
+          {},
+          {},
+          {}
+        ],
+        "redispatch_input": false,
+        "input_policy": "Economic OPF demand/cost/bounds and native OPF masks; generator Pg and PV/REF Vm unknown. No commanded PF redispatch interface.",
+        "target_policy": "Economic AC-OPF labels required; PF response labels cannot substitute. Native loss implementation is preserved, including its task-dispatch behavior; gradient/loss audit still required.",
+        "output_policy": "Native bus [Vm,Va,Pg,Qg], generator [Pg]; radians and released power scaling."
+      }
+    },
+    "texas2k.genco_opf.G500": {
+      "family": "genco_opf",
+      "weights": "artifacts/cache/texas2k.genco_opf.G500.pt",
+      "sha256": "1e664defde395b77b97e4829bf8e22c3828cbb05da87082aab4b3916a4411ad4",
+      "demo_input": "artifacts/private_inputs/texas2k/v070.genco_opf.G500.s0.pt",
+      "demo_input_sha256": "dfa6c674af0f17db57abed98a32cb9b114f0cd796ecc7065681d315df621974e",
+      "input_distribution": "PRIVATE_PENDING_REDISTRIBUTION_REVIEW",
+      "scientific_certification": "PASS",
+      "ops": "COMPLETE",
+      "parent_checkpoint_sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343",
+      "selected_epoch": 18,
+      "normalizer": "artifacts/cache/genco_opf.normalizer.pt",
+      "normalizer_sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+      "loader_request": {
+        "recipe": {
+          "batch_size": 1,
+          "epochs": 20,
+          "learning_rate": 1e-05,
+          "num_workers": 0,
+          "precision": "32-true",
+          "shuffle": false
+        }
+      },
+      "loader_contract": {
+        "backend": "graphkit",
+        "source_commit": "95b90eecc7f5c2c86a9dd776f0c3f40434def22f",
+        "release_repository": "gridfm/genco-opf-datakit",
+        "release_revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+        "checkpoint_sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343",
+        "normalizer_sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+        "normalizer_policy": "RELEASED_SOURCE_GRID_STATS_NOT_TARGET_REFIT",
+        "task": "OptimalPowerFlow",
+        "task_module": "gridfm_graphkit.tasks.opf_task",
+        "task_class": "OptimalPowerFlowTask",
+        "transform": "OptimalPowerFlowTransforms",
+        "recipe": "examples/config/HGNS_OPF_datakit_case2000.yaml",
+        "losses": [
+          "LayeredWeightedPhysics",
+          "MaskedGenMSE",
+          "MaskedBusMSE",
+          "QgViolationPenalty"
+        ],
+        "loss_weights": [
+          0.1,
+          0.1,
+          0.75,
+          0.001
+        ],
+        "loss_args": [
+          {
+            "base_weight": 0.5
+          },
+          {},
+          {},
+          {}
+        ],
+        "redispatch_input": false,
+        "input_policy": "Economic OPF demand/cost/bounds and native OPF masks; generator Pg and PV/REF Vm unknown. No commanded PF redispatch interface.",
+        "target_policy": "Economic AC-OPF labels required; PF response labels cannot substitute. Native loss implementation is preserved, including its task-dispatch behavior; gradient/loss audit still required.",
+        "output_policy": "Native bus [Vm,Va,Pg,Qg], generator [Pg]; radians and released power scaling."
+      }
+    },
+    "texas2k.opengridsfm.G100": {
+      "family": "opengridsfm",
+      "weights": "artifacts/cache/texas2k.opengridsfm.G100.pt",
+      "sha256": "e45ed36e3956eeb7750d2e396737e0cc3ccd58990aae84b65a6af9d1fdad06d5",
+      "demo_input": "artifacts/private_inputs/texas2k/v070.opengridsfm.G100.s0.pt",
+      "demo_input_sha256": "28f6a9cb417f7aec08a05c9f3ed70178533dbde685b399fcde3e7b06c162389e",
+      "input_distribution": "PRIVATE_PENDING_REDISTRIBUTION_REVIEW",
+      "scientific_certification": "PASS",
+      "ops": "NOT_A_FINAL_REPRESENTATIVE",
+      "parent_checkpoint_sha256": "f8a4396122e603e8303afdebe3b093819c0f64dac0878394aed0bd63205fd831",
+      "selected_epoch": 4
+    },
+    "texas2k.opengridsfm.G100_to_R400": {
+      "family": "opengridsfm",
+      "weights": "artifacts/cache/texas2k.opengridsfm.G100_to_R400.pt",
+      "sha256": "0ce7ad4538598f439fff4b59a72e33272f1de193ecaa3dae521c0e3eaceb0cbd",
+      "demo_input": "artifacts/private_inputs/texas2k/v070.opengridsfm.G100_to_R400.s0.pt",
+      "demo_input_sha256": "87bfbac62880854deaf51b217aab36fac8b17dd1403be6687e763742ea6256b1",
+      "input_distribution": "PRIVATE_PENDING_REDISTRIBUTION_REVIEW",
+      "scientific_certification": "PASS",
+      "ops": "PENDING",
+      "parent_checkpoint_sha256": "e45ed36e3956eeb7750d2e396737e0cc3ccd58990aae84b65a6af9d1fdad06d5",
+      "selected_epoch": 19
+    },
+    "texas2k.opengridsfm.G100_to_W400": {
+      "family": "opengridsfm",
+      "weights": "artifacts/cache/texas2k.opengridsfm.G100_to_W400.pt",
+      "sha256": "406bb6e4c23c42f1bdf1a682e4213bb64f5fe71f105feebf54b8c6f06508ae0e",
+      "demo_input": "artifacts/private_inputs/texas2k/v070.opengridsfm.G100_to_W400.s0.pt",
+      "demo_input_sha256": "a5b8f0f3f5cc5d543b4fb9d0cd67c5adb0bfbbf2ddd10783957874d246348e6a",
+      "input_distribution": "PRIVATE_PENDING_REDISTRIBUTION_REVIEW",
+      "scientific_certification": "PASS",
+      "ops": "PENDING",
+      "parent_checkpoint_sha256": "e45ed36e3956eeb7750d2e396737e0cc3ccd58990aae84b65a6af9d1fdad06d5",
+      "selected_epoch": 19
+    },
+    "texas2k.genco_opf.base": {
+      "family": "genco_opf",
+      "weights": "artifacts/cache/genco_opf.base.pt",
+      "sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343",
+      "demo_input": "artifacts/private_inputs/texas2k/v070.genco_opf.G100.s0.pt",
+      "demo_input_sha256": "dfa6c674af0f17db57abed98a32cb9b114f0cd796ecc7065681d315df621974e",
+      "input_distribution": "PRIVATE_PENDING_REDISTRIBUTION_REVIEW",
+      "scientific_certification": "RELEASED_BASE",
+      "ops": "HISTORICAL_BASE_RESULT_SEPARATELY_IDENTIFIED",
+      "parent_checkpoint_sha256": null,
+      "selected_epoch": null,
+      "normalizer": "artifacts/cache/genco_opf.normalizer.pt",
+      "normalizer_sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+      "loader_request": {
+        "recipe": {
+          "batch_size": 1,
+          "epochs": 20,
+          "learning_rate": 1e-05,
+          "num_workers": 0,
+          "precision": "32-true",
+          "shuffle": false
+        }
+      },
+      "loader_contract": {
+        "backend": "graphkit",
+        "source_commit": "95b90eecc7f5c2c86a9dd776f0c3f40434def22f",
+        "release_repository": "gridfm/genco-opf-datakit",
+        "release_revision": "2d2401572f6a2d0c1be79841b2def99cf45e1639",
+        "checkpoint_sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343",
+        "normalizer_sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+        "normalizer_policy": "RELEASED_SOURCE_GRID_STATS_NOT_TARGET_REFIT",
+        "task": "OptimalPowerFlow",
+        "task_module": "gridfm_graphkit.tasks.opf_task",
+        "task_class": "OptimalPowerFlowTask",
+        "transform": "OptimalPowerFlowTransforms",
+        "recipe": "examples/config/HGNS_OPF_datakit_case2000.yaml",
+        "losses": [
+          "LayeredWeightedPhysics",
+          "MaskedGenMSE",
+          "MaskedBusMSE",
+          "QgViolationPenalty"
+        ],
+        "loss_weights": [
+          0.1,
+          0.1,
+          0.75,
+          0.001
+        ],
+        "loss_args": [
+          {
+            "base_weight": 0.5
+          },
+          {},
+          {},
+          {}
+        ],
+        "redispatch_input": false,
+        "input_policy": "Economic OPF demand/cost/bounds and native OPF masks; generator Pg and PV/REF Vm unknown. No commanded PF redispatch interface.",
+        "target_policy": "Economic AC-OPF labels required; PF response labels cannot substitute. Native loss implementation is preserved, including its task-dispatch behavior; gradient/loss audit still required.",
+        "output_policy": "Native bus [Vm,Va,Pg,Qg], generator [Pg]; radians and released power scaling."
+      }
+    },
+    "texas2k.opengridsfm.base": {
+      "family": "opengridsfm",
+      "weights": "artifacts/cache/opengridsfm.base.pt",
+      "sha256": "f8a4396122e603e8303afdebe3b093819c0f64dac0878394aed0bd63205fd831",
+      "demo_input": "artifacts/private_inputs/texas2k/v070.opengridsfm.G100.s0.pt",
+      "demo_input_sha256": "28f6a9cb417f7aec08a05c9f3ed70178533dbde685b399fcde3e7b06c162389e",
+      "input_distribution": "PRIVATE_PENDING_REDISTRIBUTION_REVIEW",
+      "scientific_certification": "RELEASED_BASE",
+      "ops": "HISTORICAL_BASE_RESULT_SEPARATELY_IDENTIFIED",
+      "parent_checkpoint_sha256": null,
+      "selected_epoch": null
+    },
+    "goc500.ft0": {
+      "family": "opengridsfm",
+      "weights": "artifacts/cache/goc500.ft0.pt",
+      "sha256": "cf72e0f6036d1e37fb5a298eb3db5e69a6524f48bc7b0b8b5cd34e758ddfe4a2",
+      "demo_input": "experiments/goc_500/data/case500_goc.pyg.json",
+      "demo_input_sha256": "66457ef63e2f496757094d06de0ec3cafb59561ce074094828041e549ed53e5c",
+      "input_distribution": "OFFICIAL_PINNED_UPSTREAM_SAMPLE",
+      "historical_role": "SMOKE_ONLY",
+      "parent": "released v1.1",
+      "training": "10 FullTop samples; smoke test",
+      "demo_is_published_population": false
+    },
+    "goc500.m1": {
+      "family": "opengridsfm",
+      "weights": "artifacts/cache/goc500.m1.pt",
+      "sha256": "a1378fdaf38af6b317f172c27df7c0f14a23138143d65dfe5e1c46c613e119ad",
+      "demo_input": "experiments/goc_500/data/case500_goc.pyg.json",
+      "demo_input_sha256": "66457ef63e2f496757094d06de0ec3cafb59561ce074094828041e549ed53e5c",
+      "input_distribution": "OFFICIAL_PINNED_UPSTREAM_SAMPLE",
+      "historical_role": "PUBLISHED_ADAPTATION",
+      "parent": "released v1.1",
+      "training": "FullTop train indices 0-999",
+      "demo_is_published_population": false
+    },
+    "goc500.m2": {
+      "family": "opengridsfm",
+      "weights": "artifacts/cache/goc500.m2.pt",
+      "sha256": "08eda70270f787db42c48b751becc9da2062b0482550a5c2a761b4eba0c94ff6",
+      "demo_input": "experiments/goc_500/data/case500_goc.pyg.json",
+      "demo_input_sha256": "66457ef63e2f496757094d06de0ec3cafb59561ce074094828041e549ed53e5c",
+      "input_distribution": "OFFICIAL_PINNED_UPSTREAM_SAMPLE",
+      "historical_role": "PUBLISHED_ADAPTATION",
+      "parent": "M1",
+      "training": "M1 continued on FullTop train indices 1000-1499",
+      "demo_is_published_population": false
+    },
+    "goc500.m3": {
+      "family": "opengridsfm",
+      "weights": "artifacts/cache/goc500.m3.pt",
+      "sha256": "4ec89d36de80081be2fc26c14a1bc5a5369d7423b557d71b9dd4a254462f302d",
+      "demo_input": "experiments/goc_500/data/case500_goc.pyg.json",
+      "demo_input_sha256": "66457ef63e2f496757094d06de0ec3cafb59561ce074094828041e549ed53e5c",
+      "input_distribution": "OFFICIAL_PINNED_UPSTREAM_SAMPLE",
+      "historical_role": "PUBLISHED_ADAPTATION",
+      "parent": "M1",
+      "training": "M1 continued on N-1 train indices 0-499",
+      "demo_is_published_population": false
+    },
+    "goc500.base": {
+      "family": "opengridsfm",
+      "weights": "artifacts/cache/opengridsfm.base.pt",
+      "sha256": "f8a4396122e603e8303afdebe3b093819c0f64dac0878394aed0bd63205fd831",
+      "demo_input": "experiments/goc_500/data/case500_goc.pyg.json",
+      "demo_input_sha256": "66457ef63e2f496757094d06de0ec3cafb59561ce074094828041e549ed53e5c",
+      "input_distribution": "OFFICIAL_PINNED_UPSTREAM_SAMPLE",
+      "historical_role": "RELEASED_BASE",
+      "demo_is_published_population": false
+    }
+  },
+  "unavailable_models": {
+    "texas2k.opengridsfm.G500": {
+      "status": "PENDING_FINALIZATION_NOT_CERTIFIED",
+      "saved_epochs": 20,
+      "weights_distributed": false,
+      "ops": "PENDING",
+      "ac_references": "PENDING"
+    }
+  }
+}

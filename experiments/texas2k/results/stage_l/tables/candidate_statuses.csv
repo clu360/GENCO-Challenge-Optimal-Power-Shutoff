@@ -1,0 +1,7 @@
+evaluator,status,eligible,count
+genco_opf,evaluator_exception,False,48
+genco_opf,optimal_success,True,1457
+genco_pf_contingency,evaluator_exception,False,48
+genco_pf_contingency,optimal_success,True,1457
+genco_pf_transfer,evaluator_exception,False,48
+genco_pf_transfer,optimal_success,True,1457

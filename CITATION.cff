@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite this software and the upstream model and OPS sources listed in THIRD_PARTY_NOTICES.md."
+title: "GENCO Challenge: Budgeted Optimal Power Shutoff Research"
+type: software
+authors:
+  - family-names: Lu
+    given-names: Caleb
+version: 0.1.0-dev
+abstract: "Separate GOC-500 and modified Texas2k studies with surrogate topology screening, grid/task adaptation, and exact AC decision audits. Release qualification is in progress."

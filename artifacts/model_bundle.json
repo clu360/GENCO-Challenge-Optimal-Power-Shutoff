@@ -1,0 +1,58 @@
+{
+  "sha256": "f15e6d6d21f906b6433e27590b01df831fbbc32c2d1457a7eba0b8fc3004eba7",
+  "bytes": 890326503,
+  "distribution": "LOCAL_VERIFIED_EXPORT_REMOTE_ASSET_NOT_PUBLISHED_YET",
+  "files": {
+    "artifacts/cache/texas2k.genco_opf.G100.pt": {
+      "sha256": "d952811fc2fd329d2ab7c076987dec094c99c6b89036e3053b818afbcc0c4adb"
+    },
+    "artifacts/cache/genco_opf.normalizer.pt": {
+      "sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9"
+    },
+    "artifacts/cache/texas2k.genco_opf.G100_to_R400.pt": {
+      "sha256": "e64b22da3c8fa92a6c959f355e269e815d2c422bc3809fefa33db47ab11c8bcd"
+    },
+    "artifacts/cache/texas2k.genco_opf.G100_to_W400.pt": {
+      "sha256": "b4af8c9e6383ff75168b08967a0d7c125653b5dbc432328b53912e7b9aa3da74"
+    },
+    "artifacts/cache/texas2k.genco_opf.G500.pt": {
+      "sha256": "1e664defde395b77b97e4829bf8e22c3828cbb05da87082aab4b3916a4411ad4"
+    },
+    "artifacts/cache/texas2k.opengridsfm.G100.pt": {
+      "sha256": "e45ed36e3956eeb7750d2e396737e0cc3ccd58990aae84b65a6af9d1fdad06d5"
+    },
+    "artifacts/cache/texas2k.opengridsfm.G100_to_R400.pt": {
+      "sha256": "0ce7ad4538598f439fff4b59a72e33272f1de193ecaa3dae521c0e3eaceb0cbd"
+    },
+    "artifacts/cache/texas2k.opengridsfm.G100_to_W400.pt": {
+      "sha256": "406bb6e4c23c42f1bdf1a682e4213bb64f5fe71f105feebf54b8c6f06508ae0e"
+    },
+    "artifacts/cache/genco_opf.base.pt": {
+      "sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343"
+    },
+    "artifacts/cache/opengridsfm.base.pt": {
+      "sha256": "f8a4396122e603e8303afdebe3b093819c0f64dac0878394aed0bd63205fd831"
+    },
+    "artifacts/cache/goc500.ft0.pt": {
+      "sha256": "cf72e0f6036d1e37fb5a298eb3db5e69a6524f48bc7b0b8b5cd34e758ddfe4a2"
+    },
+    "artifacts/cache/goc500.m1.pt": {
+      "sha256": "a1378fdaf38af6b317f172c27df7c0f14a23138143d65dfe5e1c46c613e119ad"
+    },
+    "artifacts/cache/goc500.m2.pt": {
+      "sha256": "08eda70270f787db42c48b751becc9da2062b0482550a5c2a761b4eba0c94ff6"
+    },
+    "artifacts/cache/goc500.m3.pt": {
+      "sha256": "4ec89d36de80081be2fc26c14a1bc5a5369d7423b557d71b9dd4a254462f302d"
+    },
+    "LICENSE": {
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "sha256": "e353f5a0548bac053bf07653c6293bbf70ea1f57fee01afd3e28d8ac333faed4"
+    },
+    "docs/licenses/GridSFM-MIT.txt": {
+      "sha256": "6b089b203de04ad557c03c7259975f8ed55d08930985e97f670ffbf6b99a99d3"
+    }
+  }
+}

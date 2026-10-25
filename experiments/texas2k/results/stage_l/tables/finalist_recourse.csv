@@ -1,0 +1,16 @@
+evaluator,lambda_r,k,active_alpha_commands,nonzero_r_commands,net_redispatch_mw,half_l1_redispatch_mw,pac_operational
+genco_opf,0.0,0,0,0,0.0,0.0,202463.44175947004
+genco_opf,0.2,2,2,0,0.0,0.0,202463.17267207016
+genco_opf,0.5,2,1,0,0.0,0.0,202463.1726904802
+genco_opf,0.8,2,1,0,0.0,0.0,202463.17291363265
+genco_opf,1.0,2,1,0,0.0,0.0,202463.17294899368
+genco_pf_transfer,0.0,0,0,0,0.0,0.0,212351.23475664755
+genco_pf_transfer,0.2,2,1,0,0.0,0.0,212351.114614702
+genco_pf_transfer,0.5,2,1,0,0.0,0.0,212351.12366587733
+genco_pf_transfer,0.8,2,2,0,0.0,0.0,212351.08474763407
+genco_pf_transfer,1.0,2,1,0,0.0,0.0,212351.11530145464
+genco_pf_contingency,0.0,0,0,0,0.0,0.0,326036.16110468685
+genco_pf_contingency,0.2,1,2,0,0.0,0.0,326036.079105522
+genco_pf_contingency,0.5,2,2,0,0.0,0.0,326036.07937522617
+genco_pf_contingency,0.8,2,2,0,0.0,0.0,326036.07078036456
+genco_pf_contingency,1.0,2,2,0,0.0,0.0,326036.08030164574

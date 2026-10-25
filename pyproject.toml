@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=75.8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "genco-ops-research"
+version = "0.1.0"
+description = "Reproducible grid-surrogate optimal-power-shutoff research results and demos"
+requires-python = ">=3.10,<3.13"
+dependencies = ["numpy>=1.26,<3", "pandas>=2.2,<3", "pyarrow>=18", "matplotlib>=3.9", "scipy>=1.14,<2"]
+
+[project.scripts]
+genco-ops = "genco_ops.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.optional-dependencies]
+notebooks = ["nbformat>=5.10", "nbclient>=0.10", "ipykernel>=6"]
+test = ["pytest>=8"]
