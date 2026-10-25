@@ -1,5 +1,16 @@
 # Release Verification
 
+## Historical GOC Pool Follow-Up
+
+All 30 original frozen GOC pool CSVs now match the retained FT3/FT4 ordered-byte
+receipts. A separate regression joins all 1,530 pool rows to the published search
+table and checks physical topology IDs, ranks and K exactly. Source-export tests
+also reject changed pool bytes before writing output. The model suite now passes
+39 tests. This recovers historical selection evidence without generating any new
+topologies, predictions or AC labels. The pinned electrical sample is present;
+the historical prepared baseline/PAC artifacts and held-out evaluation population
+remain distinct missing inputs, not replaced by the small sample demo.
+
 ## Original-Executor Follow-Up
 
 The v150 follow-up exports the original Texas numerical closure:22source modules,
