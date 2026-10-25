@@ -1,0 +1,10 @@
+# Scientific inventories bind exact bytes across Windows/Linux checkouts.
+# Preserve stored line endings instead of applying user-level autocrlf settings.
+* -text
+*.py diff
+*.md diff
+*.toml diff
+*.json diff
+*.csv diff
+*.jl diff
+*.cff diff

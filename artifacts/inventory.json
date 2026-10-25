@@ -1,5 +1,9 @@
 {
   "files": {
+    ".gitattributes": {
+      "sha256": "ef448be1c4e3514ff2f7db2084457c846df927a4530f49e592b9909449990b7e",
+      "bytes": 239
+    },
     ".gitignore": {
       "sha256": "f9bf851fbb47804f0831123e8c960c63b2f6488c5cfd90bbb29fdb040aaf64f9",
       "bytes": 178
@@ -657,8 +661,8 @@
       "bytes": 708
     },
     "scripts/execute_notebooks.py": {
-      "sha256": "8cac65282ccb48db74ad8038374afb15ee634a0620badc75284b06aba077301f",
-      "bytes": 1761
+      "sha256": "fd75aa2ee675b453f98d86ce736dc595b5e70c2727aa96ff0c8534835e36ed32",
+      "bytes": 1995
     },
     "src/genco_ops/__init__.py": {
       "sha256": "01ae96ef320d1d4ecc24706a19e31f9f3ed49edf0d91ff9361cce90da26ef5cf",
