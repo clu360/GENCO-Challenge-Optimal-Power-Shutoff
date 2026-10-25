@@ -1,0 +1,60 @@
+{
+  "status": "ARCHIVED_CONFIGURATION_NOT_AN_EXECUTABLE_RELEASE_COMMAND",
+  "source_sha256": "ef2304ee2bd527612ba9e3c84b667e1eca00dcbe259d3313649a5612639bd295",
+  "configuration": {
+    "artifact_id": "STAGE-J-GRIDSFM-FT0-SMOKE",
+    "base_checkpoint": "[Private locator omitted; original hash-bound evidence retained]",
+    "batch_size": 2,
+    "case_name": "pglib_opf_case500_goc",
+    "checkpoint_dir": "[Private locator omitted; original hash-bound evidence retained]",
+    "checkpoint_name": "gridsfm_goc500_fulltop_ft0_n10.pt",
+    "device": "auto",
+    "epochs": 2,
+    "gridsfm_root": "[Private locator omitted; original hash-bound evidence retained]",
+    "heldout_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "heldout_split": "test",
+    "infeas_prob": 0.3,
+    "learning_rate": 0.0001,
+    "num_groups": 1,
+    "num_workers": 0,
+    "opfdata_root": "[Private locator omitted; original hash-bound evidence retained]",
+    "output_dir": "experiments/test/wildfire_tests/stage_j_gridsfm_goc500/finetune/results/ft0",
+    "run_label": "ft0",
+    "run_stage_j_smoke": true,
+    "seed": 42,
+    "stage_j": {
+      "finalists_csv": "experiments/test/wildfire_tests/goc_500_results/stage_j/complete_run/core_results/method_finalists_all.csv",
+      "input_dir": "[Private locator omitted; original hash-bound evidence retained]",
+      "lambda_r": 0.2,
+      "method": "Guided-GridSFM",
+      "pac_freeze_json": "[Private locator omitted; original hash-bound evidence retained]",
+      "scenario_id": "J-S1"
+    },
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "train_split": "train",
+    "variant": "fulltop",
+    "weight_decay": 0.0001
+  }
+}

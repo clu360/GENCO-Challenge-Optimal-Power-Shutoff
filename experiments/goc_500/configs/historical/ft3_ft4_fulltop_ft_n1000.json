@@ -1,0 +1,20 @@
+{
+  "status": "ARCHIVED_CONFIGURATION_NOT_AN_EXECUTABLE_RELEASE_COMMAND",
+  "source_sha256": "72848a1d4a0d380f9fac969842a1d6775095e7538a0125da39d823723f2fbe98",
+  "configuration": {
+    "analysis_python": "[Private locator omitted; original hash-bound evidence retained]",
+    "artifact_id": "STAGE-J-GRIDSFM-FT3-FT4-FULLTOP-1000",
+    "cache_root": "[Private locator omitted; original hash-bound evidence retained]",
+    "checkpoint": "[Private locator omitted; original hash-bound evidence retained]",
+    "expected_checkpoint_sha256": "A1378FDAF38AF6B317F172C27DF7C0F14A23138143D65DFE5E1C46C613E119AD",
+    "expected_gridsfm_commit": "1ca775fd436d7ce013a1c0ab946e61ac7ef59ad6",
+    "final_root": "[Private locator omitted; original hash-bound evidence retained]",
+    "ft1_manifest": "experiments/test/wildfire_tests/stage_j_gridsfm_goc500/finetune/results/ft1/ft1_manifest.json",
+    "frozen_result_root": "experiments/test/wildfire_tests/goc_500_results/stage_j/complete_run",
+    "gridsfm_root": "[Private locator omitted; original hash-bound evidence retained]",
+    "model_selection": "ft",
+    "model_variant": "fulltop_ft_n1000",
+    "publication_root": "experiments/test/wildfire_tests/stage_j_gridsfm_goc500/finetune/results/ft3_ft4_v002",
+    "run_id": "stage_j_ft3_fulltop_ft_n1000_v002"
+  }
+}

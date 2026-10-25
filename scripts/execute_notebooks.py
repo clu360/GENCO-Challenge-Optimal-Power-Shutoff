@@ -32,12 +32,14 @@ with tempfile.TemporaryDirectory(prefix='genco-notebook-kernel-') as directory:
                 resources={'metadata':{'path':str(root/'notebooks')}}).execute()
             nbformat.write(book,output/name)
             texas_status='NOT_APPLICABLE'
+            texas_ops='NOT_APPLICABLE'
             if name.startswith('03'):
-                outcomes=[item.get('data',{}).get('application/json',{}).get('status')
+                outcomes=[item.get('data',{}).get('application/json',{})
                     for cell in book.cells if cell.cell_type=='code' for item in cell.get('outputs',[])]
-                texas_status=next((value for value in outcomes if value),'UNREPORTED_SEE_NOTEBOOK')
+                texas_status=next((value.get('status') for value in outcomes if value.get('status') and value.get('kind')!='original_ops_probe'),'UNREPORTED_SEE_NOTEBOOK')
+                texas_ops=next((value.get('status') for value in outcomes if value.get('kind')=='original_ops_probe'),'UNREPORTED_SEE_NOTEBOOK')
             print(json.dumps(dict(notebook=name,status='EXECUTED',
-                texas_inference_outcome=texas_status)),flush=True)
+                texas_inference_outcome=texas_status,texas_ops_probe_outcome=texas_ops)),flush=True)
     finally:
         for key,value in prior.items():
             if value is None:os.environ.pop(key,None)

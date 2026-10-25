@@ -3,6 +3,8 @@
 ## Results Without Models Or Solvers
 
 Install `pip install -e '.[notebooks,test]'` in Python 3.12, then run:
+Use a short writable checkout path on Windows; the independent tests used an
+isolated temporary checkout, not deeply nested development directories.
 
 ```sh
 genco-ops results --study texas2k --output outputs/texas2k
@@ -58,15 +60,62 @@ does not certify physical quality. Use original numerical acceptance checks on
 the retained bus/generator/branch tables before reporting a certified new outcome.
 Existing accepted AC audit results remain available without Julia.
 
-## Full Historical Configuration
+## Original Texas Numerical Executor
 
 `experiments/texas2k/configs/phase_i_original.json` exports the actual recipe and
 search settings, with explicit source/request identities. Loading it does not run
-anything. It is not a full executor or a claim that the campaign was rerun here.
-Full fresh Texas computation is unavailable publicly pending input permissions
-and completion of the full historical executor port. The original research
-checkpoint remains the versioned numerical execution source. Do not shorten a
-demo and call it the original 301-topology result.
+anything. The original resident evaluators, graph preprocessing, physical metrics,
+alpha-only optimizer, durable objective journal and hierarchical outer search are
+exported in `src/genco_ops/published/`. The source manifest identifies66 exported
+definitions across22 original modules, with only recorded import/I/O redirections.
+The constructor receives the same generator-cost table explicitly; it does not
+look for private files through the old research package.
+
+With a separately authorized exact input pack and acquired checkpoints:
+
+```sh
+genco-ops phase-i-ops --model texas2k.genco_opf.G500 --inputs /authorized/inputs --output outputs/full_g500
+genco-ops phase-i-ops --model texas2k.genco_opf.G500 --inputs /authorized/inputs --output outputs/full_g500 --device cuda:0 --execute
+```
+
+The first command validates an input/configuration plan without inference. The
+second explicitly starts the original full search; it must not be run as a casual
+release test. One visible qualified CUDA GPU is required. Full CUDA transport and
+the full301-state computation were **not** rerun during independent packaging;
+no untested GPU/platform support or full-recomputation claim is made.
+
+A bounded CPU probe uses the original risk/scoring and20-call search on one
+explicit K0/K1/K2 topology, with a separate output identity:
+
+```sh
+genco-ops phase-i-ops --model texas2k.genco_opf.G500 --inputs /authorized/inputs --output outputs/new_probe --device cpu --probe-topology '117;281' --execute
+python scripts/check_texas_contract.py --inputs /authorized/inputs --output outputs/source_contract.json
+```
+
+Both GENCO and native20-call probes were actually tested on authorized inputs.
+Twelve normalized input tensors match the retained Stage L S1 fixture bitwise;
+its physical bus/generator/branch tables match exactly. Prediction drift from
+the older recorded runtime is diagnostic, not claimed bitwise parity or a relaxed
+AC-label gate. Existing accepted proxy files are byte-verified and reused, not
+silently recomputed under a different platform's scalar `pow` rounding.
+
+The8input files and cost data are hash-bound. Changed source/runtime/device
+identities cannot silently adopt an old trajectory. The original journal refuses
+uncertain spent calls and resumes only committed prefixes within20actual calls.
+Native cycle caches use the official cache API under this checkout's `outputs/`,
+not an undocumented home cache. Completed probes can be reused with zero new calls.
+
+Public fresh Texas computation remains unavailable until its exact input pack can
+be distributed. No private inputs were included in ordinary Git/model exports.
+Do not shorten a demo and call it the original301-topology result.
+
+## Historical GOC Configuration
+
+`experiments/goc_500/configs/historical/` preserves the actual published and
+training/evaluation configurations, separately labeled archival. Its original
+population/scenario inputs and full legacy execution path are unavailable here;
+the official-sample demo is not substituted for them. Cached results and supported
+model inference remain usable without that historical population.
 
 Training recipes and checkpoint ancestry are recorded, but raw training datasets
 are not distributed here. Fresh retraining is not an advertised independently

@@ -73,9 +73,11 @@ cluster jobs or paid computation on opening. Published-result exploration, new
 demo predictions, and full original OPS/reference reproduction are distinct.
 The optional fixed-decision AC adapter exports the unchanged Julia formulation;
 its command mapping is tested but independent numerical Julia execution is not.
-Full original configurations are exported, but the full historical executor port
-is not release-qualified. These omissions are not represented as successful full
-recomputation. See [reproduction](docs/reproduction.md) and
+The original Texas numerical executor is now exported with exact source bindings
+and tested20-call GENCO/native probes. Its full CUDA run was not repeated, and
+public input rights remain unresolved. Historical GOC full-population execution
+is separate and not substituted by the sample demo. These omissions are not
+represented as successful full recomputation. See [reproduction](docs/reproduction.md) and
 [limitations](docs/results_and_limitations.md).
 
 The scientific archive preserves failed solves, exact states, immutable request
