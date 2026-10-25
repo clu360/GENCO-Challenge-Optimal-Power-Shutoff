@@ -665,8 +665,8 @@
       "bytes": 2078
     },
     "scripts/check_texas_contract.py": {
-      "sha256": "22d3194588884694511054a52365889867ad4ed75710f3c6ca611dbbff6082b0",
-      "bytes": 5034
+      "sha256": "08e22dfcb12b6798c4f2467d8ed28da30ff135532c9df787154cec6fe990deb0",
+      "bytes": 5065
     },
     "scripts/execute_notebooks.py": {
       "sha256": "aa849ca1d57763a06f50f68e58b2480cfaa61a5d07abd88bf0ed87226aef5155",
@@ -785,8 +785,8 @@
       "bytes": 630
     },
     "src/genco_ops/published/runner.py": {
-      "sha256": "7ea1fce4350eda2f7a155893fcbfd7cca35c89dba33d5492950fbb9cee128bea",
-      "bytes": 6552
+      "sha256": "8188cc5d59de80a2ab965536855b1840ddbb83fc4bf55780a76274391a05471f",
+      "bytes": 6809
     },
     "src/genco_ops/published/runtime.py": {
       "sha256": "4529c870263e338ab3981e3b8f6d59fd3a83b5d0b028e2266becef5995c12b05",

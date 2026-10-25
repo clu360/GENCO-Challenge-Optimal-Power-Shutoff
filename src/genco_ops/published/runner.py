@@ -60,6 +60,10 @@ def run(root,model_id,inputs,output,*,device='cuda:0',execute=False,probe_topolo
     from filelock import FileLock
     output=Path(output).resolve();output.parent.mkdir(parents=True,exist_ok=True)
     with FileLock(str(output.parent/('.'+output.name+'.portable.lock')),timeout=0):
+        request_path=output.parent/(output.name+'.request.json')
+        if request_path.exists():
+            if json.loads(request_path.read_text())!=request:raise ValueError('persisted OPS request changed')
+        else:atomic_json(request_path,request)
         from .runtime import ResidentGENCO,ResidentGridSFM
         resident_type=ResidentGENCO if request['family']=='genco_opf' else ResidentGridSFM
         if probe_topology is not None:

@@ -53,8 +53,9 @@ physical=json.loads((fixture/'physical_case_after_decisions.json').read_text())
 table_diagnostics={}
 for key,frame in [('bus',tables.bus),('gen',tables.gen),('branch',tables.branch)]:
     reference=pd.DataFrame(physical[key])
-    if frame.columns.tolist()!=reference.columns.tolist() or frame.shape!=reference.shape:
+    if set(frame.columns)!=set(reference.columns) or frame.shape!=reference.shape:
         raise ValueError('physical adapter table schema changed')
+    reference=reference[frame.columns]
     numeric=frame.select_dtypes(include='number').columns
     difference=np.abs(frame[numeric].to_numpy()-reference[numeric].to_numpy())
     table_diagnostics[key]=dict(rows=len(frame),maximum_absolute_numeric_difference=float(np.nanmax(difference)))
