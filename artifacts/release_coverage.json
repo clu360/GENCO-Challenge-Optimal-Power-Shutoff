@@ -11,6 +11,9 @@
     "goc_model_demo": "SUPPORTED",
     "texas_model_demo": "PRIVATE_INPUT_ONLY_LOCAL_TEST",
     "bounded_ops_demo": "PASS_REAL_GOC500_CPU_CALLS_DISTINCT_DEMO_IDENTITY",
+    "original_texas_executor": "EXPORTED_ORIGINAL_SOURCE_AND_TESTED_TWO_20_CALL_CPU_PROBES",
+    "original_preprocessing": "12_HISTORICAL_TENSORS_BITWISE_EQUAL_PHYSICAL_TABLES_ZERO_DIFFERENCE",
+    "full_cuda_texas_execution": "NOT_RERUN_DURING_PACKAGING",
     "exact_reference": "REAL_ADAPTER_COMMAND_CONTRACT_TESTED_NUMERICAL_RUN_UNTESTED",
     "full_historical_recomputation": "NOT_RELEASE_QUALIFIED"
   },
@@ -18,6 +21,7 @@
     "Texas electrical/weather input redistribution permission unresolved",
     "Public remote model bundle not yet hosted; checksum-bound local export provided",
     "Native G500 not yet certified; native full OPS and references pending",
-    "Full historical executor port not yet certified; configuration export is not execution"
+    "Public Texas full computation needs authorized inputs; full CUDA transport has not been independently run",
+    "Historical GOC full population/legacy execution are not substituted by the official sample demo"
   ]
 }

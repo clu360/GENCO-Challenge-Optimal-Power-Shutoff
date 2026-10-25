@@ -1,0 +1,219 @@
+{
+  "status": "PASS_ORIGINAL_NUMERICAL_CONTRACT_PORTABILITY_NOT_FULL_RECOMPUTATION",
+  "model_checks": [
+    {
+      "model_id": "texas2k.genco_opf.G500",
+      "request_sha256": "77195ab090e153bc583c6c7e2aac13f01675594b80f5a0b467081678613c4f22",
+      "checkpoint_sha256": "1e664defde395b77b97e4829bf8e22c3828cbb05da87082aab4b3916a4411ad4",
+      "input_contract_sha256": "c14934988acacbcb8ac30b36fc536c026a5ace45b4ad3a23f44271c850c28b27",
+      "source_manifest_sha256": "b7b015290e059c6261b1f520c990d261dd711a37bce7c81541274655781c3082",
+      "runtime": {
+        "cublas_workspace": ":4096:8",
+        "cuda": null,
+        "deterministic": false,
+        "device": "cpu",
+        "journal_sha256": "e2797dcca0f70c101f41401c26332a34b54356e15dd176a34ce11a482acce533",
+        "numpy": "2.2.6",
+        "python": "3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:29:09) [MSC v.1943 64 bit (AMD64)]",
+        "resident_sha256": "063611d4da0b9e9898eb645e98ffcac464d0f621652e7226e2aa170aed2a1672",
+        "scipy": "1.16.2",
+        "search_sha256": "58935e07d1fb24daf564cb6a4018e9ed0109e5d3924a6a22d4a553af64f3d280",
+        "tf32": false,
+        "torch": "2.8.0+cpu"
+      },
+      "candidate_sha256": "799882cca1133dc1a6a3ce5425a2f8c59aa10e05d576ed7bcd8f5a766193671a",
+      "actual_objective_calls": 20,
+      "committed_actual_calls": 20,
+      "topology": [
+        117,
+        281
+      ],
+      "search_blocks": [
+        {
+          "actual_evaluations": 20,
+          "block": "alpha",
+          "budget": 20,
+          "cache_hits": 1,
+          "effective_coordinates_touched": [
+            0,
+            1
+          ],
+          "effective_probe_observed": true,
+          "optimizer_attempts": 22,
+          "physical_coverage_verified": true,
+          "requested_coordinates_touched": [
+            0,
+            1
+          ],
+          "termination": "ACTUAL_EVALUATION_CAP",
+          "untouched_coordinates": [
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "status": "PASS_BOUNDED_ORIGINAL_CONTRACT_NOT_FULL_SEARCH",
+      "source_science_settings_unchanged": true,
+      "scope": "PORTABILITY_ONLY_NOT_PHASE_I_PRODUCTION_RESULT",
+      "risk": 1.2904325845642468,
+      "shed": 0.0004385349286196716,
+      "j_trade": 1.0324337746371215,
+      "search_objective": 1.0324337746371215,
+      "pac_total": 202461.47918962836,
+      "objective_wall_seconds": 34.82500000001164
+    },
+    {
+      "model_id": "texas2k.opengridsfm.G100_to_R400",
+      "request_sha256": "75a8613c1e1758ad18f8577b774aae848238f147b9e42fe3d495e3eb2e7106b4",
+      "checkpoint_sha256": "0ce7ad4538598f439fff4b59a72e33272f1de193ecaa3dae521c0e3eaceb0cbd",
+      "input_contract_sha256": "c14934988acacbcb8ac30b36fc536c026a5ace45b4ad3a23f44271c850c28b27",
+      "source_manifest_sha256": "b7b015290e059c6261b1f520c990d261dd711a37bce7c81541274655781c3082",
+      "runtime": {
+        "cublas_workspace": ":4096:8",
+        "cuda": null,
+        "deterministic": false,
+        "device": "cpu",
+        "journal_sha256": "e2797dcca0f70c101f41401c26332a34b54356e15dd176a34ce11a482acce533",
+        "numpy": "2.2.6",
+        "python": "3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:29:09) [MSC v.1943 64 bit (AMD64)]",
+        "resident_sha256": "063611d4da0b9e9898eb645e98ffcac464d0f621652e7226e2aa170aed2a1672",
+        "scipy": "1.16.2",
+        "search_sha256": "58935e07d1fb24daf564cb6a4018e9ed0109e5d3924a6a22d4a553af64f3d280",
+        "tf32": false,
+        "torch": "2.8.0+cpu"
+      },
+      "candidate_sha256": "c6ed944c12836e892f61df84e9551933a2ba966a69d4f56c7aa331f7051d4ca0",
+      "actual_objective_calls": 20,
+      "committed_actual_calls": 20,
+      "topology": [
+        117,
+        281
+      ],
+      "search_blocks": [
+        {
+          "actual_evaluations": 20,
+          "block": "alpha",
+          "budget": 20,
+          "cache_hits": 1,
+          "effective_coordinates_touched": [
+            0,
+            1
+          ],
+          "effective_probe_observed": true,
+          "optimizer_attempts": 22,
+          "physical_coverage_verified": true,
+          "requested_coordinates_touched": [
+            0,
+            1
+          ],
+          "termination": "ACTUAL_EVALUATION_CAP",
+          "untouched_coordinates": [
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "status": "PASS_BOUNDED_ORIGINAL_CONTRACT_NOT_FULL_SEARCH",
+      "source_science_settings_unchanged": true,
+      "scope": "PORTABILITY_ONLY_NOT_PHASE_I_PRODUCTION_RESULT",
+      "risk": 1.1731620984349502,
+      "shed": 0.0,
+      "j_trade": 0.9385296787479602,
+      "search_objective": 27.848930736191,
+      "pac_total": 13.45520052872152,
+      "objective_wall_seconds": 42.92300000006799
+    }
+  ],
+  "original_stage_l_fixture": {
+    "status": "PASS_ORIGINAL_PREPROCESSING_TENSORS_AND_CONTROLS",
+    "normalized_tensor_count": 12,
+    "normalized_tensors_bitwise_equal": true,
+    "actual_historical_fixture": true,
+    "new_label_generation": false,
+    "source_fixture_sha256": "9208cc24cc92a5ef32dd8325ccb0a6d8f028aa7eb4cb74bbcdcb778d04c6b8df",
+    "known_input_checks": {
+      "pd_before_mask": true,
+      "qd_before_mask": true,
+      "pd_after_mask": true,
+      "qd_after_mask": true
+    },
+    "physical_table_diagnostics": {
+      "bus": {
+        "rows": 2751,
+        "maximum_absolute_numeric_difference": 0.0
+      },
+      "gen": {
+        "rows": 1099,
+        "maximum_absolute_numeric_difference": 0.0
+      },
+      "branch": {
+        "rows": 5344,
+        "maximum_absolute_numeric_difference": 0.0
+      }
+    },
+    "finite_prediction": true,
+    "recorded_prediction_max_abs_differences": {
+      "bus": 0.03587770462036133,
+      "gen": 0.00022983551025390625
+    },
+    "cross_runtime_bitwise_prediction_parity_claimed": false,
+    "current_metrics": {
+      "r_norm": 5.297423988081374,
+      "l_shed": 0.001234954722577064,
+      "j_trade_lambda_0p5": 2.6493294714019755,
+      "max_loading": 49.39513128840246,
+      "overloaded_lines": 1454,
+      "vm_min": 0.9400718808174133,
+      "vm_max": 1.0978045463562012,
+      "pac_thermal": 2.0179658960140463,
+      "pac_voltage": 0.0,
+      "pac_generator_p": 202461.42964134828,
+      "pac_operational": 202463.4476072443,
+      "pac_ac": null,
+      "pac_ac_note": "GENCO checkpoint has no GridSFM feasibility head; exact AC reference required",
+      "finite_output": true
+    },
+    "recorded_r_norm": 5.297413049430005,
+    "current_r_norm_difference": 1.0938651369585273e-05,
+    "fixture_lambda_r": 0.5,
+    "phase_i_search_lambda_r": 0.8,
+    "full_search_recomputed": false
+  },
+  "exact_source_exports": {
+    "modules": 22,
+    "transformed_definitions": 66,
+    "research_projection_test_passed": true
+  },
+  "interrupted_optimizer_resume": {
+    "committed_prefix": 5,
+    "new_calls": 15,
+    "total_actual_calls": 20,
+    "test_passed": true
+  },
+  "completed_probe_reuse": {
+    "genco_new_calls": 0,
+    "native_new_calls": 0,
+    "both_reused_existing_output": true
+  },
+  "source_review": "Focused material-code review found no actionable issues; not a new scientific-method approval",
+  "private_archive": {
+    "sha256": "5cb98ad3f2274d166c73738d8ffb1309409124e277bbc78c3eafe406b9d892a4",
+    "bytes": 15238507,
+    "files": 74,
+    "all_payload_hashes_verified": true,
+    "distributed_publicly": false
+  },
+  "preserved_failure": {
+    "classification": "UNWRITABLE_NATIVE_USER_CACHE_NOT_PHYSICAL_INFEASIBILITY",
+    "old_probe_retained": true,
+    "fix": "Official cache API and XDG_CACHE_HOME under explicit checkout outputs"
+  },
+  "numerical_label_tolerances_changed": false,
+  "new_training_or_labels_generated": false,
+  "full_cuda_301_state_run_tested": false,
+  "new_ac_audits_tested": false,
+  "raw_texas_input_distribution": "PRIVATE_PENDING_PERMISSION",
+  "phase_ii": "HELD_BY_USER"
+}

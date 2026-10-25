@@ -1,5 +1,31 @@
 # Release Verification
 
+## Original-Executor Follow-Up
+
+The v150 follow-up exports the original Texas numerical closure:22source modules,
+66scoped definitions, immutable prepared inputs and generator costs, resident
+model scoring, original20-call alpha optimizer, journal replay and hierarchical
+50-K1/five-parent/up250-K2 search. No new controller was created or deployed.
+
+The isolated-checkout suite now passes38tests with models and36plus2explicit
+model skips without Torch. Both GENCO and native Texas probes completed20new
+actual calls on one explicit K2 topology; completed-output reuse required zero
+new calls. Interrupted-prefix replay has a separate regression proving5committed
+plus15new calls, not25. The full301-state CUDA run was not repeated.
+
+The actual retained Stage L S1 fixture confirms12normalized input tensors
+bitwise, all known demand controls, and zero numerical difference in2751bus,
+1099generator and5344branch adapter rows. Prediction drift from the old recorded
+runtime is explicitly reported, not falsely labeled bitwise prediction parity.
+No label, operating control, accepted proxy weight, numerical tolerance or model
+precision was altered. A hidden user-cycle-cache I/O failure was preserved;
+the transport now uses the official cache API under checkout-local outputs.
+
+See `artifacts/published_executor_verification.json` for the measured receipts,
+runtime, source/weight hashes and private-evidence archive identity. These are
+portability checks, not extra Phase I production searches or AC audits. The initial
+v149 evidence and Git/model export remain preserved at their prior commit.
+
 ## Actual Supported Checks
 
 An isolated Git clone outside the original development tree was installed into
@@ -49,7 +75,8 @@ python -I scripts/verify_release.py --models
 
 This is a verified results/bounded-demo checkpoint, not a fully passed submission
 gate, full historical recomputation, remote publication, challenge-form submission
-or full Phase I completion. Full historical executor portability and public Texas
-input permission remain unresolved. Local model-bundle acquisition is verified;
+or full Phase I completion. Public Texas input permission remains unresolved;
+the full CUDA transport has not been independently run. Historical GOC full-data
+execution is separately unavailable, not replaced by the sample. Local model-bundle acquisition is verified;
 no fictitious public asset URL is supplied. Native G500/OPS/AC remain pending and
 Phase II remains held. Pending results will be added in separate verified commits.
