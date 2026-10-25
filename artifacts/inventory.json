@@ -21,7 +21,7 @@
       "bytes": 955
     },
     "artifacts/source_provenance.json": {
-      "sha256": "cc7364c7bc08ddc93a3dfbae75783db580bea62100e92f7add799a4a008099d1",
+      "sha256": "3f5e3460c27fdb9295ffb0899f1794452e6786e2dde17348e822ea877a781527",
       "bytes": 45011
     },
     "CITATION.cff": {
@@ -37,7 +37,7 @@
       "bytes": 4569
     },
     "docs/model_catalog.md": {
-      "sha256": "a09ce0147d89eafc06d633159b1108830e4259face48929f7e86f55a18781665",
+      "sha256": "547ff07d96962d1f9f8ab585ad4e5757a723c4ddcb2e1146a0470ab99f06a3d2",
       "bytes": 2348
     },
     "docs/reproduction.md": {
@@ -193,8 +193,8 @@
       "bytes": 12280
     },
     "experiments/texas2k/configs/phase_i_original.json": {
-      "sha256": "e6b8f204fd022a7a99b4bd694af8da0eed85d458c8c1efc77ee411e21e5f8eaf",
-      "bytes": 4113
+      "sha256": "3284471ea72648a22d6d5c7825848d76ac27b194d23e096340d68bd12f399dc5",
+      "bytes": 5191
     },
     "experiments/texas2k/results/stage_k/tables/environment_distribution_summary.csv": {
       "sha256": "93dfb797871782b7afa72ed9ded9a0e78ae353662938644b1396578de36d8482",
@@ -649,8 +649,8 @@
       "bytes": 2236
     },
     "pyproject.toml": {
-      "sha256": "d1669c7bc3345c3c7257b4055605dc5ca452779825a2f334f47a8ddb88d9c660",
-      "bytes": 594
+      "sha256": "575811f94d6c077aee67c3caa566d20430efd1904be5af197b4e5169321168b5",
+      "bytes": 615
     },
     "README.md": {
       "sha256": "9c9d6fca7398f8d8a84de9d0bac8f8b78144861f5694e503e2a172ed05aa5012",
@@ -663,6 +663,10 @@
     "scripts/check_models.py": {
       "sha256": "bd6c7798dca90316d761103d708d6569b54ca939823f4d9470c8ef99f4487b24",
       "bytes": 2078
+    },
+    "scripts/check_texas_contract.py": {
+      "sha256": "22d3194588884694511054a52365889867ad4ed75710f3c6ca611dbbff6082b0",
+      "bytes": 5034
     },
     "scripts/execute_notebooks.py": {
       "sha256": "aa849ca1d57763a06f50f68e58b2480cfaa61a5d07abd88bf0ed87226aef5155",
@@ -685,8 +689,8 @@
       "bytes": 2130
     },
     "src/genco_ops/cli.py": {
-      "sha256": "9a5cbdfc144506e941806fed4d6986665221867d21b72e5dde85c6eb87210f89",
-      "bytes": 2798
+      "sha256": "da69bcc90aca8a39418ce54c80713525388258586cbc5aa65bfa283c68d0c5ae",
+      "bytes": 3934
     },
     "src/genco_ops/demo_physics.py": {
       "sha256": "f20ce932a1c200d50237b590f2c75faf8c21c8527608197aa50ab9071bedb4af",
@@ -716,6 +720,110 @@
       "sha256": "8ef6fe336b57835622cb39a97884fe24faaafd31444396c605cfa43508131139",
       "bytes": 2460
     },
+    "src/genco_ops/published/__init__.py": {
+      "sha256": "a9e1b7cc6b3627b752f97f87c4d354ee2c442ea4aa521ff292e68ac3902d64b5",
+      "bytes": 81
+    },
+    "src/genco_ops/published/adapter.py": {
+      "sha256": "3087e4787e79fc32ac7bbb0dcc445b25f8cbd2fcbc7f5035863ae2bd756e837c",
+      "bytes": 7143
+    },
+    "src/genco_ops/published/canonical.py": {
+      "sha256": "bbc5dae3b00d8451301c884bd70e6f3143f4f48aea6fcfb755f9219b9e2620de",
+      "bytes": 119
+    },
+    "src/genco_ops/published/controls.py": {
+      "sha256": "2780d3bb0917a27652ec092a228a60ab442918dc00c564475c7903671305d2c1",
+      "bytes": 1527
+    },
+    "src/genco_ops/published/genco_method.py": {
+      "sha256": "c03f5661a91abafd5e1bec8abedf1d95ce534ca3a4cbdc249cd9650e70d0aecf",
+      "bytes": 8815
+    },
+    "src/genco_ops/published/graphkit_physics.py": {
+      "sha256": "813bdce2fa6ab5d80e65cc6b48840b04d9b0122172ed5afbaa9e29dce84f6340",
+      "bytes": 6280
+    },
+    "src/genco_ops/published/identity.py": {
+      "sha256": "4e8fd44ba87c6512e401e525216c3faf12d618d116a432d583f9b95997bb3a5e",
+      "bytes": 4823
+    },
+    "src/genco_ops/published/io.py": {
+      "sha256": "980c79d00c4f5455a5ae84ea7e34962d20e54da02877ad1e5e14bf96f024a8af",
+      "bytes": 820
+    },
+    "src/genco_ops/published/journal.py": {
+      "sha256": "e2797dcca0f70c101f41401c26332a34b54356e15dd176a34ce11a482acce533",
+      "bytes": 6948
+    },
+    "src/genco_ops/published/native_evaluator.py": {
+      "sha256": "809090aab255ff772989fed4a20cc3507d67061f8a1fe33e3a1f151814cbc685",
+      "bytes": 12415
+    },
+    "src/genco_ops/published/native_method.py": {
+      "sha256": "e997a8cb75e1600abeedeb6fa095e9259f68583e264cadfabc24a35b25b2867e",
+      "bytes": 6978
+    },
+    "src/genco_ops/published/native_metrics.py": {
+      "sha256": "1581fe602c18d6a59fa6d376028ec2f29ec28626e33be615d373dd3ded8166e7",
+      "bytes": 3857
+    },
+    "src/genco_ops/published/native_raw.py": {
+      "sha256": "e5153a9f98ec3ed78b320ca8dc8879981b2e4a5018312c9682825c0e2e845b40",
+      "bytes": 6518
+    },
+    "src/genco_ops/published/native_schemas.py": {
+      "sha256": "bb310fbbd05dcbbd531289ba055330734a33c8585e2f66931e2eb34dcfb869ac",
+      "bytes": 2181
+    },
+    "src/genco_ops/published/redispatch.py": {
+      "sha256": "a598126ff9815340b52a890222556181c7826c6a7a35d7309a3a2d0b3d7ac3af",
+      "bytes": 1939
+    },
+    "src/genco_ops/published/rows.py": {
+      "sha256": "ce59fb7051cf49ebad303c81bea6e9fc726b787fe0c0b44bdc88b7706cbd833f",
+      "bytes": 630
+    },
+    "src/genco_ops/published/runner.py": {
+      "sha256": "7ea1fce4350eda2f7a155893fcbfd7cca35c89dba33d5492950fbb9cee128bea",
+      "bytes": 6552
+    },
+    "src/genco_ops/published/runtime.py": {
+      "sha256": "4529c870263e338ab3981e3b8f6d59fd3a83b5d0b028e2266becef5995c12b05",
+      "bytes": 5421
+    },
+    "src/genco_ops/published/schemas.py": {
+      "sha256": "5bb622b16c69eb22b2a5f23d7035461ad465bdfaa4c8c968a7b4431bdb70feb0",
+      "bytes": 2493
+    },
+    "src/genco_ops/published/search.py": {
+      "sha256": "58935e07d1fb24daf564cb6a4018e9ed0109e5d3924a6a22d4a553af64f3d280",
+      "bytes": 6082
+    },
+    "src/genco_ops/published/selection.py": {
+      "sha256": "ad7853755a7f9cb44e519760f7142532cde7d6d78fc7e7c04eeee2c8ecfe6d36",
+      "bytes": 384
+    },
+    "src/genco_ops/published/service.py": {
+      "sha256": "cd0ac6750e503cc3e41d28ad4596945a7b8f03c55bbbb9d3eab61e5c81a15d00",
+      "bytes": 2394
+    },
+    "src/genco_ops/published/SOURCE_EXPORT.json": {
+      "sha256": "b7b015290e059c6261b1f520c990d261dd711a37bce7c81541274655781c3082",
+      "bytes": 17970
+    },
+    "src/genco_ops/published/support.py": {
+      "sha256": "2ec04b98db7e12e7c50b105ec2717f93d596291ee58d84921ec7aabec35cde06",
+      "bytes": 578
+    },
+    "src/genco_ops/published/topology.py": {
+      "sha256": "f956294d95996ed163217bc12578d81b1cc67384ce51e46598cf10d483a22d4e",
+      "bytes": 5430
+    },
+    "src/genco_ops/published/trajectory.py": {
+      "sha256": "acc0e5198689a0daca65579c551b6d8b392cb97ef7cbcd05bc4d027673a20e0a",
+      "bytes": 11012
+    },
     "src/genco_ops/reporting_metrics.py": {
       "sha256": "1129faf6f6bd58894e6469c10f65deed8b671c5ab64de3416c59792c9fdcdd00",
       "bytes": 1367
@@ -735,6 +843,10 @@
     "tests/test_goc500_demo.py": {
       "sha256": "8b942a20b4e15cd0dffb1e7989fdcefb4862d7cb57c7b0b0b7a782dc9025b208",
       "bytes": 8425
+    },
+    "tests/test_published_numerics.py": {
+      "sha256": "2d089c7db35a587313fa77a129b0b0aee3a03bf3a6d770989e37813e184b7654",
+      "bytes": 2444
     },
     "tests/test_published_results.py": {
       "sha256": "25ce9ca0a2c48035f46843d8029eacc97b7a2432870fee6031da1accd1b9d102",

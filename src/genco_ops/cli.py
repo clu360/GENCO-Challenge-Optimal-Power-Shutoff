@@ -29,6 +29,14 @@ def main():
     published=commands.add_parser('published-config',help='Load a checksum-pinned full configuration without executing it')
     published.add_argument('--config',type=Path,required=True)
     published.add_argument('--sha256',required=True)
+    full=commands.add_parser('phase-i-ops',help='Validate or explicitly execute the original Texas Phase I numerical pipeline')
+    full.add_argument('--root',type=Path,default=Path.cwd())
+    full.add_argument('--model',required=True)
+    full.add_argument('--inputs',type=Path,required=True,help='Authorized hash-bound private electrical inputs')
+    full.add_argument('--output',type=Path,required=True)
+    full.add_argument('--device',choices=['cpu','cuda:0'],default='cuda:0')
+    full.add_argument('--probe-topology',help='Bounded 20-call portability probe only: intact or sorted IDs separated by semicolons')
+    full.add_argument('--execute',action='store_true',help='Without this flag only validate a plan; never submit Slurm jobs')
     args=parser.parse_args()
     if args.command=='results':
         from .results import regenerate
@@ -45,6 +53,12 @@ def main():
     elif args.command=='published-config':
         from .goc500_demo import load_published_config
         print(json.dumps(load_published_config(args.config,args.sha256)))
+    elif args.command=='phase-i-ops':
+        from .published.runner import run
+        topology=None if args.probe_topology is None else ([] if args.probe_topology=='intact'
+            else list(map(int,args.probe_topology.split(';'))))
+        print(json.dumps(run(args.root,args.model,args.inputs,args.output,device=args.device,
+            execute=args.execute,probe_topology=topology)))
     else:
         from .inference import predict_saved_case
         print(json.dumps(predict_saved_case(args.root,args.model,args.output)))

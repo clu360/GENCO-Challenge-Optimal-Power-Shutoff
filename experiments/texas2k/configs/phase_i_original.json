@@ -1,6 +1,6 @@
 {
   "format": "PUBLISHED_PHASE_I_CONFIGURATION_V070_EXPORT",
-  "fresh_full_recomputation_status": "UNAVAILABLE_PUBLIC_TEXAS_INPUT_PERMISSION_AND_FULL_EXECUTOR_PORT",
+  "fresh_full_recomputation_status": "EXECUTABLE_REQUIRES_AUTHORIZED_PRIVATE_INPUTS_AND_QUALIFIED_GPU",
   "study": "modifiedTexas2k",
   "scenario": 16,
   "lambda_r": 0.8,
@@ -138,5 +138,18 @@
     }
   ],
   "no_implicit_execution": true,
-  "exact_reference_numerical_source_sha256": "0f68ce857b0d5d527095bb1e19f5343d2a7d4ca270c12056a92fe4f719892fc6"
+  "exact_reference_numerical_source_sha256": "0f68ce857b0d5d527095bb1e19f5343d2a7d4ca270c12056a92fe4f719892fc6",
+  "case_sha256": "d71d1630e73ee280794009880a12ff79f6f229bef9f9283ab293ac6492c279da",
+  "prepared_artifacts_sha256": {
+    "branch_model_mapping.parquet": "1f2de9bc3333703b970dc43867629b05ce77ea97a11dca0984491a4b8dd8c7eb",
+    "canonical_branch.parquet": "9347c70c023f199a4c4e9e9dd8b4f3b993b5acc70184a7ef431e763019024282",
+    "canonical_bus.parquet": "0c352fb912d0fa3024a4fb8523ed40612756aeea072e3a1f244d77d63aaac379",
+    "canonical_generator.parquet": "2f5369500c88b85ff8940dffd2cfc0cc8fdad5335dc58ae48e9baad03a7a90d6",
+    "canonical_load.parquet": "6733c3eb5d45f7fcab7931c279dff6ae4064e235749b8c0608862cbb2463e57b",
+    "proxy_components.parquet": "bf037cbe0a9f2bb46a965056771a05ea08a243d45cef354f2bf9983c4f3ce40c",
+    "shared_k1.parquet": "2f2788255c4bc53e0b9ba83d309bb8aac290661dd8f9aadb267ca163470426b5",
+    "gencost.parquet": "8bc902f7a7415fe59f8ad1f4385e98efb9e54ec283d5d1f8ad80fdff84590666"
+  },
+  "numerical_executor": "genco_ops.published.runner",
+  "runtime_scope": "Original alpha-only physics/search; CPU allowed only for a distinct bounded probe"
 }

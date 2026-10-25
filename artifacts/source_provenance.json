@@ -1,6 +1,6 @@
 {
   "development_base_commit": "fb44ef3ec448c9b99474067e9f08330252cac961",
-  "originating_research_checkpoint_commit": "14266c69802249ef95ae2f03d65e63d013398b80",
+  "originating_research_checkpoint_commit": "cef2435a30b261e59b4c6522bc485cc976cd3471",
   "files": {
     "src/genco_ops/model_loading.py": {
       "original_relative": "stage_m_fine_tuning/genco_model_loading.py",
