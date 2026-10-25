@@ -26,7 +26,7 @@ runtime, source/weight hashes and private-evidence archive identity. These are
 portability checks, not extra Phase I production searches or AC audits. The initial
 v149 evidence and Git/model export remain preserved at their prior commit.
 
-## Actual Supported Checks
+## Preserved Initial v149 Checks
 
 An isolated Git clone outside the original development tree was installed into
 two separate Windows/Python3.12.11 environments. The basic environment has no
@@ -55,6 +55,12 @@ official Git source commits and checkpoint hashes are in
 `artifacts/release_verification.json`. These bounded execution times are not
 training/production speedup or billing estimates. Notebook TCP/Windows event-loop
 warnings were retained; execution completed. Scientific settings were not changed.
+
+The final v150 clean clone separately passes38 model tests,36 Torch-free tests
+with2 explicit model skips, and all3 notebooks. These current receipts live in
+`artifacts/published_executor_verification.json`; the v149 receipts above remain
+historical evidence. The final public clone has no private Texas input directory,
+so both Texas fresh inference and original OPS probe report unavailable inputs.
 
 ## Reproduction Commands
 

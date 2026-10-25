@@ -366,5 +366,7 @@
     "Original Texas source port is tested in CPU probes; full CUDA execution is not rerun and public inputs remain unavailable",
     "Remote visibility/hosting not configured; local Git/export supplied",
     "Native G500 certification and native OPS/reference work remain queued"
-  ]
+  ],
+  "original_executor_followup": "artifacts/published_executor_verification.json",
+  "initial_v149_receipts_retained": true
 }

@@ -215,5 +215,146 @@
   "full_cuda_301_state_run_tested": false,
   "new_ac_audits_tested": false,
   "raw_texas_input_distribution": "PRIVATE_PENDING_PERMISSION",
-  "phase_ii": "HELD_BY_USER"
+  "phase_ii": "HELD_BY_USER",
+  "final_clean_checkout": {
+    "results_only": {
+      "status": "PASS_BOUNDED_ADVERTISED_MODES",
+      "mode": "results_only",
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-I",
+            "-m",
+            "genco_ops.cli",
+            "verify"
+          ],
+          "exit_code": 0,
+          "seconds": 2.603044099989347,
+          "stdout_sha256": "d155dfa46b9716a512332e5e18b311a7163307e8359096622a6e8dbcac18c320",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "command": [
+            "python",
+            "-I",
+            "-m",
+            "pytest",
+            "tests",
+            "-q"
+          ],
+          "exit_code": 0,
+          "seconds": 9.217705300019588,
+          "stdout_sha256": "0d624406a6b6061e58bcc5910ea55682c916ba012dcc4aec994a43f12660fab4",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "command": [
+            "python",
+            "-I",
+            "scripts/execute_notebooks.py"
+          ],
+          "exit_code": 0,
+          "seconds": 9.613155999977607,
+          "stdout_sha256": "e0b168adfc1734c40fa4c564c635f4997dd5c60cd683604c0973ab10a53b33aa",
+          "stderr_sha256": "a51a87b199cf83fcae9023175c0286047ca5870f204ea8af46c0fad5816f7416"
+        }
+      ],
+      "python": "3.12.11",
+      "platform": "Windows",
+      "installed_package_from_this_checkout": true,
+      "torch_absent": true,
+      "packages": {
+        "numpy": "2.5.4",
+        "pandas": "2.3.3",
+        "scipy": "1.18.1",
+        "pyarrow": "26.0.0",
+        "matplotlib": "3.11.2",
+        "nbformat": "5.11.1",
+        "nbclient": "0.11.0",
+        "pytest": "9.1.1"
+      },
+      "inventory_sha256": "320e2a219365988f718bf897bd5c3b49993ebd88da73792920076b902e6b72eb",
+      "no_cluster_credentials_used": true,
+      "full_historical_campaign_recomputed": false,
+      "independent_numerical_ac_audit_tested": false
+    },
+    "models": {
+      "status": "PASS_BOUNDED_ADVERTISED_MODES",
+      "mode": "models",
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-I",
+            "-m",
+            "genco_ops.cli",
+            "verify"
+          ],
+          "exit_code": 0,
+          "seconds": 1.58492470002966,
+          "stdout_sha256": "d155dfa46b9716a512332e5e18b311a7163307e8359096622a6e8dbcac18c320",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "command": [
+            "python",
+            "-I",
+            "-m",
+            "pytest",
+            "tests",
+            "-q"
+          ],
+          "exit_code": 0,
+          "seconds": 18.530363300000317,
+          "stdout_sha256": "593a16233c4665d64c2954f93dce2f48bb3c1a09715ba0d08bd06edcc50d8ff1",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "command": [
+            "python",
+            "-I",
+            "scripts/execute_notebooks.py",
+            "--models"
+          ],
+          "exit_code": 0,
+          "seconds": 28.84402720001526,
+          "stdout_sha256": "c3869d8f4f42987ff99fda23a9dd361b78a17620eeb4d75955a6057b66a251b0",
+          "stderr_sha256": "499623cda8a9860a625926a2b13248d37f7d9cfcd2a388ff13402144bc78a11d"
+        }
+      ],
+      "python": "3.12.11",
+      "platform": "Windows",
+      "installed_package_from_this_checkout": true,
+      "torch_absent": false,
+      "packages": {
+        "numpy": "2.2.6",
+        "pandas": "2.3.3",
+        "scipy": "1.16.2",
+        "pyarrow": "25.0.1",
+        "matplotlib": "3.11.2",
+        "nbformat": "5.11.1",
+        "nbclient": "0.11.0",
+        "pytest": "9.1.1"
+      },
+      "inventory_sha256": "320e2a219365988f718bf897bd5c3b49993ebd88da73792920076b902e6b72eb",
+      "no_cluster_credentials_used": true,
+      "full_historical_campaign_recomputed": false,
+      "independent_numerical_ac_audit_tested": false
+    }
+  },
+  "final_clean_checkout_has_private_texas_inputs": false,
+  "public_texas_inference_status": "UNAVAILABLE_PRIVATE_INPUT_NOT_A_PASSED_DEMO",
+  "public_texas_ops_status": "UNAVAILABLE_PRIVATE_OPS_INPUT_NOT_A_PASSED_DEMO",
+  "public_qualified_modes": [
+    "Result exploration and figure regeneration",
+    "Pinned CPU model loading",
+    "Official-sample GOC bounded OPS",
+    "Exact original Texas input/CPU probes when separately authorized inputs are supplied"
+  ],
+  "unpublished_modes": [
+    "Full original CUDA search not rerun",
+    "Independent numerical Julia audit not run",
+    "Historical GOC full population/legacy executor not distributed"
+  ]
 }
