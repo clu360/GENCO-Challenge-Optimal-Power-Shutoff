@@ -637,16 +637,16 @@
       "bytes": 11558
     },
     "notebooks/01_explore_published_results.ipynb": {
-      "sha256": "f3c6f5108498e83bed824da787f366f8afd1c5f98074dff12e68686f81f30805",
+      "sha256": "34ae5326d44134332c570be2e931382673109601e1d0e2f59ea907f05b893fec",
       "bytes": 1684
     },
     "notebooks/02_goc500_model_and_ops_demo.ipynb": {
-      "sha256": "810711d1dea85c53bbb75e1e5b1c1751cea1978edc9e09795571dcb28e7d7dc1",
+      "sha256": "419e6cfd3c6f83a3c614fb22671da9138c8eed3ec9b911fb9fbde05bdb33a1fb",
       "bytes": 1950
     },
     "notebooks/03_texas2k_model_and_ops_demo.ipynb": {
-      "sha256": "bce1ab23f478348067567377fb5c3dbecf22731ec17076db4a55e0b1d3573373",
-      "bytes": 2170
+      "sha256": "6e7257ee8b0c9722cfa156ef4cecd368e730c381de1351bb356414c402ac7f8a",
+      "bytes": 2236
     },
     "pyproject.toml": {
       "sha256": "d1669c7bc3345c3c7257b4055605dc5ca452779825a2f334f47a8ddb88d9c660",
@@ -665,16 +665,20 @@
       "bytes": 2078
     },
     "scripts/execute_notebooks.py": {
-      "sha256": "fd75aa2ee675b453f98d86ce736dc595b5e70c2727aa96ff0c8534835e36ed32",
-      "bytes": 1995
+      "sha256": "aa849ca1d57763a06f50f68e58b2480cfaa61a5d07abd88bf0ed87226aef5155",
+      "bytes": 2310
+    },
+    "scripts/verify_release.py": {
+      "sha256": "c15e25e793ee18e692029ace5009b6f744f308bf3a130a4be86ae0018ca2b5ce",
+      "bytes": 2607
     },
     "src/genco_ops/__init__.py": {
       "sha256": "01ae96ef320d1d4ecc24706a19e31f9f3ed49edf0d91ff9361cce90da26ef5cf",
       "bytes": 106
     },
     "src/genco_ops/ac_audit.py": {
-      "sha256": "ec3005223be6114e16f033cfc4a05f682f28f3f16307f8a8a1148bf94f3e7dda",
-      "bytes": 5386
+      "sha256": "df34448074450b209862b58e2b573ee72a7d872c73bc3b6cf1bafc16162a7ca9",
+      "bytes": 5531
     },
     "src/genco_ops/artifacts.py": {
       "sha256": "c6656598b1c891bb2f67497ef9235cc5212fe2fb394ce0aec36eb8cbcb2645ad",
@@ -721,8 +725,8 @@
       "bytes": 4938
     },
     "tests/test_ac_audit_contract.py": {
-      "sha256": "b9a748eeac52811a939fa45479bc0746f0b22d5919a099ccda8e27154c5354bb",
-      "bytes": 1193
+      "sha256": "2dc4947f3e39e262ed4df3bd366fdce297f5b35e2747c294c5e10aa20f157c8a",
+      "bytes": 1425
     },
     "tests/test_artifact_safety.py": {
       "sha256": "5ef3fb52ba3fc837b75f6de9b74a2dfd058ffd2735b8812d6d0ef8376a47d7a2",

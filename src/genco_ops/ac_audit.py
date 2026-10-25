@@ -28,6 +28,8 @@ def prepare(root,decision_path,case_path,output,*,julia='julia'):
     for values in (offline,sourceless):
         if len(values)!=len(set(values)) or any(type(v)!=int or v<0 for v in values):
             raise ValueError('canonical identities must be distinct zero-based integers')
+    if output.exists() and any(output.iterdir()):
+        raise RuntimeError('audit output is not empty; preserve and reconcile prior evidence')
     alpha=decision['alpha'];hazard=decision['p_env']
     if any(not math.isfinite(v) or not 0<=v<=1 for v in alpha.values()):
         raise ValueError('invalid fixed load service')

@@ -20,5 +20,9 @@ def test_fixed_decision_command_and_ids(tmp_path):
     assert b[10]=='-' and a[10].endswith('alpha.csv')
     assert '1,0.9' in (tmp_path/'audit/alpha.csv').read_text()
     assert plan['full_numerical_reproduction_verified'] is False
+    original=(tmp_path/'audit/alpha.csv').read_bytes()
+    with pytest.raises(RuntimeError,match='prior evidence'):
+        prepare(ROOT,decision,case,tmp_path/'audit')
+    assert (tmp_path/'audit/alpha.csv').read_bytes()==original
     record['case_sha256']='bad';decision.write_text(json.dumps(record))
     with pytest.raises(ValueError,match='differs'):prepare(ROOT,decision,case,tmp_path/'bad')

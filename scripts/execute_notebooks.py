@@ -31,8 +31,13 @@ with tempfile.TemporaryDirectory(prefix='genco-notebook-kernel-') as directory:
             NotebookClient(book,timeout=600,kernel_name='genco-release',
                 resources={'metadata':{'path':str(root/'notebooks')}}).execute()
             nbformat.write(book,output/name)
+            texas_status='NOT_APPLICABLE'
+            if name.startswith('03'):
+                outcomes=[item.get('data',{}).get('application/json',{}).get('status')
+                    for cell in book.cells if cell.cell_type=='code' for item in cell.get('outputs',[])]
+                texas_status=next((value for value in outcomes if value),'UNREPORTED_SEE_NOTEBOOK')
             print(json.dumps(dict(notebook=name,status='EXECUTED',
-                texas_public_input='UNAVAILABLE_EXPLICIT_SKIP' if name.startswith('03') else 'NOT_APPLICABLE')),flush=True)
+                texas_inference_outcome=texas_status)),flush=True)
     finally:
         for key,value in prior.items():
             if value is None:os.environ.pop(key,None)
