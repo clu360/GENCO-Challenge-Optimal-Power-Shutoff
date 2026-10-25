@@ -785,8 +785,8 @@
       "bytes": 630
     },
     "src/genco_ops/published/runner.py": {
-      "sha256": "8188cc5d59de80a2ab965536855b1840ddbb83fc4bf55780a76274391a05471f",
-      "bytes": 6809
+      "sha256": "c6e0060fcf566e60f34d235d1ccc1a2282320deb55cddc35db292dfc565dcf9c",
+      "bytes": 7548
     },
     "src/genco_ops/published/runtime.py": {
       "sha256": "063611d4da0b9e9898eb645e98ffcac464d0f621652e7226e2aa170aed2a1672",
@@ -845,8 +845,8 @@
       "bytes": 8425
     },
     "tests/test_published_numerics.py": {
-      "sha256": "ee189fb30bd602ae9eb42292c0b2d2943dec8df8f41d1f0c879a33bfbc53a7a9",
-      "bytes": 2820
+      "sha256": "cf81726af5c39e627793fbe527fda1c5c153b5a8a8cccd7ebf5f26fdfa0e1152",
+      "bytes": 5927
     },
     "tests/test_published_results.py": {
       "sha256": "25ce9ca0a2c48035f46843d8029eacc97b7a2432870fee6031da1accd1b9d102",

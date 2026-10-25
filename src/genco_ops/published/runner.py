@@ -48,15 +48,28 @@ def plan(root,model_id,inputs,output,*,device,probe_topology=None):
         input_contract_sha256=sha(inputs/'input_contract.json'),
         source_manifest_sha256=sha(Path(__file__).with_name('SOURCE_EXPORT.json')),
         public_model_catalog_sha256=sha(root/'artifacts/model_catalog.json'))
+    request['transport_sources_sha256']={path.name:sha(path) for path in (
+        Path(__file__),Path(__file__).with_name('runtime.py'),Path(__file__).with_name('identity.py'),
+        Path(__file__).parents[1]/'artifacts.py',Path(__file__).parents[1]/'demo_physics.py')}
     if model['family']=='genco_opf':request['normalizer_sha256']=model['normalizer_sha256']
     request['identity_sha256']=hashlib.sha256(canonical(request).encode()).hexdigest()
     return request,identity
+
+
+def _execution_request(request,runtime):
+    value={key:item for key,item in request.items() if key!='identity_sha256'}
+    value['numerical_runtime']=runtime
+    value['identity_sha256']=hashlib.sha256(canonical(value).encode()).hexdigest()
+    return value
 
 
 def run(root,model_id,inputs,output,*,device='cuda:0',execute=False,probe_topology=None):
     request,identity=plan(root,model_id,inputs,output,device=device,probe_topology=probe_topology)
     if not execute:return dict(status='VALIDATED_PLAN_NOT_EXECUTED',request=request,numerical_execution=False)
     verify(root)
+    from .runtime import load_runtime,fingerprint
+    _,_,torch,target=load_runtime(root,model_id,device,probe=probe_topology is not None)
+    request=_execution_request(request,fingerprint(torch,target))
     from filelock import FileLock
     output=Path(output).resolve();output.parent.mkdir(parents=True,exist_ok=True)
     with FileLock(str(output.parent/('.'+output.name+'.portable.lock')),timeout=0):
