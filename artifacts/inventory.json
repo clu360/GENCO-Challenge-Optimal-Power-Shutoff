@@ -745,8 +745,8 @@
       "bytes": 6280
     },
     "src/genco_ops/published/identity.py": {
-      "sha256": "4e8fd44ba87c6512e401e525216c3faf12d618d116a432d583f9b95997bb3a5e",
-      "bytes": 4823
+      "sha256": "639a079bb8a4bfca6b8595a7427868bff244047f7f22bd5f2a6be442c0e8dd7a",
+      "bytes": 4974
     },
     "src/genco_ops/published/io.py": {
       "sha256": "980c79d00c4f5455a5ae84ea7e34962d20e54da02877ad1e5e14bf96f024a8af",
