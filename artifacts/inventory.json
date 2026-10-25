@@ -1,28 +1,8 @@
 {
   "files": {
     ".gitignore": {
-      "sha256": "cf2e5aa147f62c1fd0af81d214b412d3d30f8cd7e3a4aea47002083590efc139",
-      "bytes": 163
-    },
-    ".pytest_cache/.gitignore": {
-      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
-      "bytes": 37
-    },
-    ".pytest_cache/CACHEDIR.TAG": {
-      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
-      "bytes": 191
-    },
-    ".pytest_cache/README.md": {
-      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
-      "bytes": 302
-    },
-    ".pytest_cache/v/cache/lastfailed": {
-      "sha256": "06499fccfd3b551c46e17e7bb3cb54145d13573ffa1c30e440d5794cdf7d3859",
-      "bytes": 322
-    },
-    ".pytest_cache/v/cache/nodeids": {
-      "sha256": "71823a05f0899130453e1d54730b1c8fadf0fb6a285f039cb21201344e1b81b3",
-      "bytes": 2526
+      "sha256": "f9bf851fbb47804f0831123e8c960c63b2f6488c5cfd90bbb29fdb040aaf64f9",
+      "bytes": 178
     },
     "artifacts/model_bundle.json": {
       "sha256": "dce73005f1c4991d2eeb53b7aa98f781cea53a66ae57a7010d44f1221cdf195a",
@@ -57,8 +37,8 @@
       "bytes": 2348
     },
     "docs/reproduction.md": {
-      "sha256": "8ccd6d64e6545c8cbc6c6ad4c4bbc499daabe91f4505ab8b6f907c016a42d54a",
-      "bytes": 3631
+      "sha256": "4cee695105cdde02e6adac554a04f0df9032576e4cf722659e98970ff872f6bd",
+      "bytes": 3700
     },
     "docs/results_and_limitations.md": {
       "sha256": "c96d0268ceb9a620c432d774bd0011146e5f44f22fb5e25eaa18e92b7f29a11c",
@@ -209,8 +189,8 @@
       "bytes": 12280
     },
     "experiments/texas2k/configs/phase_i_original.json": {
-      "sha256": "117691408588b500e1970343b20cbdf9e32d7238b4baf39ae05bb6dafebf445c",
-      "bytes": 3618
+      "sha256": "e6b8f204fd022a7a99b4bd694af8da0eed85d458c8c1efc77ee411e21e5f8eaf",
+      "bytes": 4113
     },
     "experiments/texas2k/results/stage_k/tables/environment_distribution_summary.csv": {
       "sha256": "93dfb797871782b7afa72ed9ded9a0e78ae353662938644b1396578de36d8482",
@@ -669,8 +649,8 @@
       "bytes": 594
     },
     "README.md": {
-      "sha256": "1291e8f36f28d1f655daffab1b52706410d59913aa584bded15edb8533d8fc43",
-      "bytes": 4439
+      "sha256": "9c9d6fca7398f8d8a84de9d0bac8f8b78144861f5694e503e2a172ed05aa5012",
+      "bytes": 5041
     },
     "scripts/ac_audit.py": {
       "sha256": "809f81fa5197be6973eb6d29e8ec721e18c6c77b032df4d1da2bcf59b7a95fd6",

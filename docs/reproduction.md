@@ -25,6 +25,7 @@ supplied local model export and run:
 ```sh
 genco-ops acquire --bundle /path/to/genco_challenge_models_v149.zip
 genco-ops infer --model goc500.m1 --output outputs/goc500_inference
+genco-ops ops-demo --model goc500.m1 --output outputs/new_goc500_ops
 ```
 
 The bundle checksum and every member checksum are in `artifacts/model_bundle.json`.

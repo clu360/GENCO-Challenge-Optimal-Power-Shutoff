@@ -4,9 +4,10 @@ Research on budgeted wildfire-aware topology decisions using neural grid-state
 evaluators and exact AC audits. GOC-500 and modified Texas2k are separate studies,
 not pooled error benchmarks.
 
-**Release preparation in progress.** Completed GENCO results and certified native
-models are available in this local package. Independent OPS/demo and final Git
-release checks are not yet certified. This is not a challenge-form submission.
+**Completed-results export with bounded numerical demos.** Completed GENCO results
+and certified native models are included through a checksum-bound local export.
+See `docs/RELEASE_VERIFICATION.md` for clean-checkout evidence and explicit
+unsupported modes. This is not a challenge-form submission or full Phase I closure.
 
 ## Completed Findings
 
@@ -41,7 +42,7 @@ genco-ops results --study goc_500 --output outputs/goc500
 
 These commands regenerate numerical summaries and main figures from included
 tables without model downloads, GPU, Julia, solver licenses or cluster access.
-Execution/verification receipts will identify the commands actually tested.
+Execution/verification receipts identify the commands actually tested.
 
 ## Model Inference
 
@@ -53,7 +54,10 @@ official package lives in the upstream `model/` subdirectory.
 Acquire the explicitly supplied model bundle with `genco-ops acquire --bundle
 model_weights.zip`. Select an actual ID from `artifacts/model_catalog.json`, then
 run `genco-ops infer --model goc500.m1 --output outputs/model_demo`.
-Finite inference is not AC feasibility. Native and GENCO raw validation losses
+Run `genco-ops ops-demo --model goc500.m1 --output outputs/new_ops_demo`
+for a real bounded CPU search on the official sample: two topologies and eight
+actual calls each, under an explicitly synthetic uniform hazard. It is not the
+published full search. Finite inference is not AC feasibility. Native and GENCO raw validation losses
 are not comparable across architectures.
 
 Texas2k raw graph inputs are kept private pending source/redistribution review.
@@ -67,8 +71,12 @@ grid and called the same reproduction.
 The notebooks are explicit, bounded entry points. They never launch training,
 cluster jobs or paid computation on opening. Published-result exploration, new
 demo predictions, and full original OPS/reference reproduction are distinct.
-Original full configurations and executable OPS/AC handoffs remain to be release-
-qualified; the current finite-inference checks are not a full campaign rerun.
+The optional fixed-decision AC adapter exports the unchanged Julia formulation;
+its command mapping is tested but independent numerical Julia execution is not.
+Full original configurations are exported, but the full historical executor port
+is not release-qualified. These omissions are not represented as successful full
+recomputation. See [reproduction](docs/reproduction.md) and
+[limitations](docs/results_and_limitations.md).
 
 The scientific archive preserves failed solves, exact states, immutable request
 identities and full resume state. Public text locators are sanitized; numeric

@@ -118,6 +118,23 @@
         "weight_decay": 0.0001
       },
       "request_sha256": "2bb9e91dc7d6370fb73115d8236532ec3e74d7e6dc420c7ce705b829c0d4b3a5"
+    },
+    {
+      "task_id": "v070.opengridsfm.G500.s0",
+      "family": "opengridsfm",
+      "recipe": {
+        "batch_size": 1,
+        "epochs": 20,
+        "lr": 0.0001,
+        "shuffle": false,
+        "weight_decay": 0.0001
+      },
+      "n": 500,
+      "n_grid": 500,
+      "n_task": 0,
+      "total_examples": 500,
+      "status": "PENDING_CERTIFICATION_NOT_ACCEPTED_MODEL",
+      "request_sha256": "04a08addbad1b8dd0a0faec01c440b24d98dfaa2345ec91575f49576cd1a49eb"
     }
   ],
   "no_implicit_execution": true,
