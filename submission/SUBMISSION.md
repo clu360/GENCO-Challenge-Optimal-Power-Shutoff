@@ -20,7 +20,11 @@ We began with **three constructed diagnostic hazard patterns**: a high-risk line
 
 We compared the released GridSFM checkpoint **M0** with **M1** (1,000 intact-grid cases), **M2** (M1 plus 500 intact cases), and **M3** (M1 plus 500 N−1 cases). Across a common **375 intact + 375 N−1 held-out test**, M2 had the lowest intact loss and M3 the lowest N−1 loss. Intact active branch-flow MAE fell from **0.0745 p.u. (M0)** to **0.0350 p.u. (M2)**.
 
-Fine-tuning convergence is separately recorded across ten epochs of additional intact-versus-N−1 adaptation in the [GOC training trajectories](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/blob/main/experiments/goc_500/results/ft6_training_trajectories.csv). The two continuation paths trade off intact and contingency accuracy; this is not uniform improvement in every physical metric.
+Fine-tuning convergence is recorded across ten epochs of additional intact-versus-N−1 adaptation. The two continuation paths trade off intact and contingency accuracy; this is not uniform improvement in every physical metric.
+
+![GOC-500 N−1 validation loss during sequential adaptation](https://raw.githubusercontent.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/main/submission/figures/04_goc_n1_validation_convergence.svg)
+
+*GOC-500 convergence on a common N−1 validation split: ten-epoch continuation from M1 with either 500 additional intact cases (M2) or 500 N−1 cases (M3). This is training/validation convergence, not OPS-search convergence. [Source traces](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/blob/main/experiments/goc_500/results/ft6_training_trajectories.csv).*
 
 ![GOC-500 fine-tuning agreement and measured screening speed](https://raw.githubusercontent.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/main/submission/figures/03_goc_evidence.png)
 
