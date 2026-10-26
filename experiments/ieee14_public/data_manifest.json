@@ -1,0 +1,73 @@
+{
+  "schema": "PUBLIC_GRAPHKIT_CASE14_FIXTURE_V1",
+  "source_repository": "https://github.com/gridfm/gridfm-graphkit",
+  "source_commit": "95b90eecc7f5c2c86a9dd776f0c3f40434def22f",
+  "source_tree_url": "https://api.github.com/repos/gridfm/gridfm-graphkit/git/trees/95b90eecc7f5c2c86a9dd776f0c3f40434def22f?recursive=1",
+  "upstream_fixture": "tests/data/case14_ieee/raw",
+  "public_git_tree_blob_parity": true,
+  "license": "Apache-2.0; see GraphKit upstream LICENSE",
+  "purpose": "Public small-case inference demonstration; not Texas2k or new training data",
+  "weights": "Released GENCO-OPF only; cross-grid demonstration is not a held-out accuracy claim",
+  "files": {
+    "experiments/ieee14_public/data/branch_data.parquet/scenario_partition=0/54e3c0dcc5074e739d692c4f1690930a-0.parquet": {
+      "upstream_relative": "tests/data/case14_ieee/raw/branch_data.parquet/scenario_partition=0/54e3c0dcc5074e739d692c4f1690930a-0.parquet",
+      "upstream_git_blob_sha1": "6472158062ea4d57cc5c2ed13232fe575a4c9d1e",
+      "bytes": 67175,
+      "sha256": "27325cc63e1e058e1ec14adfb6dcac1635f43fd66e20c07eaa8017b3c8ff1daf"
+    },
+    "experiments/ieee14_public/data/branch_data.parquet/scenario_partition=0/d202aa074592423f8b2196522fc5c453-0.parquet": {
+      "upstream_relative": "tests/data/case14_ieee/raw/branch_data.parquet/scenario_partition=0/d202aa074592423f8b2196522fc5c453-0.parquet",
+      "upstream_git_blob_sha1": "b2f8b618dffa033592c1fbb7625fd7950b8b7cff",
+      "bytes": 58892,
+      "sha256": "52d2e61c6078c74ec34b0d6ee8a6cdbc9f2e70a6b500f4e530744661a9e1fbd3"
+    },
+    "experiments/ieee14_public/data/bus_data.parquet/scenario_partition=0/1d80ed48185f4aab9f99dde645c11584-0.parquet": {
+      "upstream_relative": "tests/data/case14_ieee/raw/bus_data.parquet/scenario_partition=0/1d80ed48185f4aab9f99dde645c11584-0.parquet",
+      "upstream_git_blob_sha1": "d5d27760861a05736da8badefb1baafc6f853cc3",
+      "bytes": 32248,
+      "sha256": "8cc33b0095bc1d35074aa05726ffd50011ea429ff1ab59ce7fba17a7d14d3a8e"
+    },
+    "experiments/ieee14_public/data/bus_data.parquet/scenario_partition=0/4f141f7e2e71404c85667f5928db206d-0.parquet": {
+      "upstream_relative": "tests/data/case14_ieee/raw/bus_data.parquet/scenario_partition=0/4f141f7e2e71404c85667f5928db206d-0.parquet",
+      "upstream_git_blob_sha1": "69012396a09dd3e389816872c8c111d7692a212f",
+      "bytes": 37397,
+      "sha256": "916eb2a3f6913b8b81efde0cd5998a6a710605333672abc65246305f7725d910"
+    },
+    "experiments/ieee14_public/data/gen_data.parquet/scenario_partition=0/5cca08a1e0974ef9a15abaf879b06324-0.parquet": {
+      "upstream_relative": "tests/data/case14_ieee/raw/gen_data.parquet/scenario_partition=0/5cca08a1e0974ef9a15abaf879b06324-0.parquet",
+      "upstream_git_blob_sha1": "b8f22720238e9c5e3d16fe8d296608b5ba6a0f1d",
+      "bytes": 13984,
+      "sha256": "16453c5f4012825dd1d458a0b5ed52b91f6789276e1c08089c4464c6af4e8f80"
+    },
+    "experiments/ieee14_public/data/gen_data.parquet/scenario_partition=0/7da995898c1744b0b7da38edd3887232-0.parquet": {
+      "upstream_relative": "tests/data/case14_ieee/raw/gen_data.parquet/scenario_partition=0/7da995898c1744b0b7da38edd3887232-0.parquet",
+      "upstream_git_blob_sha1": "dd333fa8b96c2e44b60877952d8e91a08c18d047",
+      "bytes": 13294,
+      "sha256": "ddc788356118211f53dfdf2bf3669ccf985b2904ec88cf98e88d6a522e889d15"
+    },
+    "experiments/ieee14_public/data/runtime_data.parquet/scenario_partition=0/a2befd34169c467b9ee467d58143570c-0.parquet": {
+      "upstream_relative": "tests/data/case14_ieee/raw/runtime_data.parquet/scenario_partition=0/a2befd34169c467b9ee467d58143570c-0.parquet",
+      "upstream_git_blob_sha1": "ea22a828f56254eb55c70a4a5a361f3479a4df7d",
+      "bytes": 4080,
+      "sha256": "237dc1d0f6a445f3f57b04ef7ebd15a69e6ec43af52f2edcf463cf753ae8ca33"
+    },
+    "experiments/ieee14_public/data/runtime_data.parquet/scenario_partition=0/daccfd30e3634a6da6bc0cb9dcf63c6b-0.parquet": {
+      "upstream_relative": "tests/data/case14_ieee/raw/runtime_data.parquet/scenario_partition=0/daccfd30e3634a6da6bc0cb9dcf63c6b-0.parquet",
+      "upstream_git_blob_sha1": "df20de718cc1c58a695ac99089231da7ac7fb228",
+      "bytes": 3919,
+      "sha256": "9371b0e2172fecd345b983bca3f07bd28a441d2d4ca0874482d8bd34ba6dd8c5"
+    },
+    "experiments/ieee14_public/data/y_bus_data.parquet/scenario_partition=0/1d2e07e1164c4e53bab3f8411fe89fed-0.parquet": {
+      "upstream_relative": "tests/data/case14_ieee/raw/y_bus_data.parquet/scenario_partition=0/1d2e07e1164c4e53bab3f8411fe89fed-0.parquet",
+      "upstream_git_blob_sha1": "0d102cbf3c141149bacc33752582645725c93f1b",
+      "bytes": 8714,
+      "sha256": "3dab3a951cea7ce6a52968ffd2417fc72c59c6aed3ed9f0b2575d7e9843dab87"
+    },
+    "experiments/ieee14_public/data/y_bus_data.parquet/scenario_partition=0/f562b0cacf764d2d9a77efb18aa03c9f-0.parquet": {
+      "upstream_relative": "tests/data/case14_ieee/raw/y_bus_data.parquet/scenario_partition=0/f562b0cacf764d2d9a77efb18aa03c9f-0.parquet",
+      "upstream_git_blob_sha1": "14f8cc26677368f762bb044bf0127bf527b62dba",
+      "bytes": 8828,
+      "sha256": "ff1ec535dbebed43bc4d0808c59b2660a8dbb7b0ca9a294deeb9722c7298ede8"
+    }
+  }
+}

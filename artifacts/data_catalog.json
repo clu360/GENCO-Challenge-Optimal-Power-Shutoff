@@ -1,0 +1,187 @@
+{
+  "schema": "GENCO_REPRODUCTION_DATA_CATALOG_V1",
+  "datasets": {
+    "goc500.official_sample": {
+      "status": "PACKAGED_PUBLIC",
+      "path": "experiments/goc_500/data/case500_goc.pyg.json",
+      "sha256": "66457ef63e2f496757094d06de0ec3cafb59561ce074094828041e549ed53e5c",
+      "purpose": "Bounded model and OPS demonstration; not the published population"
+    },
+    "texas2k.authorized_inputs": {
+      "status": "PRIVATE_MODIFIED_ELECTRICAL_INPUTS",
+      "weather_access": "PUBLIC_PER_AUTHOR",
+      "role": "texas2k_authorized_inputs",
+      "purpose": "Eight exact model-inference fixtures and original Scenario16 prepared numerical inputs",
+      "files": {
+        "artifacts/private_inputs/texas2k/v070.genco_opf.G100.s0.pt": {
+          "sha256": "dfa6c674af0f17db57abed98a32cb9b114f0cd796ecc7065681d315df621974e",
+          "bytes": 1255192
+        },
+        "artifacts/private_inputs/texas2k/v070.genco_opf.G100_to_R400.s0.pt": {
+          "sha256": "d5e370ca779b53a485cc194b8a105acd5c3df4ee40fd1908160b0f8d1e5fe767",
+          "bytes": 1254872
+        },
+        "artifacts/private_inputs/texas2k/v070.genco_opf.G100_to_W400.s0.pt": {
+          "sha256": "a605c839cdaa0641b5451ede1b5521cbb9e89505bb8dc43dd4bb7a36f687bb89",
+          "bytes": 1254872
+        },
+        "artifacts/private_inputs/texas2k/v070.genco_opf.G500.s0.pt": {
+          "sha256": "dfa6c674af0f17db57abed98a32cb9b114f0cd796ecc7065681d315df621974e",
+          "bytes": 1255192
+        },
+        "artifacts/private_inputs/texas2k/v070.opengridsfm.G100.s0.pt": {
+          "sha256": "28f6a9cb417f7aec08a05c9f3ed70178533dbde685b399fcde3e7b06c162389e",
+          "bytes": 3221125
+        },
+        "artifacts/private_inputs/texas2k/v070.opengridsfm.G100_to_R400.s0.pt": {
+          "sha256": "87bfbac62880854deaf51b217aab36fac8b17dd1403be6687e763742ea6256b1",
+          "bytes": 3220741
+        },
+        "artifacts/private_inputs/texas2k/v070.opengridsfm.G100_to_W400.s0.pt": {
+          "sha256": "a5b8f0f3f5cc5d543b4fb9d0cd67c5adb0bfbbf2ddd10783957874d246348e6a",
+          "bytes": 3220613
+        },
+        "artifacts/private_inputs/texas2k/v070.opengridsfm.G500.s0.pt": {
+          "sha256": "28f6a9cb417f7aec08a05c9f3ed70178533dbde685b399fcde3e7b06c162389e",
+          "bytes": 3221125
+        },
+        "artifacts/private_inputs/texas2k_ops/branch_model_mapping.parquet": {
+          "sha256": "1f2de9bc3333703b970dc43867629b05ce77ea97a11dca0984491a4b8dd8c7eb",
+          "bytes": 121787
+        },
+        "artifacts/private_inputs/texas2k_ops/canonical_branch.parquet": {
+          "sha256": "9347c70c023f199a4c4e9e9dd8b4f3b993b5acc70184a7ef431e763019024282",
+          "bytes": 614006
+        },
+        "artifacts/private_inputs/texas2k_ops/canonical_bus.parquet": {
+          "sha256": "0c352fb912d0fa3024a4fb8523ed40612756aeea072e3a1f244d77d63aaac379",
+          "bytes": 179754
+        },
+        "artifacts/private_inputs/texas2k_ops/canonical_generator.parquet": {
+          "sha256": "2f5369500c88b85ff8940dffd2cfc0cc8fdad5335dc58ae48e9baad03a7a90d6",
+          "bytes": 49941
+        },
+        "artifacts/private_inputs/texas2k_ops/canonical_load.parquet": {
+          "sha256": "6733c3eb5d45f7fcab7931c279dff6ae4064e235749b8c0608862cbb2463e57b",
+          "bytes": 66471
+        },
+        "artifacts/private_inputs/texas2k_ops/proxy_components.parquet": {
+          "sha256": "bf037cbe0a9f2bb46a965056771a05ea08a243d45cef354f2bf9983c4f3ce40c",
+          "bytes": 121887
+        },
+        "artifacts/private_inputs/texas2k_ops/shared_k1.parquet": {
+          "sha256": "2f2788255c4bc53e0b9ba83d309bb8aac290661dd8f9aadb267ca163470426b5",
+          "bytes": 9580
+        },
+        "artifacts/private_inputs/texas2k_ops/gencost.parquet": {
+          "sha256": "8bc902f7a7415fe59f8ad1f4385e98efb9e54ec283d5d1f8ad80fdff84590666",
+          "bytes": 7429
+        },
+        "artifacts/private_inputs/texas2k_ops/input_contract.json": {
+          "sha256": "c14934988acacbcb8ac30b36fc536c026a5ace45b4ad3a23f44271c850c28b27",
+          "bytes": 1333
+        }
+      },
+      "missing_from_this_pack": [
+        "Original MATPOWER source case required for fresh Julia AC audits",
+        "Full adaptation training and held-out evaluation populations"
+      ]
+    },
+    "goc500.historical_population": {
+      "status": "OFFICIAL_FT6_SOURCES_AND_ORDERED_IDENTITIES_AVAILABLE_NOT_RECOVERED_OR_REPLAYED",
+      "population_manifest": "experiments/goc_500/data/evaluation_population.json",
+      "evaluation_graphs": 750,
+      "subpopulations": {
+        "fulltop": 375,
+        "n1": 375
+      },
+      "archive_bytes": 2406018938,
+      "recovery_command": "python scripts/recover_goc500_evaluation_data.py",
+      "full_recovery_performed": false,
+      "numerical_metric_replay_performed": false,
+      "missing": [
+        "Historical OPS baseline-loading and PAC-freeze artifacts",
+        "Legacy full OPS execution state"
+      ],
+      "available": [
+        "Published numeric results",
+        "Frozen topology pools",
+        "Training and evaluation configurations",
+        "All reported checkpoint weights",
+        "Public official GCS FT6 sources and original ordered graph tensor fingerprints"
+      ]
+    },
+    "texas2k.full_training_validation_population": {
+      "status": "NOT_PACKAGED",
+      "available": [
+        "Recorded validation metrics and certified checkpoints",
+        "Exact single-case inference fixtures with separate permission"
+      ],
+      "missing": [
+        "Complete raw training and held-out validation populations"
+      ]
+    },
+    "texas2k.public_weather_exposure": {
+      "status": "PACKAGED_PUBLIC_AUTHOR_CONFIRMED",
+      "path": "experiments/texas2k/data/weather/scenario16_environmental_exposure.csv",
+      "sha256": "c36c347563e4c6c749cd8d729cdeb120dbf6f8901c98bf3d5ca001208c78d76e",
+      "rows": 5344,
+      "timestamp_utc": "2023-06-23T21:00:00Z",
+      "purpose": "Frozen p_env environmental coefficients; no private electrical parameters or baseline loading"
+    },
+    "texas2k.ops_inputs": {
+      "status": "PRIVATE_MODIFIED_ELECTRICAL_INPUTS",
+      "weather_access": "PUBLIC_PER_AUTHOR",
+      "role": "texas2k_ops_inputs",
+      "purpose": "Exact nine-file Scenario16 prepared input pack for original numericalOPS executor",
+      "files": {
+        "artifacts/private_inputs/texas2k_ops/branch_model_mapping.parquet": {
+          "sha256": "1f2de9bc3333703b970dc43867629b05ce77ea97a11dca0984491a4b8dd8c7eb",
+          "bytes": 121787
+        },
+        "artifacts/private_inputs/texas2k_ops/canonical_branch.parquet": {
+          "sha256": "9347c70c023f199a4c4e9e9dd8b4f3b993b5acc70184a7ef431e763019024282",
+          "bytes": 614006
+        },
+        "artifacts/private_inputs/texas2k_ops/canonical_bus.parquet": {
+          "sha256": "0c352fb912d0fa3024a4fb8523ed40612756aeea072e3a1f244d77d63aaac379",
+          "bytes": 179754
+        },
+        "artifacts/private_inputs/texas2k_ops/canonical_generator.parquet": {
+          "sha256": "2f5369500c88b85ff8940dffd2cfc0cc8fdad5335dc58ae48e9baad03a7a90d6",
+          "bytes": 49941
+        },
+        "artifacts/private_inputs/texas2k_ops/canonical_load.parquet": {
+          "sha256": "6733c3eb5d45f7fcab7931c279dff6ae4064e235749b8c0608862cbb2463e57b",
+          "bytes": 66471
+        },
+        "artifacts/private_inputs/texas2k_ops/proxy_components.parquet": {
+          "sha256": "bf037cbe0a9f2bb46a965056771a05ea08a243d45cef354f2bf9983c4f3ce40c",
+          "bytes": 121887
+        },
+        "artifacts/private_inputs/texas2k_ops/shared_k1.parquet": {
+          "sha256": "2f2788255c4bc53e0b9ba83d309bb8aac290661dd8f9aadb267ca163470426b5",
+          "bytes": 9580
+        },
+        "artifacts/private_inputs/texas2k_ops/gencost.parquet": {
+          "sha256": "8bc902f7a7415fe59f8ad1f4385e98efb9e54ec283d5d1f8ad80fdff84590666",
+          "bytes": 7429
+        },
+        "artifacts/private_inputs/texas2k_ops/input_contract.json": {
+          "sha256": "c14934988acacbcb8ac30b36fc536c026a5ace45b4ad3a23f44271c850c28b27",
+          "bytes": 1333
+        }
+      },
+      "missing_from_this_pack": [
+        "Prepared single-graph .pt inference fixtures",
+        "Original MATPOWER source case required for JuliaAC audits",
+        "Full training and held-out validation populations"
+      ]
+    },
+    "genco.public_ieee14": {
+      "status": "PACKAGED_PUBLIC_GRAPHKIT_FIXTURE",
+      "manifest": "experiments/ieee14_public/data_manifest.json",
+      "purpose": "Public small-grid GENCO interface demonstration; not Texas accuracy, fine-tuning benefit, OPS, or AC feasibility"
+    }
+  }
+}

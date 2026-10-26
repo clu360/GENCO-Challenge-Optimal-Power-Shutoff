@@ -1,133 +1,180 @@
-# Reproduction
+# Reproduction workflows
 
-## Results Without Models Or Solvers
+Run from the repository root using Python 3.12 in a short, writable checkout.
+[Installation](installation.md) separates the results environment from the pinned
+CPU model environment. [Artifact acquisition](artifacts.md) explains the models
+and data each workflow requires.
 
-Install `pip install -e '.[notebooks,test]'` in Python 3.12, then run:
-Use a short writable checkout path on Windows; the independent tests used an
-isolated temporary checkout, not deeply nested development directories.
-
-```sh
-genco-ops results --study texas2k --output outputs/texas2k
-genco-ops results --study goc_500 --output outputs/goc500
-python -m pytest tests -q
-```
-
-The first notebook reads both studies without training, network access or model
-downloads. Full candidate/objective traces are retained as Parquet; compact CSVs
-are convenience views, not replacement evidence. No raw model loss is relabeled
-as a common physical error.
-
-## Real Model Inference
-
-Use a separate environment with the pinned `environments/model_cpu_requirements.txt`.
-Install torch 2.8.0 CPU from the official CPU index before the remaining packages.
-The GraphKit and Microsoft source commits are fixed in that manifest. Obtain the
-supplied local model export and run:
+## Inspect the published experiments
 
 ```sh
-genco-ops acquire --bundle /path/to/genco_challenge_models_v149.zip
-genco-ops acquire --bundle /path/to/opengridsfm_G500_v152.zip
-genco-ops infer --model goc500.m1 --output outputs/goc500_inference
-genco-ops ops-demo --model goc500.m1 --output outputs/new_goc500_ops
+python -m pip install -e '.[notebooks,test]'
+genco-ops results --study goc_500 --output outputs/goc500_results
+genco-ops results --study texas2k --output outputs/texas2k_results
+python scripts/execute_notebooks.py
 ```
 
-The primary bundle, G500 supplement and every member checksum are in
-`artifacts/model_bundle.json`. The supplement adds the newly certified native
-G500 checkpoint and its MIT notice without repacking or replacing earlier weights.
-Both archives together provide all current catalog entries; acquisition is explicit,
-local and idempotent. Native G500 validation/OPS/AC work is separate from fit certification.
-Both archives are also available from the verified
-[private GitHub release](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/tag/phase-i-models-v152).
-Sign into an authorized GitHub account to download them, then run the same explicit
-local acquisition commands above. Both complete authenticated downloads were
-SHA-256 checked in a clean remote clone, acquired there, and all fifteen catalog
-entries genuinely loaded. See `artifacts/hosted_release_verification.json`.
-The original local export remains an independently verified alternative.
-Texas input graphs are not publicly distributed until redistribution rights are
-resolved. The Texas notebook marks an absent authorized input as UNAVAILABLE,
-not PASS. No paid compute, cluster login or hidden research import is required
-for the supported GOC sample inference path.
+These commands read included numeric evidence and regenerate figures. They do
+not train models, predict new states, launch topology searches or solve AC-OPF.
+GOC FT3/FT4, FT6, refined FT7 and RQ1 evidence retain distinct provenance;
+Texas K/L historical comparisons remain separate from Stage M Phase I.
 
-## Exact AC Adapter
+| Notebook | Scope |
+|---|---|
+| `01_explore_published_results.ipynb` | Rebuild and explain both studies' published findings |
+| `02_goc500_model_and_ops_demo.ipynb` | Select GOC checkpoints; run official-sample inference and a bounded new OPS demo |
+| `03_texas2k_model_and_ops_demo.ipynb` | Select Texas checkpoints; inspect evidence and execute paths with exact authorized inputs |
+| `04_public_genco_ieee14.ipynb` | Run real GENCO inference on public GraphKit inputs |
 
-`scripts/ac_audit.py` accepts an authorized electrical case and an explicit
-fixed-decision JSON. The schema is `OPF_FIXED_TOPOLOGY_SERVICE_A_AND_MAX_SERVICE_B_V1`:
-`case_sha256`, zero-based `offline_branch_ids`/`sourceless_load_ids`, complete `alpha`
-and `p_env` dictionaries keyed by zero-based physical identities, stored `r_base`,
-`lambda_r`, and `reference_b_service_tolerance_mw`. The unchanged Julia source,
-Project and Manifest are exported under `environments/julia/`.
+New execution products go under `outputs/`. Select a notebook and require actual
+numerical execution with:
+
+```sh
+python scripts/execute_notebooks.py --notebook 02_goc500_model_and_ops_demo.ipynb --require-model-execution
+```
+
+`--models` selects all four notebooks; `--in-place` explicitly saves measured
+outputs into the source notebooks. Missing inputs remain unavailable. Notebook
+completion with unavailable modes is not a passed inference check.
+
+The current [execution receipt](../artifacts/reproduction_verification.json)
+records all fifteen checkpoint loads and the actual notebook outcomes: GOC
+M0-M3 sample predictions, the 16-call GOC demo and the public GENCO prediction
+passed; exact Texas saved-case/probe inputs remain unavailable in the independent
+checkout. Executed source notebooks preserve both the outputs and these limits.
+
+## Choose a checkpoint and run the supported model path
+
+In the [CPU model environment](installation.md):
+
+```sh
+python scripts/download_models.py
+genco-ops models --study goc_500 --verify-hashes
+genco-ops models --study texas2k --json
+```
+
+Selectors report model/input presence separately from verified hashes. Numerical
+paths check the required model and input identities before deserializing them.
+Model lineage is in `artifacts/model_catalog.json`.
+
+The shared `run` command prints a plan unless `--execute` is present:
+
+```sh
+genco-ops run --study goc_500 --model goc500.m2 --mode infer --output outputs/m2_inference
+genco-ops run --study goc_500 --model goc500.m2 --mode infer --output outputs/m2_inference --execute
+genco-ops run --study goc_500 --model goc500.m2 --mode demo --output outputs/m2_ops_demo --execute
+```
+
+Inference predicts one pinned official sample. The demo uses that same electrical
+sample with synthetic uniform hazard, two topologies and its own small continuous
+budget. It records a distinct study identity; it is not the historical
+three-scenario search or 750-case validation population. `infer` and `ops-demo`
+remain available as direct entry points.
+
+### Public GENCO compatibility example
+
+Notebook 04 or this command runs actual GENCO-OPF inference with the released
+checkpoint/normalizer and original masked OPF transforms:
+
+```sh
+genco-ops public-genco --output outputs/public_ieee14 --scenario 0 --execute
+```
+
+Omit `--execute` to inspect the plan. The ten public raw Parquet fixtures are
+pinned to the official GraphKit commit with Git-blob parity and SHA-256
+provenance. Processing and decoded predictions go into a fresh output directory.
+IEEE14 supplies a public interface demonstration: it does not measure
+Texas accuracy, fine-tuning benefit, AC feasibility or OPS quality. See its
+[input documentation](../experiments/ieee14_public/README.md).
+
+## Texas numerical reproduction with authorized electrical inputs
+
+The exact modified grid is private; public weather coefficients alone cannot
+reconstruct it. An inference pack supplies the catalogued graph bytes:
+
+```sh
+genco-ops run --study texas2k --model texas2k.genco_opf.G500 --mode infer --inputs /authorized/graphpack --output outputs/genco_prediction --execute
+```
+
+`--inputs` accepts an exact saved graph, a directory of named graph fixtures, or
+a directory mirroring the catalog tree. The catalog SHA remains mandatory.
+
+The original OPS executor uses a different contract: eight prepared Parquet
+tables plus `input_contract.json`. A single-topology CPU probe runs the original
+20-call continuous optimizer with a separate output identity:
+
+```sh
+genco-ops run --study texas2k --model texas2k.genco_opf.G500 --mode published --inputs /authorized/prepared --device cpu --probe-topology '117;281' --output outputs/genco_probe --execute
+```
+
+Use `intact` or sorted line IDs separated by semicolons for `--probe-topology`.
+The full frozen Phase I search requires one qualified CUDA GPU:
+
+```sh
+genco-ops run --study texas2k --model texas2k.genco_opf.G500 --mode published --inputs /authorized/prepared --device cuda:0 --output outputs/genco_full
+genco-ops run --study texas2k --model texas2k.genco_opf.G500 --mode published --inputs /authorized/prepared --device cuda:0 --output outputs/genco_full --execute
+```
+
+The plan validates the supplied input pack. Explicit execution preserves the
+original 301-state/6,020-call ceiling, hierarchical K0/K1/K2 search, five selected
+load controls, resident evaluator and durable journal. Checkpoint, runtime and
+device changes cannot silently resume another trajectory. Intermediate/base
+checkpoints are not final Phase I representatives. No command submits Slurm jobs
+or starts training. The direct `phase-i-ops` entry point remains.
+
+The exported original source has prior CPU portability/parity evidence. Full
+CUDA transport and a complete 301-state run have not been independently rerun
+for this packaging update. A new probe is not a historical full-search replay.
+
+## Recover the historical GOC FT6 evaluation inputs
+
+The official source objects and all 750 ordered graph fingerprints have been
+identified: 375 FullTop and 375 N-1 cases. The default command only shows a plan:
+
+```sh
+python scripts/recover_goc500_evaluation_data.py
+```
+
+Explicit recovery transfers approximately 2.4 GB before decompression:
+
+```sh
+python -m pip install -e '.[recovery]'
+python scripts/recover_goc500_evaluation_data.py --download
+python scripts/recover_goc500_evaluation_data.py --prepare
+```
+
+The utility pins GCS object generation, byte counts and CRC32C, then matches each
+selected graph's tensor SHA and restores the historical order. Preparation writes
+two 375-graph dictionary files and a receipt; it performs no model evaluation or
+AC solve. Full archive recovery and the historical 750-case metric replay have
+**not** been performed in this release. The original evaluation used PyG
+2.8.0.post1, distinct from the portable one-case environment. Read the
+[data recipe](../experiments/goc_500/data/README.md) before replaying it.
+
+Recovering FT6 inputs does not recover the separate historical OPS baseline,
+PAC-freeze inputs or legacy execution state. Frozen candidate pools and recorded
+OPS outcomes remain included; the sample demo does not substitute for them.
+
+## Optional exact AC audit
+
+The real Julia adapter accepts an authorized MATPOWER case and a fixed-decision
+JSON; it prepares commands by default:
 
 ```sh
 julia --project=environments/julia -e 'using Pkg; Pkg.instantiate()'
 python scripts/ac_audit.py --decision decision.json --case authorized_case.m --output outputs/audit
 ```
 
-Preparation writes the exact A/B commands and controls without solving. Add
-`--execute` only deliberately. No topology search or scientific decision is
-silently changed. Numerical AC execution in the independent release is **untested**;
-command/identity mapping has bounded regression coverage. Solver eligibility alone
-does not certify physical quality. Use original numerical acceptance checks on
-the retained bus/generator/branch tables before reporting a certified new outcome.
-Existing accepted AC audit results remain available without Julia.
+Add `--execute` deliberately to solve. The JSON schema is
+`OPF_FIXED_TOPOLOGY_SERVICE_A_AND_MAX_SERVICE_B_V1`: case SHA, zero-based
+`offline_branch_ids`/`sourceless_load_ids`, complete `alpha` and `p_env`
+dictionaries keyed by physical IDs, `r_base`, `lambda_r`, and the Reference B
+service tolerance. The original Julia source, Project and Manifest are included.
 
-## Original Texas Numerical Executor
-
-`experiments/texas2k/configs/phase_i_original.json` exports the actual recipe and
-search settings, with explicit source/request identities. Loading it does not run
-anything. The original resident evaluators, graph preprocessing, physical metrics,
-alpha-only optimizer, durable objective journal and hierarchical outer search are
-exported in `src/genco_ops/published/`. The source manifest identifies66 exported
-definitions across22 original modules, with only recorded import/I/O redirections.
-The constructor receives the same generator-cost table explicitly; it does not
-look for private files through the old research package.
-
-With a separately authorized exact input pack and acquired checkpoints:
-
-```sh
-genco-ops phase-i-ops --model texas2k.genco_opf.G500 --inputs /authorized/inputs --output outputs/full_g500
-genco-ops phase-i-ops --model texas2k.genco_opf.G500 --inputs /authorized/inputs --output outputs/full_g500 --device cuda:0 --execute
-```
-
-The first command validates an input/configuration plan without inference. The
-second explicitly starts the original full search; it must not be run as a casual
-release test. One visible qualified CUDA GPU is required. Full CUDA transport and
-the full301-state computation were **not** rerun during independent packaging;
-no untested GPU/platform support or full-recomputation claim is made.
-
-A bounded CPU probe uses the original risk/scoring and20-call search on one
-explicit K0/K1/K2 topology, with a separate output identity:
-
-```sh
-genco-ops phase-i-ops --model texas2k.genco_opf.G500 --inputs /authorized/inputs --output outputs/new_probe --device cpu --probe-topology '117;281' --execute
-python scripts/check_texas_contract.py --inputs /authorized/inputs --output outputs/source_contract.json
-```
-
-Both GENCO and native20-call probes were actually tested on authorized inputs.
-Twelve normalized input tensors match the retained Stage L S1 fixture bitwise;
-its physical bus/generator/branch tables match exactly. Prediction drift from
-the older recorded runtime is diagnostic, not claimed bitwise parity or a relaxed
-AC-label gate. Existing accepted proxy files are byte-verified and reused, not
-silently recomputed under a different platform's scalar `pow` rounding.
-
-The8input files and cost data are hash-bound. Changed source/runtime/device
-identities cannot silently adopt an old trajectory. The original journal refuses
-uncertain spent calls and resumes only committed prefixes within20actual calls.
-Native cycle caches use the official cache API under this checkout's `outputs/`,
-not an undocumented home cache. Completed probes can be reused with zero new calls.
-
-Public fresh Texas computation remains unavailable until its exact input pack can
-be distributed. No private inputs were included in ordinary Git/model exports.
-Do not shorten a demo and call it the original301-topology result.
-
-## Historical GOC Configuration
-
-`experiments/goc_500/configs/historical/` preserves the actual published and
-training/evaluation configurations, separately labeled archival. Its original
-population/scenario inputs and full legacy execution path are unavailable here;
-the official-sample demo is not substituted for them. Cached results and supported
-model inference remain usable without that historical population.
-
-Training recipes and checkpoint ancestry are recorded, but raw training datasets
-are not distributed here. Fresh retraining is not an advertised independently
-qualified mode. See `artifacts/release_coverage.json` and the verification report
-for exact tested models, platform, commands, and omissions.
+Reference A fixes topology/service and minimizes economic generation cost.
+Reference B maximizes AC-feasible service, then economically dispatches at that
+service level. Neither is the proposed risk-constrained shortlist refinement.
+Command and identity mapping have bounded checks; independent numerical Julia
+execution remains unqualified. Inspect physical acceptance diagnostics before
+certifying a newly solved point. Existing accepted A/B tables can be explored
+without installing Julia.

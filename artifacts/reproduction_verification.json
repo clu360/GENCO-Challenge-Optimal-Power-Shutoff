@@ -1,0 +1,352 @@
+{
+  "schema": "INDEPENDENT_CHECKOUT_REPRODUCTION_V1",
+  "observed_utc": "2026-10-26",
+  "clean_git_clone": true,
+  "checkpoints_acquired_from_verified_release_archives": true,
+  "catalog_load": {
+    "checks": [
+      {
+        "model_id": "texas2k.genco_opf.G100",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "d952811fc2fd329d2ab7c076987dec094c99c6b89036e3053b818afbcc0c4adb",
+        "parameter_count": 20069187,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "texas2k.genco_opf.G100_to_R400",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "e64b22da3c8fa92a6c959f355e269e815d2c422bc3809fefa33db47ab11c8bcd",
+        "parameter_count": 20069187,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "texas2k.genco_opf.G100_to_W400",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "b4af8c9e6383ff75168b08967a0d7c125653b5dbc432328b53912e7b9aa3da74",
+        "parameter_count": 20069187,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "texas2k.genco_opf.G500",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "1e664defde395b77b97e4829bf8e22c3828cbb05da87082aab4b3916a4411ad4",
+        "parameter_count": 20069187,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "texas2k.opengridsfm.G100",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "e45ed36e3956eeb7750d2e396737e0cc3ccd58990aae84b65a6af9d1fdad06d5",
+        "parameter_count": 15148227,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "texas2k.opengridsfm.G100_to_R400",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "0ce7ad4538598f439fff4b59a72e33272f1de193ecaa3dae521c0e3eaceb0cbd",
+        "parameter_count": 15148227,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "texas2k.opengridsfm.G100_to_W400",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "406bb6e4c23c42f1bdf1a682e4213bb64f5fe71f105feebf54b8c6f06508ae0e",
+        "parameter_count": 15148227,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "texas2k.genco_opf.base",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343",
+        "parameter_count": 20069187,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "texas2k.opengridsfm.base",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "f8a4396122e603e8303afdebe3b093819c0f64dac0878394aed0bd63205fd831",
+        "parameter_count": 15148227,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "goc500.ft0",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "cf72e0f6036d1e37fb5a298eb3db5e69a6524f48bc7b0b8b5cd34e758ddfe4a2",
+        "parameter_count": 15148227,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "goc500.m1",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "a1378fdaf38af6b317f172c27df7c0f14a23138143d65dfe5e1c46c613e119ad",
+        "parameter_count": 15148227,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "goc500.m2",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "08eda70270f787db42c48b751becc9da2062b0482550a5c2a761b4eba0c94ff6",
+        "parameter_count": 15148227,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "goc500.m3",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "4ec89d36de80081be2fc26c14a1bc5a5369d7423b557d71b9dd4a254462f302d",
+        "parameter_count": 15148227,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "goc500.base",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "f8a4396122e603e8303afdebe3b093819c0f64dac0878394aed0bd63205fd831",
+        "parameter_count": 15148227,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      },
+      {
+        "model_id": "texas2k.opengridsfm.G500",
+        "status": "PASS_OFFICIAL_MODEL_LOAD",
+        "checkpoint_sha256": "2e4911c452dd4a2c80e17ab6f7dc5764150ae6615e3a16404ed9fb82bdeee170",
+        "parameter_count": 15148227,
+        "device": "cpu",
+        "prediction_executed": false,
+        "physical_feasibility_certified": false
+      }
+    ],
+    "all_pass": true,
+    "python": "3.12.4",
+    "platform": "Windows",
+    "packages": {
+      "torch": "2.8.0+cpu",
+      "torch_geometric": "2.6.1",
+      "numpy": "2.2.6",
+      "scipy": "1.16.2",
+      "huggingface_hub": "0.34.4",
+      "gridfm-graphkit": "0.0.7",
+      "gridsfm": "1.1.0"
+    },
+    "upstream": {
+      "gridfm-graphkit": {
+        "commit_id": "95b90eecc7f5c2c86a9dd776f0c3f40434def22f",
+        "requested_revision": "95b90eecc7f5c2c86a9dd776f0c3f40434def22f",
+        "vcs": "git"
+      },
+      "gridsfm": {
+        "commit_id": "1ca775fd436d7ce013a1c0ab946e61ac7ef59ad6",
+        "requested_revision": "1ca775fd436d7ce013a1c0ab946e61ac7ef59ad6",
+        "vcs": "git"
+      }
+    }
+  },
+  "notebooks": {
+    "01_explore_published_results.ipynb": {
+      "sha256": "0974ec1d3921a81375e1ffce6dd0956e2ff5ffed980262dfcdbba07ff43dbacf",
+      "code_cells": 6,
+      "executed_cells": 6,
+      "embedded_png_figures": 9,
+      "execution": {
+        "notebook": "01_explore_published_results.ipynb",
+        "status": "EXECUTED",
+        "source_outputs_updated": true,
+        "inference_outcomes": [],
+        "ops_outcomes": [],
+        "unavailable_numerical_modes": 0,
+        "new_ac_solves": 0
+      }
+    },
+    "02_goc500_model_and_ops_demo.ipynb": {
+      "sha256": "8e67a48b92fa091174eaaec8c6acc519f4681422dc5c93436c4a2c48f00ba75e",
+      "code_cells": 5,
+      "executed_cells": 5,
+      "embedded_png_figures": 0,
+      "execution": {
+        "notebook": "02_goc500_model_and_ops_demo.ipynb",
+        "status": "EXECUTED",
+        "source_outputs_updated": true,
+        "inference_outcomes": [
+          {
+            "model_id": "goc500.base",
+            "status": "PASS_FINITE_INFERENCE_NOT_AC_FEASIBILITY"
+          },
+          {
+            "model_id": "goc500.m1",
+            "status": "PASS_FINITE_INFERENCE_NOT_AC_FEASIBILITY"
+          },
+          {
+            "model_id": "goc500.m2",
+            "status": "PASS_FINITE_INFERENCE_NOT_AC_FEASIBILITY"
+          },
+          {
+            "model_id": "goc500.m3",
+            "status": "PASS_FINITE_INFERENCE_NOT_AC_FEASIBILITY"
+          }
+        ],
+        "ops_outcomes": [
+          {
+            "model_id": "goc500.m2",
+            "status": "PASS_BOUNDED_SURROGATE_DEMO_NOT_AC_FEASIBILITY",
+            "calls": 16
+          }
+        ],
+        "unavailable_numerical_modes": 0,
+        "new_ac_solves": 0
+      }
+    },
+    "03_texas2k_model_and_ops_demo.ipynb": {
+      "sha256": "5ac05a0883a90dc2800fa204001d990ab230d5bda9639d183a037b8a4a2ebdb5",
+      "code_cells": 5,
+      "executed_cells": 5,
+      "embedded_png_figures": 0,
+      "execution": {
+        "notebook": "03_texas2k_model_and_ops_demo.ipynb",
+        "status": "EXECUTED_WITH_UNAVAILABLE_NUMERICAL_MODES",
+        "source_outputs_updated": true,
+        "inference_outcomes": [
+          {
+            "model_id": "texas2k.genco_opf.G500",
+            "status": "UNAVAILABLE_EXACT_INPUT_OR_MODEL_ASSETS_NOT_A_PASSED_DEMO"
+          },
+          {
+            "model_id": "texas2k.genco_opf.G100_to_R400",
+            "status": "UNAVAILABLE_EXACT_INPUT_OR_MODEL_ASSETS_NOT_A_PASSED_DEMO"
+          },
+          {
+            "model_id": "texas2k.genco_opf.G100_to_W400",
+            "status": "UNAVAILABLE_EXACT_INPUT_OR_MODEL_ASSETS_NOT_A_PASSED_DEMO"
+          },
+          {
+            "model_id": "texas2k.opengridsfm.G500",
+            "status": "UNAVAILABLE_EXACT_INPUT_OR_MODEL_ASSETS_NOT_A_PASSED_DEMO"
+          },
+          {
+            "model_id": "texas2k.opengridsfm.G100_to_R400",
+            "status": "UNAVAILABLE_EXACT_INPUT_OR_MODEL_ASSETS_NOT_A_PASSED_DEMO"
+          },
+          {
+            "model_id": "texas2k.opengridsfm.G100_to_W400",
+            "status": "UNAVAILABLE_EXACT_INPUT_OR_MODEL_ASSETS_NOT_A_PASSED_DEMO"
+          }
+        ],
+        "ops_outcomes": [
+          {
+            "model_id": "texas2k.genco_opf.G500",
+            "status": "UNAVAILABLE_EXACT_OPS_INPUT_NOT_A_PASSED_DEMO",
+            "calls": null
+          },
+          {
+            "model_id": "texas2k.opengridsfm.G500",
+            "status": "UNAVAILABLE_EXACT_OPS_INPUT_NOT_A_PASSED_DEMO",
+            "calls": null
+          }
+        ],
+        "unavailable_numerical_modes": 8,
+        "new_ac_solves": 0
+      }
+    },
+    "04_public_genco_ieee14.ipynb": {
+      "sha256": "1961530f991b2def1fa032aa8b71ec7048eef50111927b8f82796c5f3d18b80f",
+      "code_cells": 4,
+      "executed_cells": 4,
+      "embedded_png_figures": 1,
+      "execution": {
+        "notebook": "04_public_genco_ieee14.ipynb",
+        "status": "EXECUTED",
+        "source_outputs_updated": true,
+        "inference_outcomes": [
+          {
+            "model_id": "texas2k.genco_opf.base",
+            "status": "PASS_PUBLIC_GENCO_INFERENCE_NOT_AC_FEASIBILITY"
+          }
+        ],
+        "ops_outcomes": [],
+        "unavailable_numerical_modes": 0,
+        "new_ac_solves": 0
+      }
+    }
+  },
+  "public_genco_example": {
+    "status": "PASS_PUBLIC_GENCO_INFERENCE_NOT_AC_FEASIBILITY",
+    "demo_id": "PUBLIC_IEEE14_GENCO_MASKED_OPF_V1",
+    "model_id": "texas2k.genco_opf.base",
+    "checkpoint_sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343",
+    "normalizer_sha256": "cae4811c5c35c56954d7eb668976041cda0222634dee5cefa323398e24e52ce9",
+    "public_data_manifest_sha256": "7b800d868b3b19dce99e98cee0b2556c044afd6e0e4ffd850085f3efb04333c8",
+    "public_source_commit": "95b90eecc7f5c2c86a9dd776f0c3f40434def22f",
+    "scenario": 0,
+    "available_saved_scenarios": 72,
+    "bus_count": 14,
+    "generator_count": 5,
+    "input_contract": "ORIGINAL_GRAPHKIT_NORMALIZER_AND_OPTIMAL_POWER_FLOW_MASKS",
+    "output_schema": "bus [Vm_pu,Va_rad,Pg_MW,Qg_MVAr]; generator [Pg_MW]",
+    "device": "cpu",
+    "torch": "2.8.0+cpu",
+    "actual_model_calls": 1,
+    "elapsed_seconds": 1.482753899999807,
+    "texas2k_result": false,
+    "historical_population_reproduced": false,
+    "fine_tuning_benefit_established": false,
+    "ac_feasibility_certified": false,
+    "training_executed": false,
+    "ops_search_executed": false,
+    "ac_audit_executed": false,
+    "scope": "PUBLIC_SMALL_GRID_COMPATIBILITY_DEMO_SEPARATE_FROM_TEXAS_STUDY"
+  },
+  "bounded_goc_example": {
+    "status": "PASS_BOUNDED_SURROGATE_DEMO_NOT_AC_FEASIBILITY",
+    "demo_id": "GOC500_SAMPLE_BOUNDED_ALPHA_POWELL_DEMO_V1",
+    "model_id": "goc500.m2",
+    "checkpoint_sha256": "08eda70270f787db42c48b751becc9da2062b0482550a5c2a761b4eba0c94ff6",
+    "input_sha256": "66457ef63e2f496757094d06de0ec3cafb59561ce074094828041e549ed53e5c",
+    "actual_model_calls": 16,
+    "topology_count": 2,
+    "selected_offline_branch_ids": [
+      1
+    ],
+    "published_full_search_recomputed": false,
+    "ac_audit_executed": false,
+    "ac_feasibility_certified": false
+  },
+  "exact_texas_numerical_modes": "UNAVAILABLE_INDEPENDENT_CHECKOUT_INPUTS_NOT_RECOVERED",
+  "texas_unavailable_modes": 8,
+  "fresh_training": false,
+  "fresh_ac_solves": 0,
+  "full_historical_campaign_recomputed": false,
+  "sanitizer": {
+    "policy": "Absolute user/temp execution locators only; numerical cells, arrays, timings, statuses, and hashes unchanged",
+    "replaced_locator_occurrences": 4
+  },
+  "context_clarification_after_execution": {
+    "scope_label": "PUBLIC_SMALL_GRID_COMPATIBILITY_DEMO_SEPARATE_FROM_TEXAS_STUDY",
+    "training_grid_membership_not_asserted": true,
+    "new_predictions_required": false,
+    "scientific_arrays_timings_and_statuses_unchanged": true
+  }
+}

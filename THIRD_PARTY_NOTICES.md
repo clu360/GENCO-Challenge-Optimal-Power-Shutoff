@@ -13,8 +13,13 @@
 - The GOC-500 bounded-demo input is the saved sample distributed with that exact
   Microsoft source revision. Its role is explicitly separate from the historical
   held-out evaluation populations. Original input provenance is retained.
-- Raw modifiedTexas2k case/weather/graph inputs were supplied separately; their
-  redistribution permissions have not been established here. Keep them private.
+- The small IEEE14 demonstration fixture comes from the same pinned GraphKit
+  revision under Apache-2.0. Its manifest binds all ten public upstream blobs;
+  the upstream license is retained under `docs/licenses/`.
+- Exact modified Texas2k electrical case/graph inputs stay private. The official
+  GENCO Texas dataset is a different grid and does not supply those exact inputs.
+  Public weather-derived exposure is supplied separately with source/date and
+  preprocessing provenance under `experiments/texas2k/data/weather/`.
 
 Model-card metadata and publication references were checked October25,2026.
 No upstream performance claim is adopted as a measured result of this study.

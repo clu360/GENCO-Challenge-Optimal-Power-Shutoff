@@ -1,0 +1,54 @@
+{
+  "schema": "COMPACT_PUBLICATION_EVIDENCE_V2",
+  "evidence_cut": "2026-10-25; eight Texas fits certified, native GridSFM OPS pending",
+  "source_files": [
+    {
+      "path": "experiments/texas2k/results/stage_m/tables/physical_validation.csv",
+      "sha256": "c06339bafc628239e3c7ec1f3d631aece1040c6627af09f6fb3c0451dabeb405"
+    },
+    {
+      "path": "experiments/texas2k/results/stage_m/tables/finalist_native_and_exact.csv",
+      "sha256": "50080ddf972b31a066eeb581fc4200e1cd9b49b415609e5fdaea944499902227"
+    },
+    {
+      "path": "experiments/goc_500/results/refined_study/core_results/state_fidelity_all.parquet",
+      "sha256": "d407ea8f56cde032e9dde83982098d81a2fd440329c10839c0c72d85eea015cf"
+    },
+    {
+      "path": "experiments/goc_500/results/refined_study/core_results/reference_a_all.parquet",
+      "sha256": "5ba298ae88316c1a98aa54dc108f4e85fcaf1cfdfcb477cdfa6ae462f516a223"
+    },
+    {
+      "path": "experiments/goc_500/results/rq1/rq1_runtime_summary.json",
+      "sha256": "8b4a27df4bc0c05f0da5f2166a9e36540f70452294802bb23453b31569db4aa0"
+    }
+  ],
+  "selection": "GENCO-OPF final fits, 100 validation cases per G/R/W distribution; three selected Texas decisions; 15 common settings per GOC checkpoint, each model selecting its own decision; separate 54-decision M0 runtime benchmark",
+  "scope": "Aggregation of retained results, not fresh inference or AC recomputation",
+  "exports": {
+    "goc_agreement.csv": {
+      "sha256": "c4992a424532d72b583c4be158f635162246a8f1208f2923a3946ca5df30993f",
+      "bytes": 555
+    },
+    "goc_runtime.json": {
+      "sha256": "8b4a27df4bc0c05f0da5f2166a9e36540f70452294802bb23453b31569db4aa0",
+      "bytes": 2428
+    },
+    "texas_selected_ac.csv": {
+      "sha256": "50080ddf972b31a066eeb581fc4200e1cd9b49b415609e5fdaea944499902227",
+      "bytes": 1406
+    },
+    "texas_validation.csv": {
+      "sha256": "d5af3a75d67eab04e17439c1e73c0c073f6d5e85dbad03bddf35f9ef2c300cb0",
+      "bytes": 884
+    }
+  },
+  "figure_files": {
+    "figures/01_workflow.pdf": "b5e44950bae4f137e59264db34bf246b8c9b700d76a013682cb3eea6d8f6164a",
+    "figures/01_workflow.png": "ec8c46fda25d7b9dc375acf43437b3db2759e8dd74724b5a59fadc357dcabac8",
+    "figures/02_texas_evidence.pdf": "389b094505c239ab104005226b2faf3597ffc45d6da526e7dc10c3c66a5c5f87",
+    "figures/02_texas_evidence.png": "01a8fcc5b9cd1364f3012b8fbe7bfe7463eb4ce9c15e37d7f04b0a71acdcea12",
+    "figures/03_goc_evidence.pdf": "5a2660b7c63f834194616d64a62cf2cbbcc05010ddc82fddeaeebd7793cd4f14",
+    "figures/03_goc_evidence.png": "a182d921a95d3d8187fc3394cab450db456fd26850b0b9702270984624c3213d"
+  }
+}

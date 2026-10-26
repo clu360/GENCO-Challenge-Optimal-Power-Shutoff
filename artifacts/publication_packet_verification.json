@@ -1,0 +1,40 @@
+{
+  "status": "PASS_EXTRACTED_PACKET_STANDALONE_REBUILD",
+  "packet_bytes": 1231017,
+  "packet_sha256": "f438c75b9b67a48934772c84a7901f29a12f2fac5b75ca4cbbfda727564d7b99",
+  "packet_members": 22,
+  "all_packet_member_hashes_verified": true,
+  "original_development_data_required": false,
+  "private_data_required": false,
+  "model_execution_required": false,
+  "figure_bytes_identical": true,
+  "pdf_page_text_images_links_and_geometry_identical": true,
+  "pdf_bytes_identical": false,
+  "rebuilt_outputs": {
+    "figures/01_workflow.pdf": true,
+    "figures/01_workflow.png": true,
+    "figures/02_texas_evidence.pdf": true,
+    "figures/02_texas_evidence.png": true,
+    "figures/03_goc_evidence.pdf": true,
+    "figures/03_goc_evidence.png": true,
+    "GENCO_Challenge_Submission.pdf": false
+  },
+  "build": {
+    "pdf_pages": 3,
+    "characters_by_page": [
+      2836,
+      2919,
+      3650
+    ],
+    "embedded_images_by_page": [
+      1,
+      1,
+      1
+    ],
+    "missing_local_links": [],
+    "markdown_words": 1343,
+    "pdf_sha256": "23816dd6d7eafc46e6f3e3905a975b88d7f88e5f4f7619df556c62e873df37fb",
+    "data_provenance_sha256": "ec8fbb9e5bd73da469df389b4d1ea425711c5c8a4c0e19de7c25804668848121",
+    "source_scope": "Adjacent compact data only; no development checkout, private data, PACE, or model execution"
+  }
+}

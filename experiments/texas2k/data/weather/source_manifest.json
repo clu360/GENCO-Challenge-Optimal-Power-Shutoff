@@ -1,0 +1,18 @@
+{
+  "schema": "TEXAS2K_PUBLIC_WEATHER_DERIVED_EXPOSURE_V1",
+  "rows": 5344,
+  "switchable_transmission_rows": 3993,
+  "timestamp": "2023-06-23T16:00:00-05:00",
+  "timestamp_utc": "2023-06-23T21:00:00Z",
+  "columns": {
+    "canonical_branch_id": "Zero-based physical branch identity in the modified experiment grid",
+    "p_env": "Frozen cumulative FFWI environmental exposure; not calibrated ignition probability"
+  },
+  "distribution": "AUTHOR_CONFIRMED_PUBLIC_WEATHER_DERIVATIVE",
+  "source_environment_sha256": "98a2bf8e38376ba5a8d452c8e1de5698944abf2226c61ff3d591e36b00e35b3d",
+  "source_canonical_branch_sha256": "9347c70c023f199a4c4e9e9dd8b4f3b993b5acc70184a7ef431e763019024282",
+  "source_definitions": "Stage K identity.py maps hazard_score_p_cumulative to p_env; Phase I uses p_env times squared apparent loading on switchable transmission lines",
+  "csv_sha256": "c36c347563e4c6c749cd8d729cdeb120dbf6f8901c98bf3d5ca001208c78d76e",
+  "contains_electrical_parameters": false,
+  "contains_baseline_loading": false
+}

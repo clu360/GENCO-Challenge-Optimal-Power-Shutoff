@@ -1,0 +1,97 @@
+{
+  "schema": "GENCO_REFINEMENT_VERIFICATION_V1",
+  "status": "PASS_BOUNDED_REPRODUCTION_AND_STANDALONE_PUBLICATION",
+  "observed_utc": "2026-10-26T04:13:00.738646+00:00",
+  "scientific_evidence_cut": "2026-10-25",
+  "results_only_suite": {
+    "status": "PASS_TORCH_FREE_PYTEST_IN_INDEPENDENT_TEMP_CLONE",
+    "command": "python -m pytest tests -q",
+    "passed": 79,
+    "skipped": 3,
+    "elapsed_seconds": 21.32,
+    "inventory_hashed_files": 340,
+    "initial_failure": "Public evaluation_population.json omitted from snapshot; copied without code changes and full suite passed",
+    "private_model_cache_and_downloads_preserved": true
+  },
+  "model_suite": {
+    "status": "PASS_MODEL_ENV_PYTEST_IN_INDEPENDENT_TEMP_CLONE",
+    "checked_date": "2026-10-26",
+    "command": "python -m pytest tests -q",
+    "passed": 82,
+    "skipped": 0,
+    "elapsed_seconds": 83.45,
+    "inventory_hashed_files": 349,
+    "packaged_inventory_status": "PASS_PACKAGED_FILES",
+    "public_scan_files": 352,
+    "public_scan_findings": 0,
+    "script_help_checks": [
+      "scripts/download_models.py --help",
+      "scripts/package_authorized_inputs.py --help",
+      "scripts/recover_goc500_evaluation_data.py --help"
+    ],
+    "private_model_cache_and_downloads_preserved": true,
+    "private_inputs_distributed": false
+  },
+  "model_catalog_entries_loaded": 15,
+  "notebooks_executed": 4,
+  "goc_saved_case_predictions": 4,
+  "public_genco_actual_calls": 1,
+  "bounded_goc_actual_calls": 16,
+  "texas_unavailable_numerical_modes": 8,
+  "publication_packet": {
+    "status": "PASS_EXTRACTED_PACKET_STANDALONE_REBUILD",
+    "packet_bytes": 1231017,
+    "packet_sha256": "f438c75b9b67a48934772c84a7901f29a12f2fac5b75ca4cbbfda727564d7b99",
+    "packet_members": 22,
+    "all_packet_member_hashes_verified": true,
+    "original_development_data_required": false,
+    "private_data_required": false,
+    "model_execution_required": false,
+    "figure_bytes_identical": true,
+    "pdf_page_text_images_links_and_geometry_identical": true,
+    "pdf_bytes_identical": false,
+    "rebuilt_outputs": {
+      "figures/01_workflow.pdf": true,
+      "figures/01_workflow.png": true,
+      "figures/02_texas_evidence.pdf": true,
+      "figures/02_texas_evidence.png": true,
+      "figures/03_goc_evidence.pdf": true,
+      "figures/03_goc_evidence.png": true,
+      "GENCO_Challenge_Submission.pdf": false
+    },
+    "build": {
+      "pdf_pages": 3,
+      "characters_by_page": [
+        2836,
+        2919,
+        3650
+      ],
+      "embedded_images_by_page": [
+        1,
+        1,
+        1
+      ],
+      "missing_local_links": [],
+      "markdown_words": 1343,
+      "pdf_sha256": "23816dd6d7eafc46e6f3e3905a975b88d7f88e5f4f7619df556c62e873df37fb",
+      "data_provenance_sha256": "ec8fbb9e5bd73da469df389b4d1ea425711c5c8a4c0e19de7c25804668848121",
+      "source_scope": "Adjacent compact data only; no development checkout, private data, PACE, or model execution"
+    }
+  },
+  "linked_receipts": {
+    "artifacts/acquisition_verification.json": "7ca3a2dd93868085e598560b113b15c4cf32bf9ee25e97ad7f7c93b7671ab3fd",
+    "artifacts/reproduction_verification.json": "7d26a242da573021210eb72bbc8a65a43f22808833f219a81dfe37b642d165cc",
+    "artifacts/publication_packet_verification.json": "70152cae7338f7bdbc6124094f8a55e6e0e9c36e0411d0790db0d6be05119a5c"
+  },
+  "repository_visibility": "private",
+  "private_electrical_inputs_distributed": false,
+  "full_historical_campaign_recomputed": false,
+  "fresh_training": false,
+  "fresh_ac_solves": 0,
+  "remaining_boundaries": [
+    "Public visibility and signed-out link verification require author approval",
+    "Exact modified Texas electrical inputs unavailable in independent checkout",
+    "GOC official-source750population recovery/replay not executed",
+    "Native GridSFM OPS/AC pending in publication cut; Phase II held"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "status": "PASS_FRESH_AUTHENTICATED_DOWNLOAD_AND_ACQUISITION",
+  "elapsed_seconds": 266.98499999999876,
+  "downloads": [
+    {
+      "status": "PASS_RELEASE_ACQUIRED",
+      "bundles": [
+        {
+          "status": "PASS_ACQUIRED",
+          "files": 2,
+          "bundle_sha256": "36f6ef4d96e1f733c58f4f2cf5023323ba62f496fea693fe7dffa432cae63553",
+          "bundle_role": "certified_g500_supplement",
+          "source": "AUTHENTICATED_GITHUB_RELEASE"
+        }
+      ]
+    },
+    {
+      "status": "PASS_RELEASE_ACQUIRED",
+      "bundles": [
+        {
+          "status": "PASS_ACQUIRED",
+          "files": 17,
+          "bundle_sha256": "f15e6d6d21f906b6433e27590b01df831fbbc32c2d1457a7eba0b8fc3004eba7",
+          "bundle_role": "primary",
+          "source": "AUTHENTICATED_GITHUB_RELEASE"
+        }
+      ]
+    }
+  ],
+  "readiness": [
+    {
+      "role": "primary",
+      "filename": "genco_challenge_models_v149.zip",
+      "files": 17,
+      "missing": [],
+      "mismatched": [],
+      "status": "READY",
+      "access": "AUTHENTICATED_PRIVATE_GITHUB_RELEASE"
+    },
+    {
+      "role": "certified_g500_supplement",
+      "filename": "opengridsfm_G500_v152.zip",
+      "files": 2,
+      "missing": [],
+      "mismatched": [],
+      "status": "READY",
+      "access": "AUTHENTICATED_PRIVATE_GITHUB_RELEASE"
+    }
+  ],
+  "independent_clone": true,
+  "private_inputs_downloaded": false,
+  "checked_date": "2026-10-25",
+  "unit_tests": {
+    "command": "python -m pytest tests/test_artifact_safety.py tests/test_artifact_release.py -q",
+    "passed": 15
+  },
+  "note": "Authenticated private model access verified; repository visibility and input permissions are unchanged."
+}

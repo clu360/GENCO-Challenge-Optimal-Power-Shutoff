@@ -1,0 +1,44 @@
+{
+  "schema": "OFFICIAL_GENCO_TEXAS_SOURCE_IDENTITY_CHECK_V1",
+  "checked_date": "2026-10-25",
+  "conclusion": "OFFICIAL_PUBLISHED_TEXAS_GRID_IS_NOT_THE_MODIFIED_EXPERIMENT_CASE",
+  "official": {
+    "repository": "https://huggingface.co/gridfm/genco-pf-contingency",
+    "revision": "5c625b00f5b79c8a7d4d27ecc133d4ecdf573af7",
+    "model_card_license": "apache-2.0",
+    "sample_path": "data/test_1/Texas2k_case1_2016summerpeak/raw/branch_data.parquet/scenario_partition=0/53ebbb39419e470289f0cffb04c85210-0.parquet",
+    "sha256": "c03b9012ae552e065f780bda7beb79e11f2d7e80a07edd99bcebaa5d42096c2c",
+    "bytes": 6248897,
+    "observed_scenarios": [
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199
+    ],
+    "branches_per_scenario": 3220,
+    "bus_index_range": [
+      0,
+      1999
+    ],
+    "branch_index_range": [
+      0,
+      3219
+    ]
+  },
+  "experiment": {
+    "case_sha256": "d71d1630e73ee280794009880a12ff79f6f229bef9f9283ab293ac6492c279da",
+    "buses": 2751,
+    "physical_branches": 5344,
+    "generators": 1099,
+    "scenario": 16
+  },
+  "distribution_decision": "Keep exact modified electrical case and dependent model fixtures private. Public weather source is a separate input and is not restricted by this decision."
+}

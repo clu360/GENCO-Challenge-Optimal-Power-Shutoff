@@ -7,25 +7,32 @@
     "GENCO_reference_tasks": 3
   },
   "tests": {
-    "results_only": "PASS_ISOLATED_39_TESTS_PLUS_2_MODEL_SKIPS",
+    "results_only": "PASS_ISOLATED_79_TESTS_PLUS_3_MODEL_SKIPS",
     "goc_model_demo": "PASS_BOUNDED_OFFICIAL_SAMPLE",
-    "texas_model_demo": "PRIVATE_INPUT_ONLY_LOCAL_TEST",
-    "bounded_ops_demo": "PASS_DISTINCT_DEMO_IDENTITY",
+    "texas_model_demo": "UNAVAILABLE_CURRENT_INDEPENDENT_CHECKOUT_EXACT_INPUTS",
+    "bounded_ops_demo": "PASS_REAL_M2_16_CALL_DISTINCT_DEMO_IDENTITY",
     "original_texas_executor": "EXPORTED_ORIGINAL_SOURCE_AND_TESTED_TWO_20_CALL_CPU_PROBES",
     "original_preprocessing": "12_HISTORICAL_TENSORS_BITWISE_EQUAL_PHYSICAL_TABLES_ZERO_DIFFERENCE",
     "full_cuda_texas_execution": "NOT_RERUN_DURING_PACKAGING",
     "exact_reference": "REAL_ADAPTER_COMMAND_CONTRACT_TESTED_NUMERICAL_RUN_UNTESTED",
     "full_historical_recomputation": "NOT_RELEASE_QUALIFIED",
-    "official_cpu_model_loading": "PASS_ALL_15_CATALOG_ENTRIES_14_UNIQUE_WEIGHTS"
+    "official_cpu_model_loading": "PASS_ALL_15_CATALOG_ENTRIES_14_UNIQUE_WEIGHTS",
+    "public_genco_ieee14": "PASS_REAL_RELEASED_CHECKPOINT_ONE_CALL_SEPARATE_FROM_TEXAS",
+    "goc_selected_checkpoints": "PASS_REAL_M0_M1_M2_M3_SAVED_CASE_PREDICTIONS",
+    "goc_750_population": "OFFICIAL_SOURCES_AND_750_HASHES_RECORDED_RECOVERY_TOOL_TESTED_FULL_REPLAY_NOT_PERFORMED",
+    "model_environment_suite": "PASS_ISOLATED_82_TESTS_ZERO_SKIPS",
+    "standalone_submission": "PASS_EXTRACTED_PACKET_FIGURE_BYTES_AND_PDF_CONTENT_REBUILD"
   },
   "limitations": [
-    "Texas electrical/weather input redistribution permission unresolved",
-    "Verified model archives are hosted privately on GitHub; permission is required for access",
-    "All eight fits certified; native full OPS and references remain pending",
-    "Public Texas full computation needs authorized inputs; full CUDA transport has not been independently run",
-    "Historical GOC full population/legacy execution are not substituted by the official sample demo"
+    "Exact modified Texas electrical inputs remain private; public weather-derived exposure is included",
+    "Repository and verified model archives remain private; public visibility and signed-out verification require approval",
+    "All eight fits certified; native full OPS and references remain pending in publication cut",
+    "Full CUDA Texas and independent Julia AC numerical replay were not performed",
+    "Historical GOC full-population recovery and OPS baseline/PAC inputs are not replaced by sample demos"
   ],
   "private_source_and_models_hosted": true,
   "public_release": false,
-  "hosted_verification": "artifacts/hosted_release_verification.json"
+  "hosted_verification": "artifacts/hosted_release_verification.json",
+  "current_execution_receipt": "artifacts/reproduction_verification.json",
+  "refinement_receipt": "artifacts/refinement_verification.json"
 }

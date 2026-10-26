@@ -1,89 +1,158 @@
-# GENCO Challenge: Optimal Power Shutoff
+# GENCO for grid-to-task adaptation and physical verification
 
-Research on budgeted wildfire-aware topology decisions using neural grid-state
-evaluators and exact AC audits. GOC-500 and modified Texas2k are separate studies,
-not pooled error benchmarks.
+Select a checkpoint, inspect its results, and run the supported electrical-state
+and optimal power shutoff (OPS) pipelines for **GOC-500** or **modified Texas2k**.
+We study whether adaptation improves physical predictions and whether those gains
+survive downstream AC decision audits.
 
-**Completed-results export with bounded numerical demos.** Completed GENCO results
-and certified native models are included through a checksum-bound local export.
-See `docs/RELEASE_VERIFICATION.md` for clean-checkout evidence and explicit
-unsupported modes. This is not a challenge-form submission or full Phase I closure.
+GENCO-OPF and OpenGridFM's GraphKit are the Texas2k adaptation testbed. GOC-500
+uses GridSFM as a separate precursor study. Grid, model and evaluation populations
+remain explicit throughout the code and notebooks.
 
-## Completed Findings
+## Start with the results
 
-Texas2k Phase I uses Scenario16, the frozen June23,2023 4PM CDT cumulative-hazard
-snapshot, lambda_R0.8, and the original alpha-only hierarchical search. Each
-completed GENCO variant evaluated301 topology states and6020 objective calls.
-Economic AC Reference A risks are1.164144 for G500,1.089042 for G100-to-R400,
-and1.089060 for G100-to-W400. All exceed the stored baseline of1. The sequential
-variants select physical lines117/281; G500 selects117/1548. Reference B recovers
-essentially full service under the solver tolerance. These are local audit
-outcomes, not global optimality or broad generalization claims.
-
-| Study | Models | Published evidence | Current limitations |
-|---|---|---|---|
-| GOC-500 | Released GridSFM; FT0 smoke; M1; sibling M2/M3 adaptations | Retained Stage J physical evaluations and FT3/FT4 OPS tables | Official sample demo is not the historical test population |
-| Texas2k K/L | Historical DC/AC/GridSFM and three released GENCO branches | Recorded historical tables, separately labeled | Different evaluator/search/control policies; PF redispatch exploration was limited |
-| Texas2k M | GENCO-OPF G500/G100-to-R400/G100-to-W400; all eight training fits certified | Three complete GENCO searches and exact A/B audits; available validation | Native OPS/AC pending; Phase II held |
-
-Read [the Phase I report](experiments/texas2k/results/stage_m/reports/PHASE_I_RESULTS.md)
-and [methodology](experiments/texas2k/results/stage_m/reports/METHODOLOGY.md).
-Model/data channels and completion states are machine-readable in
-`artifacts/model_catalog.json`. Large weights are delivered through a checksum-bound
-model archives, not ordinary Git objects. The verified
-[private source/model release](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/tag/phase-i-models-v152)
-requires repository access. Its visibility has not been changed to public.
-
-## Results-Only Use
+Use Python 3.12 in a short, writable checkout. See
+[installation](docs/installation.md) for environment setup.
 
 ```sh
+git clone https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff.git
+cd GENCO-Challenge-Optimal-Power-Shutoff
 python -m pip install -e '.[notebooks,test]'
-genco-ops results --study texas2k --output outputs/texas2k
-genco-ops results --study goc_500 --output outputs/goc500
+genco-ops results --study goc_500 --output outputs/goc500_results
+genco-ops results --study texas2k --output outputs/texas2k_results
+python scripts/execute_notebooks.py
 ```
 
-These commands regenerate numerical summaries and main figures from included
-tables without model downloads, GPU, Julia, solver licenses or cluster access.
-Execution/verification receipts identify the commands actually tested.
+These commands regenerate figures and summaries from included tables, without
+checkpoints, GPU, Julia, a cluster account, or new scientific solves. New outputs
+go under `outputs/`; accepted evidence stays intact.
 
-## Model Inference
+| Notebook | Reader workflow |
+|---|---|
+| [01 Explore results](notebooks/01_explore_published_results.ipynb) | Adaptation, residuals, native frontiers, exact A/B outcomes and scoped timing for both grids |
+| [02 GOC models and OPS](notebooks/02_goc500_model_and_ops_demo.ipynb) | Choose a GridSFM checkpoint; predict the official sample and run a bounded new search |
+| [03 Texas models and OPS](notebooks/03_texas2k_model_and_ops_demo.ipynb) | Choose GENCO or GridSFM; inspect results and execute numerical paths when exact authorized inputs are installed |
+| [04 Public GENCO example](notebooks/04_public_genco_ieee14.ipynb) | Load released GENCO-OPF and predict a small included public IEEE14 case |
 
-Use the separately pinned `environments/model_cpu_requirements.txt` in an isolated
-Python environment. PyTorch CPU wheels are installed from the official CPU index;
-the matching PyG scatter wheel and exact upstream Git commits are pinned. GridSFM's
-official package lives in the upstream `model/` subdirectory.
+Executed notebook outputs distinguish saved-result exploration, fresh prediction,
+bounded demos and full historical recomputation. Missing numerical inputs are
+reported as unavailable, never counted as successful inference.
 
-Acquire the primary model bundle and the G500 supplement using the two explicit
-commands in `docs/reproduction.md`. Each has its own immutable checksum; previous
-model exports remain unchanged. Select an actual ID from `artifacts/model_catalog.json`, then
-run `genco-ops infer --model goc500.m1 --output outputs/model_demo`.
-Run `genco-ops ops-demo --model goc500.m1 --output outputs/new_ops_demo`
-for a real bounded CPU search on the official sample: two topologies and eight
-actual calls each, under an explicitly synthetic uniform hazard. It is not the
-published full search. Finite inference is not AC feasibility. Native and GENCO raw validation losses
-are not comparable across architectures.
+## Select and acquire a model
 
-Texas2k raw graph inputs are kept private pending source/redistribution review.
-The exact unavailable mode is fresh public Texas2k inference/full computation
-without separately authorized inputs. Model weights and saved result exploration
-are separate from that restriction. No unavailable case is replaced by a different
-grid and called the same reproduction.
+The catalog has **15 entries / 14 unique weight files**, covering all certified
+Texas fits and GOC adaptations. GOC's released base aliases the same native base
+weight used by Texas. Intermediate G100 models preserve lineage; FT0 is smoke-only.
 
-## Reproduction Scope
+| Grid/family | Model selectors |
+|---|---|
+| GOC-500 GridSFM | `goc500.base`, `goc500.ft0`, `goc500.m1`, `goc500.m2`, `goc500.m3` |
+| Texas GENCO | `texas2k.genco_opf.base`, `texas2k.genco_opf.G100`, `texas2k.genco_opf.G500`, `texas2k.genco_opf.G100_to_R400`, `texas2k.genco_opf.G100_to_W400` |
+| Texas GridSFM | `texas2k.opengridsfm.base`, `texas2k.opengridsfm.G100`, `texas2k.opengridsfm.G500`, `texas2k.opengridsfm.G100_to_R400`, `texas2k.opengridsfm.G100_to_W400` |
 
-The notebooks are explicit, bounded entry points. They never launch training,
-cluster jobs or paid computation on opening. Published-result exploration, new
-demo predictions, and full original OPS/reference reproduction are distinct.
-The optional fixed-decision AC adapter exports the unchanged Julia formulation;
-its command mapping is tested but independent numerical Julia execution is not.
-The original Texas numerical executor is now exported with exact source bindings
-and tested20-call GENCO/native probes. Its full CUDA run was not repeated, and
-public input rights remain unresolved. Historical GOC full-population execution
-is separate and not substituted by the sample demo. These omissions are not
-represented as successful full recomputation. See [reproduction](docs/reproduction.md) and
-[limitations](docs/results_and_limitations.md).
+The [catalog](artifacts/model_catalog.json) records weight/normalizer hashes,
+ancestry, selection epochs and loader contracts. Install the separate
+[pinned model environment](environments/model_cpu_requirements.txt), then run:
 
-The scientific archive preserves failed solves, exact states, immutable request
-identities and full resume state. Public text locators are sanitized; numeric
-table values and physical line identities are unchanged. Personal cluster paths,
-accounts, credentials and raw private archives are not part of this repository.
+```sh
+python scripts/download_models.py
+genco-ops models --study goc_500
+genco-ops models --study texas2k
+```
+
+Downloads verify archive size/SHA-256 and every member before extraction, using
+existing GitHub authorization when required. Local archives also work with
+`genco-ops acquire --bundle <file.zip>`. Large weights are release assets rather
+than Git history. See [artifact acquisition](docs/artifacts.md).
+
+## Run the selected pipeline
+
+Use the same model selector in notebooks or the CLI. These commands execute real
+CPU work; omitting `--execute` inspects the plan and missing assets:
+
+```sh
+genco-ops run --study goc_500 --model goc500.m2 --mode infer --output outputs/m2_inference --execute
+genco-ops run --study goc_500 --model goc500.m2 --mode demo --output outputs/m2_ops_demo --execute
+```
+
+The GOC demo uses the included official electrical sample, two topologies and
+16 actual model calls under synthetic uniform hazard. It is separate from the
+published three-scenario experiment.
+
+For a small GENCO example with public electrical inputs:
+
+```sh
+genco-ops public-genco --output outputs/public_genco --execute
+```
+
+This uses the released GENCO-OPF checkpoint and official GraphKit IEEE14 sample.
+It checks the loading and prediction pipeline; it does not measure Texas accuracy.
+
+With an authorized Texas graph pack or prepared OPS input directory:
+
+```sh
+genco-ops run --study texas2k --model texas2k.genco_opf.G500 --mode infer --inputs /authorized/graphpack --output outputs/genco_prediction --execute
+genco-ops run --study texas2k --model texas2k.genco_opf.G500 --mode published --inputs /authorized/prepared --device cpu --probe-topology '117;281' --output outputs/genco_probe --execute
+```
+
+The second command runs the original 20-call optimizer on one topology. The
+original full 301-state CUDA search is a separate explicit mode, documented in
+[reproduction](docs/reproduction.md). No command automatically submits cluster jobs
+or starts training.
+
+## Findings and interpretation
+
+At equal 500-example Texas budgets, GENCO's selected Reference A normalized risks
+are **1.1641 (G500), 1.0890 (Random), and 1.0891 (Wildfire)**. Sequential adaptations
+select lower-risk, lower-shedding decisions than G500 here, but both choose the
+same outage pair and all remain above baseline 1. Substantial worst-bus residuals
+prevent interpreting these predictions as AC-feasible states.
+
+GOC adaptation improves held-out fidelity and native-to-AC agreement, with
+distribution-specific tradeoffs. Its paired fixed-decision benchmark measures
+3.59× faster released-GridSFM evaluation; the separate warm-start study shows
+about 2.2% mean IPOPT savings. These are not complete GENCO/Texas OPS speedups.
+
+See the [methodology](docs/methodology.md),
+[limitations](docs/results_and_limitations.md) and
+[verification](docs/RELEASE_VERIFICATION.md) for evidence and timing boundaries.
+
+## Data coverage
+
+| Material or mode | Status |
+|---|---|
+| Published tables and figure regeneration | Included: GOC FT6/FT7/RQ1 and Texas K/L/M accepted evidence |
+| Catalogued models and normalizers | Checksum-bound release archives with acquisition commands |
+| GOC sample inference and bounded OPS | Included official sample and real adapters |
+| Public GENCO compatibility example | Included official IEEE14 sample and released-checkpoint adapter |
+| Full GOC held-out population | Official acquisition recipe and all 750 ordered fingerprints; full recovery/replay not reverified |
+| Texas weather-derived exposure | Public derivative with date, source and preprocessing provenance |
+| Exact modified Texas electrical inputs/graphs | Private; the official GENCO Texas data is a different grid |
+| Full campaigns and training populations | Per-dataset acquisition and qualification in the data manifest |
+
+The official GENCO contingency release has 2,000 buses and 3,220 branches; our
+modified case has 2,751 buses and 5,344 branches. The
+[identity check](artifacts/official_texas_identity_check.json) records its pinned
+source and comparison. Public weather does not imply permission to redistribute
+the different electrical case. See [data coverage](artifacts/data_catalog.json).
+
+Eight Texas fits are certified. Native GridSFM full OPS/AC remains pending in the
+publication cut; Phase II is held. Higher-K screening and risk-aware shortlist
+refinement remain proposed experiments.
+
+The [three-page submission](submission/SUBMISSION.md),
+[PDF](submission/GENCO_Challenge_Submission.pdf), and
+[standalone publication builder](submission/README.md) use included compact
+evidence. Repository and model downloads currently require access to the private
+GitHub repository; public availability must be confirmed before challenge review.
+
+## Extend the workflow
+
+`src/genco_ops/` contains shared selectors, numerical adapters and reporting.
+`experiments/goc_500/` and `experiments/texas2k/` separate frozen configurations,
+data and results. `artifacts/` binds their identities; notebooks call shared code.
+
+Start with `genco_ops.catalog.models` and `genco_ops.workflow.run_workflow`.
+Use a new output directory per experiment, retain input/model hashes, and label
+changed budgets/hazards as new studies. Upstream attribution and licenses are in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

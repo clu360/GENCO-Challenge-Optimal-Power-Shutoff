@@ -7,18 +7,21 @@ import time
 from .artifacts import checked_path,sha,configure_native_cache
 
 
-def predict_saved_case(root,model_id,output):
-    import torch
+def predict_saved_case(root,model_id,output,inputs=None):
+    from .catalog import model_spec, saved_case_path
+    from .workflow import validate_output
     root=Path(root).resolve()
-    registry=json.loads((root/'artifacts/model_catalog.json').read_text())
-    if model_id not in registry['models']:raise ValueError('unknown model ID')
-    spec=registry['models'][model_id]
+    output=validate_output(root,output)
+    if any((output/name).exists() for name in ('prediction.pt','inference.json')):
+        raise ValueError('preserve the existing prediction; choose a fresh output directory')
+    spec,_=model_spec(root,model_id)
     checkpoint=checked_path(root,spec['weights'])
     if not checkpoint.exists():raise FileNotFoundError('Acquire the documented model bundle first')
     if sha(checkpoint)!=spec['sha256']:raise ValueError('checkpoint differs from catalog')
-    fixture=checked_path(root,spec['demo_input'])
+    fixture=saved_case_path(root,spec,inputs)
     if not fixture.exists():raise FileNotFoundError('This input is not distributed publicly; see the documented input-permission limitation')
     if sha(fixture)!=spec['demo_input_sha256']:raise ValueError('demo input differs')
+    import torch
     torch.set_num_threads(2);torch.manual_seed(0);torch.use_deterministic_algorithms(True)
     started=time.perf_counter()
     if spec['family']=='genco_opf':
@@ -47,10 +50,11 @@ def predict_saved_case(root,model_id,output):
         schema='Native v1.1 schema; bus [Va,Vm], generator [Pg,Qg]; native power normalization'
     if not predictions or any(not torch.isfinite(t).all() for t in predictions.values()):
         raise ValueError('nonfinite prediction')
-    output=Path(output);output.mkdir(parents=True,exist_ok=True)
+    output.mkdir(parents=True,exist_ok=True)
     torch.save(predictions,output/'prediction.pt')
     result=dict(status='PASS_FINITE_INFERENCE_NOT_AC_FEASIBILITY',model_id=model_id,
         checkpoint_sha256=sha(checkpoint),demo_input_sha256=sha(fixture),schema=schema,
+        input_path=str(fixture),
         device='cpu',torch=torch.__version__,seconds=time.perf_counter()-started,
         shapes={k:list(v.shape) for k,v in predictions.items()},
         published_production_result=False,ops_executed=False,ac_audit_executed=False)

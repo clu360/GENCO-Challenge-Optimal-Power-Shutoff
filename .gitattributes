@@ -8,3 +8,7 @@
 *.csv diff
 *.jl diff
 *.cff diff
+*.pdf binary
+*.png binary
+*.parquet binary
+*.npy binary

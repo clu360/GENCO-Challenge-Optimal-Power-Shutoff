@@ -1,9 +1,16 @@
 cff-version: 1.2.0
 message: "Please cite this software and the upstream model and OPS sources listed in THIRD_PARTY_NOTICES.md."
-title: "GENCO Challenge: Budgeted Optimal Power Shutoff Research"
+title: "GENCO in the Loop: Grid-to-Task Adaptation and Physical Verification"
 type: software
 authors:
   - family-names: Lu
     given-names: Caleb
-version: 0.1.0-dev
-abstract: "Separate GOC-500 and modified Texas2k studies with surrogate topology screening, grid/task adaptation, and exact AC decision audits. Release qualification is in progress."
+    affiliation: "Georgia Institute of Technology, H. Milton Stewart School of Industrial and Systems Engineering"
+    email: clu360@gatech.edu
+  - family-names: Liu
+    given-names: Xiao
+    affiliation: "Georgia Institute of Technology, H. Milton Stewart School of Industrial and Systems Engineering"
+    email: xiao.liu@isye.gatech.edu
+version: 0.1.0
+repository-code: "https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff"
+abstract: "GENCO/Texas2k adaptation and physical verification with a separate GridSFM/GOC-500 precursor, retained results, selectable model artifacts, and bounded reproducible examples. Exact Texas inputs remain private; full historical campaigns are not replayed by the examples."

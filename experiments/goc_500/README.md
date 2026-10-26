@@ -1,8 +1,28 @@
 # GOC-500 Study
 
-Retained Stage J FT3/FT4 search evidence and FT6 physical evaluations are under
-`results/`. Model IDs `goc500.base`, `ft0`, `m1`, `m2`, `m3` are in the common
-artifact catalog. FT0 is smoke-only; M2 and M3 are sibling adaptations from M1.
+Select `goc500.base` (M0), `goc500.m1` (FullTop-1000), `goc500.m2`
+(M1 + FullTop-500), or `goc500.m3` (M1 + N-1-500) through the same model
+selector. M2 and M3 are sibling continuations. `goc500.ft0` is smoke-only.
+
+Start with [notebook 01](../../notebooks/01_explore_published_results.ipynb)
+for the executed result analysis and [notebook 02](../../notebooks/02_goc500_model_and_ops_demo.ipynb)
+for real checkpoint inference and the bounded sample OPS example.
+
+| Included evidence | Location | Population |
+| --- | --- | --- |
+| Accepted refined OPS study (FT7) | `results/refined_study/core_results/` | DC and M0-M3: 150,000 continuous evaluations, 7,500 topology rows, 75 finalists/A audits, 150 B-stage rows, 525 controlled warm-start solves |
+| Refined derived analyses | `results/refined_study/derived/` | All five-lambda empirical fronts, AC discrepancies, state fidelity and warm-start summaries |
+| Frozen M0 runtime study (RQ1) | `results/rq1/` | 54 unique fixed decisions from 75 provenance rows; per-repetition timings and paired summaries |
+| Held-out physical evaluation (FT6) | `results/ft6_*.csv` | FullTop and N-1 populations, separate from the selected OPS decisions |
+| Earlier study archive | `results/ft3_ft4/` | Original frozen evidence retained for provenance; use FT7 for the submission comparison |
+
+The source/published hashes, row counts and exact numerical-column preservation
+checks for FT7/RQ1 are in `artifacts/results_provenance.json`. Private text
+locators are sanitized; scientific quantities are unchanged. Regenerate figures:
+
+```bash
+genco-ops results --study goc_500 --output outputs/goc500_results
+```
 
 `configs/historical/` preserves actual training/evaluation settings and the
 hash-verified published FT3/FT4 RUN_CONFIG. These are explicitly archival, not
