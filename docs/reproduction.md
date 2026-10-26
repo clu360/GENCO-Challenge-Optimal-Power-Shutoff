@@ -36,8 +36,13 @@ The primary bundle, G500 supplement and every member checksum are in
 G500 checkpoint and its MIT notice without repacking or replacing earlier weights.
 Both archives together provide all current catalog entries; acquisition is explicit,
 local and idempotent. Native G500 validation/OPS/AC work is separate from fit certification.
-A remote download URL is not invented: remote hosting remains a separate release
-action. Models are genuinely included in the separately delivered local export.
+Both archives are also available from the verified
+[private GitHub release](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/tag/phase-i-models-v152).
+Sign into an authorized GitHub account to download them, then run the same explicit
+local acquisition commands above. Both complete authenticated downloads were
+SHA-256 checked in a clean remote clone, acquired there, and all fifteen catalog
+entries genuinely loaded. See `artifacts/hosted_release_verification.json`.
+The original local export remains an independently verified alternative.
 Texas input graphs are not publicly distributed until redistribution rights are
 resolved. The Texas notebook marks an absent authorized input as UNAVAILABLE,
 not PASS. No paid compute, cluster login or hidden research import is required

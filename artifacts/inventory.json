@@ -8,9 +8,13 @@
       "sha256": "f9bf851fbb47804f0831123e8c960c63b2f6488c5cfd90bbb29fdb040aaf64f9",
       "bytes": 178
     },
+    "artifacts/hosted_release_verification.json": {
+      "sha256": "435f8053b69cd995df731494737dc32cdbad88207075cc4624ad1c5e7a2d09ef",
+      "bytes": 13722
+    },
     "artifacts/model_bundle.json": {
-      "sha256": "7d307ed134b2d339cce85bd40bdc575376bb12b8a615f35129a2582cdf71acfd",
-      "bytes": 3277
+      "sha256": "1b6008c9c1e5ccb9982a2aaef83e3f90efa2be8b44fdaab084d6e002e9a77040",
+      "bytes": 3697
     },
     "artifacts/model_catalog.json": {
       "sha256": "5c9e1bd195ba18a46455dca8d4eef9d8fbc490428fdfdc47b2d0d1aa628dd3e5",
@@ -25,8 +29,8 @@
       "bytes": 12978
     },
     "artifacts/release_coverage.json": {
-      "sha256": "f920f0274db637864506a1799332e60f5fef7c200b06ddc1fdb1d369e67c8473",
-      "bytes": 1338
+      "sha256": "62031b3cd44bfc373e6cf3b9be42f6110d69650241dcab4a600323ad80839893",
+      "bytes": 1575
     },
     "artifacts/source_provenance.json": {
       "sha256": "afc05b9575b9a868f6094c528ae76128ae5c506e4e728f005d3e1f1405593539",
@@ -45,12 +49,12 @@
       "bytes": 4569
     },
     "docs/model_catalog.md": {
-      "sha256": "fe63a1babfd43b1d3e0e0670177865fc6b76224f72ad152f8647700a527752c6",
-      "bytes": 2461
+      "sha256": "36f5e97b4c29961260b08a4ad8d43bb56eb0c0232669e80c2b54dbd94d151441",
+      "bytes": 2564
     },
     "docs/reproduction.md": {
-      "sha256": "801f91c903c99c82e803336834f1a3f9ea4dce32d62efacc7350d8044a085dfb",
-      "bytes": 6992
+      "sha256": "ef2ceed0b37d65d578fee878431cfa2f86d87477d10c3e33176446b9f4f9dbcb",
+      "bytes": 7397
     },
     "docs/results_and_limitations.md": {
       "sha256": "a8fa51432a6554847c6fb82e80aa7eb871cf1a85e5145501089baea28b9802c7",
@@ -829,8 +833,8 @@
       "bytes": 615
     },
     "README.md": {
-      "sha256": "a20e3f92d7caf4a974f17bbeb79e4514886c5bf390237970b9eac35b31ecd817",
-      "bytes": 5302
+      "sha256": "7ab8d3ea6e89cde6a5e7259c2fd88e837e63d81abf76f1c13a9281e4ea74e657",
+      "bytes": 5482
     },
     "scripts/ac_audit.py": {
       "sha256": "809f81fa5197be6973eb6d29e8ec721e18c6c77b032df4d1da2bcf59b7a95fd6",

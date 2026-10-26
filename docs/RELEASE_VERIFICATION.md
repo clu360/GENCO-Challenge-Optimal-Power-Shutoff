@@ -1,5 +1,22 @@
 # Release Verification
 
+## Private GitHub Delivery
+
+Source and the two licensed model archives are hosted in the existing private
+repository, without changing its visibility. The private prerelease
+`phase-i-models-v152` pins numerical source commit `d1b4d6d0c1e63639b0f4acb94e598f7386eddbaf`.
+The complete authenticated downloads match both local and GitHub server SHA-256
+values. They were acquired into a clean clone from GitHub, and all15 catalog
+entries (14 unique weight hashes) loaded through the pinned official packages.
+The standalone package resolves inside that remote checkout; no private Texas
+input directory is present there. No raw grid/weather inputs were uploaded.
+
+Current isolated suites pass41 model tests and39 Torch-free tests plus2 explicit
+skips; notebooks execute. Earlier dated verification cuts below are preserved,
+not retroactively changed to these counts. Exact receipts, versions and supported
+mode limitations are in `artifacts/hosted_release_verification.json`. This is not
+a public challenge-form submission or a full Phase I completion certificate.
+
 ## Native G500 Certification Update
 
 The original controller accepted G500's scientific PASS receipt after saved-epoch
@@ -106,9 +123,9 @@ python -I scripts/verify_release.py --models
 
 ## Completion Boundaries
 
-This is a verified results/bounded-demo checkpoint, not a fully passed submission
-gate, full historical recomputation, remote publication, challenge-form submission
-or full Phase I completion. Public Texas input permission remains unresolved;
+This is a verified results/bounded-demo checkpoint with private source/model
+delivery, not a fully passed public submission gate, full historical recomputation,
+challenge-form submission or full Phase I completion. Public Texas input permission remains unresolved;
 the full CUDA transport has not been independently run. Historical GOC full-data
 execution is separately unavailable, not replaced by the sample. Local model-bundle acquisition is verified;
 no fictitious public asset URL is supplied. Native OPS/AC remain pending and

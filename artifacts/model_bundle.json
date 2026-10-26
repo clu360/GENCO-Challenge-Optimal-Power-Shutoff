@@ -72,7 +72,11 @@
         }
       },
       "scientific_task_id": "v070.opengridsfm.G500.s0",
-      "selected_epoch": 19
+      "selected_epoch": 19,
+      "download_url": "https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/download/phase-i-models-v152/opengridsfm_G500_v152.zip",
+      "access": "AUTHENTICATED_PRIVATE_GITHUB_RELEASE"
     }
-  ]
+  ],
+  "download_url": "https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/download/phase-i-models-v152/genco_challenge_models_v149.zip",
+  "access": "AUTHENTICATED_PRIVATE_GITHUB_RELEASE"
 }

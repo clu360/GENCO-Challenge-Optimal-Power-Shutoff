@@ -30,7 +30,9 @@ Read [the Phase I report](experiments/texas2k/results/stage_m/reports/PHASE_I_RE
 and [methodology](experiments/texas2k/results/stage_m/reports/METHODOLOGY.md).
 Model/data channels and completion states are machine-readable in
 `artifacts/model_catalog.json`. Large weights are delivered through a checksum-bound
-model bundle, not ordinary Git objects. Remote publication is not yet claimed.
+model archives, not ordinary Git objects. The verified
+[private source/model release](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/tag/phase-i-models-v152)
+requires repository access. Its visibility has not been changed to public.
 
 ## Results-Only Use
 
