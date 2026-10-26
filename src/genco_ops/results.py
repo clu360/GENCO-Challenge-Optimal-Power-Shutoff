@@ -61,7 +61,9 @@ def regenerate(root,study,output):
         ax.set(xlabel='Topology attempt',ylabel='Best native merit');ax.legend();save('outer_convergence',fig)
         fig,axes=plt.subplots(1,3,figsize=(15,5));x=np.arange(len(exact))
         for ax,column,title in zip(axes,['a_r','a_j','a_cost'],['Economic AC A risk','Economic AC A tradeoff objective','Economic AC A generation cost: case units']):
-            ax.bar(x,exact[column]);ax.set(xticks=x,xticklabels=exact.model,title=title);ax.tick_params(axis='x',labelrotation=20)
+            labels=[name.replace('GENCO ','GENCO\n').replace('OpenGridSFM ','OpenGrid\nSFM\n').replace(' -> ',' ->\n') for name in exact.model]
+            ax.bar(x,exact[column]);ax.set(xticks=x,xticklabels=labels,title=title)
+            ax.tick_params(axis='x',labelsize=8)
         save('exact_reference_a',fig)
         exact.to_csv(output/'regenerated_reference_summary.csv',index=False)
         summary=dict(study=study,completed_searches=len(labels),candidate_rows=len(candidates),

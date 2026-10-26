@@ -1,0 +1,27 @@
+{
+  "branch": "G500",
+  "status": "PASS_ACCEPTED_NATIVE_OPS_AND_AC_RECOMPUTATION",
+  "task_id": "v070.opengridsfm.G500.s0.phase_i.ops",
+  "accepted_export_sha256": "151f7cf3e5efdcd7c17f4bee23266aa7af6efffb5fbadec1210aad44f6ba11f8",
+  "manifest_sha256": "61c7c4fcbabe791a46b08619039d9a2656c448a751987a60ffc8972fc27c4feb",
+  "checkpoint_sha256": "2e4911c452dd4a2c80e17ab6f7dc5764150ae6615e3a16404ed9fb82bdeee170",
+  "execution_receipt_sha256": {
+    "ops": "db59271bc2154cf697464e8fc4c0a61f449417ecf860f321a6e6852175f298c5",
+    "refs": "e85edb2d33bc730505fdc1fea8869ad68999f491af866f36dc7ce286f7c5d86f"
+  },
+  "reporter_sha256": "ce4b0658429cd054176fe9c089fe6eb14c61205e1f32182e6edb7bbededcbcb7",
+  "published_searches": 6,
+  "published_reference_tasks": 6,
+  "recomputation": {
+    "model": "OpenGridSFM G500",
+    "recomputed_r_norm": 1.0822811135182344,
+    "recomputed_shed": 0.0003281307460573091,
+    "recomputed_j": 0.865890516963799,
+    "recomputed_native_r_norm": 1.0957433909433527,
+    "recomputed_native_j": 0.8766603389038937,
+    "maximum_absolute_recompute_error": 8.881784197001252e-16
+  },
+  "genco_exact_table_unchanged": true,
+  "phase_i_completion": "REPORTING_GATE_PENDING",
+  "phase_ii": "HELD_BY_USER"
+}

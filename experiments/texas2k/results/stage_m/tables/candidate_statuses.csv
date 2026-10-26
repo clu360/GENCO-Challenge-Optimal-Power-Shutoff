@@ -7,3 +7,4 @@ GENCO G500,evaluator_exception,False,12
 GENCO G500,optimal_success,True,289
 OpenGridSFM G100 -> R400,optimal_success,True,301
 OpenGridSFM G100 -> W400,optimal_success,True,301
+OpenGridSFM G500,optimal_success,True,301

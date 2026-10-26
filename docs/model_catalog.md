@@ -2,7 +2,7 @@
 
 Actual catalog entries; no native G500 success is inferred from saved epochs.
 Weights are acquired from the checksum-bound primary archive and G500 supplement.
-Both are delivered locally and as verified private GitHub release assets; access is required.
+Both are delivered locally and as checksum-verified GitHub release assets. The owner-published repository is now public; this update did not change visibility.
 Texas demo graphs are private pending source permissions. Historical PF models
 are represented by recorded Stage L results, not bundled as new fine-tunes.
 
@@ -26,5 +26,5 @@ are represented by recorded Stage L results, not bundled as new fine-tunes.
 
 Original research checkpoint: `346058115d35b3da234146067e675f31e74d5fae`.
 
-Native G500: certified PASS; native final OPS/AC: 2/3 incorporated; reporting gate pending. Phase II held.
+Native G500: certified PASS; native final OPS/AC: 3/3 incorporated; reporting gate pending. Phase II held.
 CPU loader/parity evidence and separate fresh-checkout evidence must not be conflated.

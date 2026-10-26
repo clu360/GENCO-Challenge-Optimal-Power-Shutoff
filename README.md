@@ -20,11 +20,18 @@ variants select physical lines117/281; G500 selects117/1548. Reference B recover
 essentially full service under the solver tolerance. These are local audit
 outcomes, not global optimality or broad generalization claims.
 
+All three fine-tuned OpenGridSFM searches and exact A/B audits are also accepted.
+Their AC-A risks are 1.082281 (G500), 1.084259 (G100-to-R400) and 1.088199
+(G100-to-W400), again above the stored baseline. They select different two-line
+outages, not the GENCO search trajectories. Retained-state checks reconstruct all
+six finalists within 1e-10 without fresh inference or AC solves. The final
+controller reporting gate is still separate from these accepted outcomes.
+
 | Study | Models | Published evidence | Current limitations |
 |---|---|---|---|
 | GOC-500 | Released GridSFM; FT0 smoke; M1; sibling M2/M3 adaptations | Retained Stage J physical evaluations and FT3/FT4 OPS tables | Official sample demo is not the historical test population |
 | Texas2k K/L | Historical DC/AC/GridSFM and three released GENCO branches | Recorded historical tables, separately labeled | Different evaluator/search/control policies; PF redispatch exploration was limited |
-| Texas2k M | GENCO-OPF and OpenGridSFM; all eight fits certified | Three GENCO and 2 native full searches with exact A/B audits published | Final reporting gate pending; Phase II held |
+| Texas2k M | GENCO-OPF and OpenGridSFM; all eight fits certified | Three GENCO and 3 native full searches with exact A/B audits published | Final reporting gate pending; Phase II held |
 
 Read [the Phase I report](experiments/texas2k/results/stage_m/reports/PHASE_I_RESULTS.md)
 and [methodology](experiments/texas2k/results/stage_m/reports/METHODOLOGY.md).

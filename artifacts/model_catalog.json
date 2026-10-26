@@ -428,9 +428,11 @@
       "demo_input_sha256": "28f6a9cb417f7aec08a05c9f3ed70178533dbde685b399fcde3e7b06c162389e",
       "input_distribution": "PRIVATE_PENDING_REDISTRIBUTION_REVIEW",
       "scientific_certification": "PASS",
-      "ops": "PENDING",
+      "ops": "PASS",
       "parent_checkpoint_sha256": "f8a4396122e603e8303afdebe3b093819c0f64dac0878394aed0bd63205fd831",
-      "selected_epoch": 19
+      "selected_epoch": 19,
+      "ac_references": "PASS",
+      "branch_verification": "artifacts/native_branch_G500_v155.json"
     }
   },
   "unavailable_models": {}

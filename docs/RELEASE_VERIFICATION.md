@@ -130,3 +130,25 @@ the full CUDA transport has not been independently run. Historical GOC full-data
 execution is separately unavailable, not replaced by the sample. Local model-bundle acquisition is verified;
 no fictitious public asset URL is supplied. Native OPS/AC remain pending and
 Phase II remains held. Pending results will be added in separate verified commits.
+
+
+## October 26 Native Results Update
+
+All eight fits, six final OPS searches and six exact-reference tasks are accepted.
+The six finalists recompute from retained states within 8.9e-16; the prior GENCO
+values are unchanged. Separate native branch commits preserve the initial release.
+An isolated clean clone passes 42 model tests and 40 Torch-free tests with two
+explicit skips. All three notebooks execute, and all 15 official model loaders
+pass. Texas fresh inference/OPS remains visibly unavailable without authorized
+raw inputs; retained-state reconstruction is not a new numerical solve.
+
+The final controller reporting gate is still pending after one original timeout;
+this update does not claim full Phase I closure. Phase II remains held. Actual
+command statuses, elapsed times, output hashes, versions and scope are retained
+in release_verification.json under native_results_followup_v155.
+
+The repository is now public as observed through unauthenticated GitHub metadata;
+this update did not change visibility. Both immutable model-asset digests match.
+Newer remote publication work is preserved on main; these independently verified
+native results are delivered on phase-i-native-results-v155 for safe integration.
+No challenge-form submission or new full historical recomputation is claimed.

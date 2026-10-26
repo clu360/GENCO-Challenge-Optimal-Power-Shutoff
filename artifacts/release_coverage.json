@@ -5,11 +5,11 @@
     "certified_phase_i_fits": 8,
     "GENCO_full_searches": 3,
     "GENCO_reference_tasks": 3,
-    "OpenGridSFM_full_searches": 2,
-    "OpenGridSFM_reference_tasks": 2
+    "OpenGridSFM_full_searches": 3,
+    "OpenGridSFM_reference_tasks": 3
   },
   "tests": {
-    "results_only": "PASS_ISOLATED_39_TESTS_PLUS_2_MODEL_SKIPS",
+    "results_only": "PASS_ISOLATED_40_TESTS_PLUS_2_MODEL_SKIPS",
     "goc_model_demo": "PASS_BOUNDED_OFFICIAL_SAMPLE",
     "texas_model_demo": "PRIVATE_INPUT_ONLY_LOCAL_TEST",
     "bounded_ops_demo": "PASS_DISTINCT_DEMO_IDENTITY",
@@ -18,21 +18,24 @@
     "full_cuda_texas_execution": "NOT_RERUN_DURING_PACKAGING",
     "exact_reference": "REAL_ADAPTER_COMMAND_CONTRACT_TESTED_NUMERICAL_RUN_UNTESTED",
     "full_historical_recomputation": "NOT_RELEASE_QUALIFIED",
-    "official_cpu_model_loading": "PASS_ALL_15_CATALOG_ENTRIES_14_UNIQUE_WEIGHTS"
+    "official_cpu_model_loading": "PASS_ALL_15_CATALOG_ENTRIES_14_UNIQUE_WEIGHTS",
+    "model_suite": "PASS_ISOLATED_42_TESTS",
+    "native_retained_states": "PASS_THREE_NATIVE_PLUS_THREE_GENCO_FINALISTS"
   },
   "limitations": [
     "Texas electrical/weather input redistribution permission unresolved",
-    "Verified model archives are hosted privately on GitHub; permission is required for access",
     "Public Texas full computation needs authorized inputs; full CUDA transport has not been independently run",
     "Historical GOC full population/legacy execution are not substituted by the official sample demo"
   ],
-  "private_source_and_models_hosted": true,
-  "public_release": false,
+  "private_source_and_models_hosted": false,
+  "public_release": true,
   "hosted_verification": "artifacts/hosted_release_verification.json",
   "native_results_state": {
-    "incorporated": 2,
+    "incorporated": 3,
     "required": 3,
     "scientific_completion_gate": "PENDING_REPORTING_RECOVERY",
     "phase_ii": "HELD_BY_USER"
-  }
+  },
+  "repository_visibility_observed": "public",
+  "visibility_changed_by_this_update": false
 }

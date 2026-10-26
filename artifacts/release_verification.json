@@ -369,5 +369,386 @@
   ],
   "original_executor_followup": "artifacts/published_executor_verification.json",
   "initial_v149_receipts_retained": true,
-  "native_g500_followup": "artifacts/native_g500_verification.json"
+  "native_g500_followup": "artifacts/native_g500_verification.json",
+  "native_results_followup_v155": {
+    "status": "PASS_SIX_RESULT_PUBLICATION_AND_ISOLATED_SUPPORTED_MODES",
+    "observed_utc": "2026-10-26T17:40:22.495991+00:00",
+    "research_commit": "eb79983de0b9959fbdb2d266ea92e19e73cd1a00",
+    "source_release_ancestor": "d3ecce9fc3b2d8d9ca6d0f46a75bccd315216bc4",
+    "concurrent_remote_main_observed": "9c7f4e283b422b14ac6c03cd1ece26722b7b3183",
+    "publication_branch": "phase-i-native-results-v155",
+    "results_only": {
+      "status": "PASS_BOUNDED_ADVERTISED_MODES",
+      "mode": "results_only",
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-I",
+            "-m",
+            "genco_ops.cli",
+            "verify"
+          ],
+          "exit_code": 0,
+          "seconds": 1.5544371000141837,
+          "stdout_sha256": "d766f14d555d3ee9a448122d33e7012948d7b7180a490d3f464141ae2d6308ea",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "command": [
+            "python",
+            "-I",
+            "-m",
+            "pytest",
+            "tests",
+            "-q"
+          ],
+          "exit_code": 0,
+          "seconds": 11.704190400021616,
+          "stdout_sha256": "c4ad3c825aec6b19efb9db64fbccf2ff9466f223f67d4a5dfb09d36534499ea1",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "command": [
+            "python",
+            "-I",
+            "scripts/execute_notebooks.py"
+          ],
+          "exit_code": 0,
+          "seconds": 12.136055599956308,
+          "stdout_sha256": "e0b168adfc1734c40fa4c564c635f4997dd5c60cd683604c0973ab10a53b33aa",
+          "stderr_sha256": "a51a87b199cf83fcae9023175c0286047ca5870f204ea8af46c0fad5816f7416"
+        }
+      ],
+      "python": "3.12.11",
+      "platform": "Windows",
+      "installed_package_from_this_checkout": true,
+      "torch_absent": true,
+      "packages": {
+        "numpy": "2.5.4",
+        "pandas": "2.3.3",
+        "scipy": "1.18.1",
+        "pyarrow": "26.0.0",
+        "matplotlib": "3.11.2",
+        "nbformat": "5.11.1",
+        "nbclient": "0.11.0",
+        "pytest": "9.1.1"
+      },
+      "inventory_sha256": "55af3ec1fe455b2d779fca348cd4e0ea0b82535b830e97ccc8a97e122ab63b16",
+      "no_cluster_credentials_used": true,
+      "full_historical_campaign_recomputed": false,
+      "independent_numerical_ac_audit_tested": false
+    },
+    "official_model_environment": {
+      "status": "PASS_BOUNDED_ADVERTISED_MODES",
+      "mode": "models",
+      "commands": [
+        {
+          "command": [
+            "python",
+            "-I",
+            "-m",
+            "genco_ops.cli",
+            "verify"
+          ],
+          "exit_code": 0,
+          "seconds": 2.833945100021083,
+          "stdout_sha256": "d766f14d555d3ee9a448122d33e7012948d7b7180a490d3f464141ae2d6308ea",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "command": [
+            "python",
+            "-I",
+            "-m",
+            "pytest",
+            "tests",
+            "-q"
+          ],
+          "exit_code": 0,
+          "seconds": 25.92105870001251,
+          "stdout_sha256": "cddfd9f53adf73401e6419617003ed5db3f035d183d9ede45ab3fa9997c5e6a9",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "command": [
+            "python",
+            "-I",
+            "scripts/execute_notebooks.py",
+            "--models"
+          ],
+          "exit_code": 0,
+          "seconds": 30.56156279996503,
+          "stdout_sha256": "c3869d8f4f42987ff99fda23a9dd361b78a17620eeb4d75955a6057b66a251b0",
+          "stderr_sha256": "499623cda8a9860a625926a2b13248d37f7d9cfcd2a388ff13402144bc78a11d"
+        }
+      ],
+      "python": "3.12.11",
+      "platform": "Windows",
+      "installed_package_from_this_checkout": true,
+      "torch_absent": false,
+      "packages": {
+        "numpy": "2.2.6",
+        "pandas": "2.3.3",
+        "scipy": "1.16.2",
+        "pyarrow": "25.0.1",
+        "matplotlib": "3.11.2",
+        "nbformat": "5.11.1",
+        "nbclient": "0.11.0",
+        "pytest": "9.1.1"
+      },
+      "inventory_sha256": "55af3ec1fe455b2d779fca348cd4e0ea0b82535b830e97ccc8a97e122ab63b16",
+      "no_cluster_credentials_used": true,
+      "full_historical_campaign_recomputed": false,
+      "independent_numerical_ac_audit_tested": false
+    },
+    "official_checkpoint_loading": {
+      "checks": [
+        {
+          "model_id": "texas2k.genco_opf.G100",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "d952811fc2fd329d2ab7c076987dec094c99c6b89036e3053b818afbcc0c4adb",
+          "parameter_count": 20069187,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "texas2k.genco_opf.G100_to_R400",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "e64b22da3c8fa92a6c959f355e269e815d2c422bc3809fefa33db47ab11c8bcd",
+          "parameter_count": 20069187,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "texas2k.genco_opf.G100_to_W400",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "b4af8c9e6383ff75168b08967a0d7c125653b5dbc432328b53912e7b9aa3da74",
+          "parameter_count": 20069187,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "texas2k.genco_opf.G500",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "1e664defde395b77b97e4829bf8e22c3828cbb05da87082aab4b3916a4411ad4",
+          "parameter_count": 20069187,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "texas2k.opengridsfm.G100",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "e45ed36e3956eeb7750d2e396737e0cc3ccd58990aae84b65a6af9d1fdad06d5",
+          "parameter_count": 15148227,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "texas2k.opengridsfm.G100_to_R400",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "0ce7ad4538598f439fff4b59a72e33272f1de193ecaa3dae521c0e3eaceb0cbd",
+          "parameter_count": 15148227,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "texas2k.opengridsfm.G100_to_W400",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "406bb6e4c23c42f1bdf1a682e4213bb64f5fe71f105feebf54b8c6f06508ae0e",
+          "parameter_count": 15148227,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "texas2k.genco_opf.base",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "158520c976c5a97dbf251cfbd21c985982b3d3cb0e11bbbe96112214bc981343",
+          "parameter_count": 20069187,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "texas2k.opengridsfm.base",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "f8a4396122e603e8303afdebe3b093819c0f64dac0878394aed0bd63205fd831",
+          "parameter_count": 15148227,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "goc500.ft0",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "cf72e0f6036d1e37fb5a298eb3db5e69a6524f48bc7b0b8b5cd34e758ddfe4a2",
+          "parameter_count": 15148227,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "goc500.m1",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "a1378fdaf38af6b317f172c27df7c0f14a23138143d65dfe5e1c46c613e119ad",
+          "parameter_count": 15148227,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "goc500.m2",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "08eda70270f787db42c48b751becc9da2062b0482550a5c2a761b4eba0c94ff6",
+          "parameter_count": 15148227,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "goc500.m3",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "4ec89d36de80081be2fc26c14a1bc5a5369d7423b557d71b9dd4a254462f302d",
+          "parameter_count": 15148227,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "goc500.base",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "f8a4396122e603e8303afdebe3b093819c0f64dac0878394aed0bd63205fd831",
+          "parameter_count": 15148227,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        },
+        {
+          "model_id": "texas2k.opengridsfm.G500",
+          "status": "PASS_OFFICIAL_MODEL_LOAD",
+          "checkpoint_sha256": "2e4911c452dd4a2c80e17ab6f7dc5764150ae6615e3a16404ed9fb82bdeee170",
+          "parameter_count": 15148227,
+          "device": "cpu",
+          "prediction_executed": false,
+          "physical_feasibility_certified": false
+        }
+      ],
+      "all_pass": true,
+      "python": "3.12.11",
+      "platform": "Windows",
+      "packages": {
+        "torch": "2.8.0+cpu",
+        "torch_geometric": "2.6.1",
+        "numpy": "2.2.6",
+        "scipy": "1.16.2",
+        "huggingface_hub": "0.34.4",
+        "gridfm-graphkit": "0.0.7",
+        "gridsfm": "1.1.0"
+      },
+      "upstream": {
+        "gridfm-graphkit": {
+          "commit_id": "95b90eecc7f5c2c86a9dd776f0c3f40434def22f",
+          "requested_revision": "95b90eecc7f5c2c86a9dd776f0c3f40434def22f",
+          "vcs": "git"
+        },
+        "gridsfm": {
+          "commit_id": "1ca775fd436d7ce013a1c0ab946e61ac7ef59ad6",
+          "requested_revision": "1ca775fd436d7ce013a1c0ab946e61ac7ef59ad6",
+          "vcs": "git"
+        }
+      }
+    },
+    "full_model_suite": "42 passed",
+    "torch_free_suite": "40 passed, 2 explicit model skips",
+    "retained_finalists": [
+      {
+        "model": "GENCO G100 -> R400",
+        "recomputed_r_norm": 1.0890420110534258,
+        "recomputed_shed": 0.0004862336293931513,
+        "recomputed_j": 0.8713308555686193,
+        "recomputed_native_r_norm": 1.450011284106502,
+        "recomputed_native_j": 1.1601062740110804,
+        "maximum_absolute_recompute_error": 0.0
+      },
+      {
+        "model": "GENCO G100 -> W400",
+        "recomputed_r_norm": 1.089059938025689,
+        "recomputed_shed": 0.0005464057072691597,
+        "recomputed_j": 0.871357231562005,
+        "recomputed_native_r_norm": 1.5111847889704402,
+        "recomputed_native_j": 1.209057112317806,
+        "maximum_absolute_recompute_error": 0.0
+      },
+      {
+        "model": "GENCO G500",
+        "recomputed_r_norm": 1.1641443400722764,
+        "recomputed_shed": 0.002696929272223425,
+        "recomputed_j": 0.9318548579122659,
+        "recomputed_native_r_norm": 1.2701105490997597,
+        "recomputed_native_j": 1.0166278251342524,
+        "maximum_absolute_recompute_error": 0.0
+      },
+      {
+        "model": "OpenGridSFM G100 -> R400",
+        "recomputed_r_norm": 1.0842594729549553,
+        "recomputed_shed": 0.0,
+        "recomputed_j": 0.8674075783639643,
+        "recomputed_native_r_norm": 1.1030318779814543,
+        "recomputed_native_j": 0.8824255023851635,
+        "maximum_absolute_recompute_error": 6.661338147750939e-16
+      },
+      {
+        "model": "OpenGridSFM G100 -> W400",
+        "recomputed_r_norm": 1.0881986608591654,
+        "recomputed_shed": 0.00011281873039681312,
+        "recomputed_j": 0.8705814924334117,
+        "recomputed_native_r_norm": 1.0075321157336488,
+        "recomputed_native_j": 0.8060482563329984,
+        "maximum_absolute_recompute_error": 2.220446049250313e-16
+      },
+      {
+        "model": "OpenGridSFM G500",
+        "recomputed_r_norm": 1.0822811135182344,
+        "recomputed_shed": 0.0003281307460573091,
+        "recomputed_j": 0.865890516963799,
+        "recomputed_native_r_norm": 1.0957433909433527,
+        "recomputed_native_j": 0.8766603389038937,
+        "maximum_absolute_recompute_error": 8.881784197001252e-16
+      }
+    ],
+    "scientific_fits": 8,
+    "full_searches": 6,
+    "reference_tasks": 6,
+    "phase_i_completion": "FINAL_CONTROLLER_REPORTING_GATE_PENDING",
+    "phase_ii": "HELD_BY_USER",
+    "repository_visibility_observed": "public",
+    "visibility_changed_by_this_update": false,
+    "model_assets": [
+      {
+        "filename": "genco_challenge_models_v149.zip",
+        "sha256": "f15e6d6d21f906b6433e27590b01df831fbbc32c2d1457a7eba0b8fc3004eba7",
+        "bytes": 890326503,
+        "url": "https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/download/phase-i-models-v152/genco_challenge_models_v149.zip"
+      },
+      {
+        "filename": "opengridsfm_G500_v152.zip",
+        "sha256": "36f6ef4d96e1f733c58f4f2cf5023323ba62f496fea693fe7dffa432cae63553",
+        "bytes": 60987194,
+        "url": "https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/download/phase-i-models-v152/opengridsfm_G500_v152.zip"
+      }
+    ],
+    "unauthenticated_asset_metadata_verified": true,
+    "original_genCO_results_unchanged": true,
+    "raw_texas_inputs_published": false,
+    "independent_full_cuda_recomputation": false,
+    "independent_numerical_julia_audit": false,
+    "challenge_form_submission_claim": false
+  }
 }
