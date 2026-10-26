@@ -121,15 +121,16 @@ python -I scripts/check_models.py --output outputs/catalog_model_loading.json
 python -I scripts/verify_release.py --models
 ```
 
-## Completion Boundaries
+## Initial Checkpoint Boundaries
 
 This is a verified results/bounded-demo checkpoint with private source/model
 delivery, not a fully passed public submission gate, full historical recomputation,
 challenge-form submission or full Phase I completion. Public Texas input permission remains unresolved;
 the full CUDA transport has not been independently run. Historical GOC full-data
 execution is separately unavailable, not replaced by the sample. Local model-bundle acquisition is verified;
-no fictitious public asset URL is supplied. Native OPS/AC remain pending and
-Phase II remains held. Pending results will be added in separate verified commits.
+no fictitious public asset URL is supplied. At that initial checkpoint native
+OPS/AC remained pending. The updates below supersede that pending-work state;
+Phase II remains held.
 
 
 ## October 26 Native Results Update
@@ -152,3 +153,17 @@ this update did not change visibility. Both immutable model-asset digests match.
 Newer remote publication work is preserved on main; these independently verified
 native results are delivered on phase-i-native-results-v155 for safe integration.
 No challenge-form submission or new full historical recomputation is claimed.
+
+## October 26 Reporting Interruption
+
+At 5:04 PM Eastern, all eight fits/validations, six full 301-state searches and
+six exact-reference tasks remain accepted. All 628 predecessors of the original
+completion report are PASS. Report-only job 14453249 was preempted by Embers at
+4:43:32 PM after 2h07m03s, before producing its scientific completion gate.
+The original two-retry budget is exhausted, and the controller correctly records
+PAUSED_RETRIES. No new job, scientific rerun, paid allocation or retry expansion
+was started. Full Phase I closure is not certified. Phase II stays held.
+
+This scheduler interruption does not invalidate the accepted numerical results,
+unchanged models, official-loader checks or supported-mode release verification.
+The research repository retains exact reporting code, log and ownership receipts.

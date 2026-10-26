@@ -33,7 +33,7 @@
   "native_results_state": {
     "incorporated": 3,
     "required": 3,
-    "scientific_completion_gate": "PENDING_REPORTING_RECOVERY",
+    "scientific_completion_gate": "PAUSED_REPORTING_RETRIES_EXHAUSTED",
     "phase_ii": "HELD_BY_USER"
   },
   "repository_visibility_observed": "public",
