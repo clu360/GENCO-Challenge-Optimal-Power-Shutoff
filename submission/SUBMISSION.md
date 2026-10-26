@@ -1,63 +1,87 @@
-# GENCO in the Loop
+# GENCO in the Loop: From Grid Adaptation to Wildfire-Aware Power Shutoff
 
-**Grid-to-task adaptation and physical verification for wildfire-aware power shutoff**  
-**Caleb Lu and Xiao Liu** · H. Milton Stewart School of Industrial and Systems Engineering, Georgia Institute of Technology  
-Contact: [clu360@gatech.edu](mailto:clu360@gatech.edu) (primary); [xiao.liu@isye.gatech.edu](mailto:xiao.liu@isye.gatech.edu)
+**Caleb Lu and Xiao Liu** · H. Milton Stewart School of Industrial and Systems Engineering, Georgia Institute of Technology
 
-## Summary
+**[Repository and reproducible demos](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff)** · **[GENCO and GridSFM checkpoints](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/tag/phase-i-models-v152)** · **[Three-page technical submission](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/blob/main/submission/GENCO_Challenge_Submission.pdf)**
 
-How does adapting a grid foundation model change the quality of decisions made with it? We use **GENCO-OPF** as a downstream testbed for wildfire-aware optimal power shutoff (OPS), connecting prediction fidelity, topology screening, and exact AC verification. On one modified Texas2k case, 500-example adaptations yield audited normalized risks of **1.164, 1.089, and 1.089**, all above the stored baseline. **G500 looks best under native scoring, while contingency-adapted checkpoints look best after AC recovery.** A GridSFM/GOC-500 precursor provides context. The central finding is that task-specific adaptation changes selected decisions but guarantees neither physical feasibility nor consistently better operating outcomes.
+## Why OPS is a useful testbed for grid foundation models
 
-## Motivation and method
+Wildfire-aware **Optimal Power Shutoff (OPS)** aims to reduce exposure from energized transmission lines while retaining electricity service. Following Rhodes, Ntaimo, and Roald (2021), we investigate a predict-then-optimize workflow that proposes line de-energizations, adjusts selected load-service controls, evaluates the resulting operating states, and finally checks selected decisions using **nonlinear AC physics**. This is a combinatorial task: changing one line can redistribute flow throughout the network.
 
-OPS trades reduced wildfire exposure against interrupted service [1]. Repeated state evaluations make a reusable predictor attractive. GENCO's GraphKit implementation [2] lets us adapt a checkpoint and evaluate changed topology and demand. Its OPF interface predicts dispatch; our wrapper does not expose arbitrary generator commands or condition the model directly on a wildfire objective.
+**Our central question is not only whether a model predicts a grid state accurately, but whether its predictions lead to better *AC-verified operational decisions*.** We first established the workflow on GOC-500 using **GridSFM**, then transferred it to a modified Texas2k system using **GENCO-OPF**, real weather-derived exposure, and grid-to-task fine-tuning.
 
-For energized-line indicators **z** and served-demand fractions **α**, we report **J = λR Rnorm + (1 − λR) Lshed**. Rnorm sums environmental exposure × squared apparent-power loading over energized transmission risk lines, divided by stored intact-grid risk; Lshed is the unserved demand fraction. This is an exposure proxy, not a calibrated ignition probability. GENCO's Phase I search minimizes J; physics violations are separate diagnostics.
+![Surrogate-assisted OPS and AC-verification workflow](https://raw.githubusercontent.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/main/submission/figures/01_workflow.png)
 
-![Figure 1. GENCO adaptation and verification workflow.](figures/01_workflow.png)
+The current evaluator screens candidate topologies with at most **two planned shutoffs**, followed by a bounded five-load-control search with up to **20 model objective calls per topology**. Exact AC Reference A fixes topology and requested service, then optimizes economic dispatch. Reference B1/B2 asks how much service that topology can physically deliver, followed by an economic tie-break. These are **audits of selected solutions**, not global optimality certificates or risk-constrained corrective OPF.
 
-*Figure 1. Completed work adapts GENCO, screens bounded topology/service choices, and audits selected decisions. Broader screening followed by risk-aware AC refinement and reranking is the proposed extension.*
+## 1. GOC-500: a controlled laboratory for adaptation and downstream decisions
 
-Both studies permit at most two shutoffs and search five load-service controls with at most 20 evaluations per topology. **Reference A** fixes topology and service, then minimizes AC generation cost. **B1/B2** maximize total service, then minimize cost at that service under a documented recovery policy; B does not constrain wildfire risk. These are local solver outcomes, not global certificates. Full formulations and generator bounds are in the [methodology](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/blob/main/docs/methodology.md).
+We began with **three constructed diagnostic hazard patterns**: a high-risk line with low service consequences, one with high service consequences, and one with an alternate network path. These interpretable cases allowed us to establish the topology-proposal → GridSFM state evaluation → recourse → AC-reference workflow before introducing geographic hazard data.
 
-<!-- pagebreak -->
+We compared the released GridSFM checkpoint **M0** with **M1** (1,000 intact-grid cases), **M2** (M1 plus 500 intact cases), and **M3** (M1 plus 500 N−1 cases). Across a common **375 intact + 375 N−1 held-out test**, M2 had the lowest intact loss and M3 the lowest N−1 loss. Intact active branch-flow MAE fell from **0.0745 p.u. (M0)** to **0.0350 p.u. (M2)**.
 
-## GENCO on Texas2k: what task adaptation changes
+Fine-tuning convergence is separately recorded across ten epochs of additional intact-versus-N−1 adaptation in the [GOC training trajectories](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/blob/main/experiments/goc_500/results/ft6_training_trajectories.csv). The two continuation paths trade off intact and contingency accuracy; this is not uniform improvement in every physical metric.
 
-We study target-grid adaptation under geographic wildfire exposure: one frozen operating case, load Scenario 16, and the June 23, 2023, 16:00 CDT weather-hazard snapshot. The modified synthetic system has 2,751 buses and 5,344 branches. It differs from the official GENCO Texas grid; this is not utility operational validation or demonstrated cross-region transfer.
+![GOC-500 fine-tuning agreement and measured screening speed](https://raw.githubusercontent.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/main/submission/figures/03_goc_evidence.png)
 
-**Matched adaptation and search budgets.** G500 uses 500 intact-grid examples; G→R/W use 100 intact followed by 400 random/wildfire-ranked outage examples. W samples outages, not optimal OPS labels. Each search evaluates 301 topologies and 6,020 objective calls: intact, 50 common single outages, and 250 evaluator-dependent pairs. This compares adaptation strategies, not improvement over the released checkpoint.
+The strongest lesson came from comparing model predictions with **exact AC-recovered decisions**. For M2 versus M0, mean state NRMSE fell **42%** and absolute risk discrepancy fell **76%**, yet mean AC-audited OPS objective improved by only **about 1.1%**; M1 attained the best mean audited objective. Thus, substantial prediction gains did not translate proportionally into decision gains. The completed GOC study also includes [empirical risk–service frontiers](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/tree/main/experiments/goc_500/results/refined_study/derived), fixed-decision reference comparisons, and a 525-solve warm-start study.
 
-![Figure 2. GENCO validation and the change in finalist ordering after AC recovery.](figures/02_texas_evidence.png)
+**Computational evidence:** on **54 matched fixed decisions**, released GridSFM achieved a **3.59× paired-median complete state-evaluation speedup** versus AC-OPF/IPOPT on the tested CPU environment (95% bootstrap interval **3.48–3.68**). A separate warm-start comparison showed only modest solver-time benefits. These are *specific evaluation boundaries*, not whole-OPS or GENCO/Texas2k acceleration figures.
 
-*Figure 2. Left: mean bus-level absolute P/Q imbalance on 100 cases per distribution (MW/MVAr; color denotes P). Right: each checkpoint's own selected decision, scored natively and after Reference A at λR = 0.8; lower J is better. G→R/W open pair 117;281; G500 opens 117;1548 (local branch indices).*
+## 2. Texas2k: geographic wildfire exposure reveals a harder problem
 
-**Average fidelity and extremes tell different stories.** On G validation, mean P imbalance is similar across final checkpoints (51–52 MW). Sequential adaptation lowers mean Q imbalance from 20.6 to about 16.6–16.7 MVAr. On wildfire validation, G→W has the lowest mean P imbalance (52.3 versus 55.8 and 57.8 MW). However, mean worst-bus P imbalance on G validation increases from **6,265 MW** for G500 to **9,312/9,841 MW** for G→R/W. These predictions must not be treated as AC-feasible states.
+We then moved to **modified Texas2k (2,751 buses, 5,344 branches)**, using operating **Scenario 16** and the weather-derived **June 23, 2023, 4:00 PM CDT** wildfire-exposure snapshot. Unlike the designed GOC diagnostics, the geographic exposure is not constructed to guarantee an obvious or favorable shutoff decision. Our loading-dependent risk is an **exposure proxy**, not a calibrated ignition probability, and the synthetic electrical network is not a utility operating study.
 
-**AC auditing reverses G500's native-score advantage.** Across the three selected decisions, native J favors G500 (1.0166 versus 1.1601/1.2091), while Reference A J favors G→R/W (0.8713/0.8714 versus 0.9319), about 6.5% lower. Each model explores its own K2 pool, and AC recovery replaces predicted dispatch; this is a change in cross-model finalist ordering, not common-pool ranking agreement or a causal adaptation effect. R/W share a pair and nearly identical outcomes. All audited risks exceed baseline 1; economic redispatch against stored loading does not isolate the effect of shutoffs.
+The Stage K comparison screened candidate states with **GridSFM, DC, and exact AC**. Its smoke-benchmark-based extrapolation estimated **4.34 hours of serial GridSFM screening on V100 versus 51.47 hours for AC on CPU**, approximately **11.9×** for the tested configuration. This is a **projected hardware-dependent screening comparison**, not a measured GENCO speedup or full end-to-end OPS advantage.
 
-**Continuous recourse exposes a distinct tradeoff.** Historical DC/AC searches reach audited risk 0.488/0.474 while shedding 43.76%/34.61%; B restores essentially full service at risk 1.100/1.084. GENCO's B risks are 1.172 (G500) and 1.096 (G→R/W), also at full service. Maximum service therefore does not preserve lower risk. The historical optimizers freely adjust dispatch and service; their gap from GENCO mixes control freedom, fidelity, and search coverage. Eight Texas fits are certified; native GridSFM OPS/AC remains pending in this evidence cut.
+More importantly, **the continuous operating decision often dominates the result in this scenario**. At λR = 0.8, historical DC and AC selected operating points achieved audited normalized risks **0.488 and 0.474**, but with **43.76% and 34.61% load shedding** respectively. Their Reference B recovery can restore essentially full service, although the risk increases to **1.100 and 1.084**. Consequently, opening attractive lines is not sufficient: how generation and service are reoptimized under exact physics matters greatly. These historical methods have broader dispatch and service recourse than our GENCO-OPF wrapper, so this is not a hardware- or control-matched ranking.
 
-<!-- pagebreak -->
+![Texas2k incumbent surrogate-search convergence](https://raw.githubusercontent.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/main/experiments/texas2k/results/stage_m/figures/convergence/topology_incumbent.png)
 
-## GOC-500 precursor: fidelity gains exceed decision gains
+*Texas2k topology-search convergence is a record of the best **native** OPS merit found as candidates are evaluated; it is not convergence to a certified global or AC-feasible optimum.*
 
-The precursor uses **GridSFM, not GENCO** [3], on three constructed hazard patterns, five λR values, and 100 topology attempts from shared frozen pools per setting. Released M0 is compared with M1 (1,000 intact examples), M2 (M1 + 500 intact), and M3 (M1 + 500 N−1). A common test population contains 375 intact and 375 N−1 cases. M2 has the lowest intact-case loss; M3 has the lowest N−1 loss. Intact branch-P MAE falls from 0.0745 p.u. (M0) to 0.0350 (M2).
+For comparable additional context, see the [Texas Stage K/L/M exact reference comparison](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/blob/main/experiments/texas2k/results/stage_m/figures/stage_k_l_m_comparison/lambda08_exact_reference_context.png) and [empirical native risk–service frontiers](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/blob/main/experiments/texas2k/results/stage_m/figures/pareto/empirical_native_frontiers.png). Native DC, AC, GridSFM, and GENCO methods do not share identical control freedom or prediction physics; exact references are the more meaningful outcome comparison.
 
-![Figure 3. GOC-500 fidelity and fixed-decision timing evidence.](figures/03_goc_evidence.png)
+## 3. GENCO-OPF: fine-tune to the grid, then to the operational topology distribution
 
-*Figure 3. Left: mean state-family NRMSE and absolute native-to-A risk/objective discrepancies at each model's own selected decisions across 15 common settings, divided by the corresponding M0 value. Lower means less error, not a feasibility rate. Right: a separate 54-decision CPU benchmark of released M0; displayed medians are not the paired speedup estimator.*
+With the same **500-example total training budget**, we evaluated three GENCO-OPF adaptations:
 
-M2 reduces state NRMSE by 42% and risk discrepancy by 76%, yet mean AC-audited J improves only about 1.1% versus M0; M1 has the best mean audited J. At λR = 0.8, M1's audited risks are 0.394, 0.945, and 0.448 with about 0.93% shedding, already close to M0. Prediction improvements therefore need not yield comparable decision improvements. Constructed GOC hazards and geographic Texas exposure also have different risk concentration; their reduction magnitudes are not directly comparable.
+| Final checkpoint | Adaptation data | What it tests |
+|---|---|---|
+| **G500** | 500 intact-grid cases | Target-grid adaptation |
+| **G100 → R400** | 100 intact + 400 random N−1/N−2 cases | Generic contingency exposure |
+| **G100 → W400** | 100 intact + 400 wildfire-ranked N−1/N−2 cases | Task-relevant outage exposure |
 
-The paired CPU benchmark finds **3.59× median speedup** for complete M0 state evaluation versus fixed-decision AC-OPF (95% bootstrap interval 3.48–3.68). Startup, downstream scoring, and publication I/O are excluded. A separate 525-solve warm-start study finds only 2.2% lower mean IPOPT time for M2, excluding inference. Neither measurement establishes GENCO/Texas end-to-end acceleration.
+The wildfire-ranked cases are **not** AC-OPS-optimal labels. Each final checkpoint screened **301 topologies and 6,020 surrogate objective calls**, sharing the initial 50 single-line candidates while generating model-specific double-outage candidates from the five top-ranked parents. We evaluated held-out G/R/W validation strata and exact AC references for each selected finalist.
 
-## Lessons, next steps, and reproducibility
+![GENCO physical validation and selected-decision audit](https://raw.githubusercontent.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/main/submission/figures/02_texas_evidence.png)
 
-The contribution is a testbed that exposes the interaction between **adaptation distribution, physical fidelity, control interface, and audited decision quality**. We propose broader, shallow topology screening followed by risk-aware AC refinement of a shortlist. Future tests will measure top-N recall, rank agreement, audited objective gaps, and total runtime under matched control budgets. Increasing the shutoff budget and increasing candidate coverage are separate experiments; this extension is not yet implemented.
+The validation results show mixed transfer. On the intact G stratum, average active-power imbalance remains roughly **51–52 MW per bus**, while sequential adaptation lowers average reactive imbalance from **20.6** to about **16.6–16.7 MVAr**. However, mean *worst-bus* active imbalance increases from **6,265 MW** (G500) to **9,312/9,841 MW** (R/W). Such neural states **cannot be called AC feasible**.
 
-The repository provides 15 selectable checkpoint entries, retained result tables, four notebooks, and a small public IEEE-14 **GENCO compatibility demo**. That demo establishes a runnable loading/evaluation path, not reproduction of Texas performance. All three figures and this PDF rebuild from included compact tables without private inputs or PACE. Exact modified Texas electrical inputs remain private; public weather-derived exposure is included. The exact GOC test-population hashes and official acquisition recipe are provided, but its full 750-case replay has not been reverified. Full historical OPS/AC recomputation remains a separate task.
+The selected decisions reveal an even more instructive inversion:
 
-**Resources.** [Public code, notebooks, results, and data coverage](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff) · [Public checkpoint archives](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/tag/phase-i-models-v152) · [GOC technical supplement](supplementary/GOC500_technical_report.pdf). Repository and model-download access are verified without authentication; exact Texas electrical inputs remain private. The accompanying availability note supersedes the supplement's earlier “upon acceptance” statement.
+| Checkpoint | Selected outage pair | Native OPS objective J ↓ | Audited Reference A J ↓ | Audited risk ↓ |
+|---|---|---:|---:|---:|
+| **G500** | 117;1548 | **1.0166** | 0.9319 | 1.1641 |
+| **G→R** | 117;281 | 1.1601 | **0.8713** | **1.0890** |
+| **G→W** | 117;281 | 1.2091 | 0.8714 | 1.0891 |
 
-**References.** [1] [Rhodes, Ntaimo & Roald, *Balancing Wildfire Risk and Power Outages Through Optimized Power Shut-Offs*, 2021](https://doi.org/10.1109/TPWRS.2020.3046796). [2] [Puech et al., *GENCO*, 2026](https://arxiv.org/abs/2608.09921) and [OpenGridFM GraphKit](https://github.com/gridfm/gridfm-graphkit). [3] [Yang et al., *GridSFM: A Foundation Model for AC Optimal Power Flow*, 2026](https://www.microsoft.com/en-us/research/publication/gridsfm-a-foundation-model-for-ac-optimal-power-flow/).
+**G500 looks best under its native score; contingency-adapted checkpoints look better after AC economic recovery.** Both R and W choose the same outage pair and give almost identical audited results. All three audited risks remain **above the stored intact-risk baseline of 1**, so this is *not* a demonstrated operational wildfire-risk reduction. Because the K2 search pools differ and the AC references replace predicted dispatch, this inversion is **not** a common-candidate ranking test or a causal estimate of the benefit of specific training examples.
+
+The difference from GOC-500 is revealing. In constructed diagnostics, selected topology changes can produce clear exposure reductions; on this Texas snapshot, **continuous recourse and AC recovery largely determine the risk–service outcome**. The model's prediction accuracy, operating control interface, candidate search coverage, and exact AC feasibility all become critical.
+
+## 4. What this opens up
+
+**Near term:** screen a much larger set of candidate topology decisions cheaply, use GENCO to shortlist promising choices, then solve **risk-aware AC recourse** only for the finalists and rerank using exact outcomes. This is a *proposed extension*, not the method that generated the reported results. Evaluate decision recall, ranking disagreement, AC objective gaps, service recovery, and *whole-workflow* runtime against DC/AC benchmarks at matched control budgets.
+
+**Adaptation study:** expand grid-only and task-only learning curves, test how many intact versus contingency samples to allocate, and examine transfer as planned shutoff budgets move beyond K≤2 to K=5, 10, or 20. These are prospective investigations, not security guarantees.
+
+**Broader view:** grid foundation models can become reusable components of scientific decision workflows: **simulate → generate evidence → adapt → screen → physically verify**. This study illustrates the need for that verification layer rather than claiming deployment-ready autonomy.
+
+## Reproduce and build on the work
+
+**[Repository](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff)** · **[Documentation and reproduction guide](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/blob/main/docs/reproduction.md)** · **[Public model archives](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/tag/phase-i-models-v152)** · **[GOC-500 technical supplement](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/blob/main/submission/supplementary/GOC500_technical_report.pdf)**
+
+The release includes model selectors, certified weights, GOC-500/Texas result tables, and four notebooks. It provides a real public IEEE-14 GENCO interface example with `genco-ops public-genco --output outputs/public_genco --execute`, and regenerates figures from retained compact evidence **without PACE**. Exact modified Texas electrical inputs remain private, so this is not a public full Texas2k rerun. GridSFM is the GOC-500 precursor; GENCO-OPF is the Texas2k challenge experiment. Native fine-tuned GridSFM Texas OPS/AC was pending in the published evidence cut.
+
+**References:** [Rhodes, Ntaimo & Roald, 2021](https://doi.org/10.1109/TPWRS.2020.3046796) · [GENCO (Puech et al., 2026)](https://arxiv.org/abs/2608.09921) · [GridSFM](https://www.microsoft.com/en-us/research/publication/gridsfm-a-foundation-model-for-ac-optimal-power-flow/).
