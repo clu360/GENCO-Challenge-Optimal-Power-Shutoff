@@ -16,3 +16,11 @@ Copy `submission/HUGGINGFACE_DISCUSSION.md` into the [GENCO Challenge Community 
 
 ## Boundaries
 The user prioritizes scientific precision, readable narrative, accuracy, efficiency, and a clean open-source release. Do not replace results or quietly broaden the research scope. GOC uses GridSFM, Texas Stage M uses GENCO-OPF, and native Texas GridSFM OPS/AC was unfinished in the published evidence cut. Do not substitute unfinished results.
+
+
+## Final narrative refinement (October 26)
+- The revised source now opens with Rhodes et al.'s **original OPS risk-vs-service formulation** before explaining our heuristic outer-topology, inner-service, surrogate-state evaluation, and exact AC auditing. Preserve the distinction that original OPS uses a DC power-flow formulation, while ours is not a globally certified AC-OPS optimizer.
+- The GOC J-S1 frontier is included in the Markdown as `submission/figures/05_goc_j_s1_pareto_illustration.svg`; it is explicitly a **visual redraw**, not the underlying original scientific figure. **Before final publication, replace this illustrative SVG with the user's supplied original `gridsfm_pareto_j-s1_no_title.png` uploaded from the authorized scientific artifact source**, or programmatically regenerate an exact figure from retained `evaluated_native_pareto_frontiers.parquet`. Update both Markdown files to embed that newly published PNG/vector figure and inspect render. Do NOT silently relabel an illustrative redraw as an exact experiment plot.
+- Texas text now explicitly contrasts GOC's constructed J-S1 topology-first exposure gains against Texas2k's environment-driven AC risk/service and large effects from **continuous recourse**; do not imply that line switching alone produces the measured DC/AC reductions.
+- Rebuild `submission/GENCO_Challenge_Submission.pdf` from the updated text, using readable pages, all figure captions, and proper source attributions. Update PDF and Markdown together. The currently checked-in PDF is **not yet synchronized** with this narrative.
+- Keep community post directly pasteable, link only to exact archived figures and validated table sources. Check figure and PDF links after commits; report exact hashes, successful validations, and remaining limitations.
