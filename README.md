@@ -9,6 +9,24 @@ GENCO-OPF and OpenGridFM's GraphKit are the Texas2k adaptation testbed. GOC-500
 uses GridSFM as a separate precursor study. Grid, model and evaluation populations
 remain explicit throughout the code and notebooks.
 
+## Run GENCO on public inputs
+
+After cloning this public repository, install the
+[pinned CPU model runtime](docs/installation.md#official-cpu-model-runtime) and
+acquire the public weights with `python scripts/download_models.py`. Then run
+one actual GENCO-OPF prediction on the included IEEE14 inputs:
+
+```sh
+genco-ops public-genco --output outputs/public_genco --execute
+```
+
+[Notebook 04](notebooks/04_public_genco_ieee14.ipynb) contains executed outputs;
+the [execution receipt](artifacts/reproduction_verification.json) records this
+successful compatibility demonstration. It does not measure Texas performance.
+The next section regenerates saved result figures; full Texas2k numerical
+reproduction requires private electrical inputs and follows the
+[reproduction guide](docs/reproduction.md).
+
 ## Start with the results
 
 Use Python 3.12 in a short, writable checkout. See
@@ -79,15 +97,6 @@ The GOC demo uses the included official electrical sample, two topologies and
 16 actual model calls under synthetic uniform hazard. It is separate from the
 published three-scenario experiment.
 
-For a small GENCO example with public electrical inputs:
-
-```sh
-genco-ops public-genco --output outputs/public_genco --execute
-```
-
-This uses the released GENCO-OPF checkpoint and official GraphKit IEEE14 sample.
-It checks the loading and prediction pipeline; it does not measure Texas accuracy.
-
 With an authorized Texas graph pack or prepared OPS input directory:
 
 ```sh
@@ -107,6 +116,12 @@ are **1.1641 (G500), 1.0890 (Random), and 1.0891 (Wildfire)**. Sequential adapta
 select lower-risk, lower-shedding decisions than G500 here, but both choose the
 same outage pair and all remain above baseline 1. Substantial worst-bus residuals
 prevent interpreting these predictions as AC-feasible states.
+
+G500's native-score advantage also changes after AC recovery: its selected
+decision has native J = 1.0166 and audited J = 0.9319, versus
+1.1601/0.8713 (Random) and 1.2091/0.8714 (Wildfire). These are each model's own
+finalists, with different pair coverage and AC-recovered dispatch, rather than
+a common-candidate ranking test.
 
 GOC adaptation improves held-out fidelity and native-to-AC agreement, with
 distribution-specific tradeoffs. Its paired fixed-decision benchmark measures

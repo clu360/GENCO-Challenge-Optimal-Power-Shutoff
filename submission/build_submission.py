@@ -89,21 +89,24 @@ def figures():
         for j in range(3):
             axes[0].text(j, i, f'{p.iloc[i,j]:.1f} / {q.iloc[i,j]:.1f}', ha='center', va='center',
                          color='white' if p.iloc[i,j] > 55 else NAVY, fontsize=10.5)
-    axes[1].axis('off'); axes[1].set_title('b  Selected Reference A decisions', pad=10)
+    axes[1].axis('off'); axes[1].set_title('b  Native and AC scores disagree', pad=10)
     order = ['GENCO G500', 'GENCO G100 -> R400', 'GENCO G100 -> W400']
     rows = []
     for name, label in zip(order, models):
         r = exact[exact.model.eq(name)].iloc[0]
-        rows.append([label, f'{r.a_r:.4f}', f'{100*r.shed:.3f}%', r.topology_key])
+        rows.append([label, f'{r.native_j:.4f}', f'{r.a_j:.4f}', f'{r.a_r:.4f}', f'{100*r.shed:.3f}'])
     table = axes[1].table(cellText=rows,
-        colLabels=['Adaptation', 'Risk / baseline', 'Demand shed', 'Opened pair'],
-        cellLoc='center', colLoc='center', loc='center', colWidths=[.21, .29, .25, .25])
-    table.auto_set_font_size(False); table.set_fontsize(9.6); table.scale(1, 2.15)
+        colLabels=['Model', 'Native J', 'AC Jᴬ', 'AC risk', 'Shed (%)'],
+        cellLoc='center', colLoc='center', loc='center', colWidths=[.17, .21, .21, .21, .20])
+    table.auto_set_font_size(False); table.set_fontsize(9.4); table.scale(1, 2.15)
     for (i, j), cell in table.get_celld().items():
         cell.set_edgecolor('white')
         cell.set_facecolor('#eaf0f5' if i == 0 else '#f4f8fa' if i % 2 else '#e6f4f1')
         cell.set_text_props(color=NAVY, weight='bold' if i == 0 else 'normal')
-    axes[1].text(.5, .02, 'Stored baseline = 1.0000; all three audited risks remain above it.',
+    # Emphasize G500's native advantage and both sequential models' audited advantage.
+    for key in [(1, 1), (2, 2), (3, 2)]:
+        table[key].set_text_props(color='#10786f', weight='bold')
+    axes[1].text(.5, .02, 'Own selected decisions; all audited risks remain above baseline 1.',
                  transform=axes[1].transAxes, ha='center', fontsize=9)
     fig.tight_layout(w_pad=2.2)
     save(fig, '02_texas_evidence')

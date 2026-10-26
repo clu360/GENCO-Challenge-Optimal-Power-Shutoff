@@ -1,0 +1,82 @@
+{
+  "schema": "GENCO_EDITORIAL_REFINEMENT_V1",
+  "status": "PASS_RETAINED_EVIDENCE_AND_RENDERED_PUBLICATION",
+  "observed_utc": "2026-10-26T04:53:52.483465+00:00",
+  "prior_public_commit": "3375872025df24fbe909f13f54f165831e67e319",
+  "changes": [
+    "Explicit cross-model own-finalist native/AC objective comparison",
+    "Shorter main methodology, full policies linked",
+    "Public GENCO prediction command near top of challenge-facing READMEs",
+    "Clarified accepted GENCO Phase I minimizes J directly; physics diagnostics are separate"
+  ],
+  "retained_scientific_input_exports": {
+    "goc_agreement.csv": {
+      "sha256": "c4992a424532d72b583c4be158f635162246a8f1208f2923a3946ca5df30993f",
+      "bytes": 555
+    },
+    "goc_runtime.json": {
+      "sha256": "8b4a27df4bc0c05f0da5f2166a9e36540f70452294802bb23453b31569db4aa0",
+      "bytes": 2428
+    },
+    "texas_selected_ac.csv": {
+      "sha256": "50080ddf972b31a066eeb581fc4200e1cd9b49b415609e5fdaea944499902227",
+      "bytes": 1406
+    },
+    "texas_validation.csv": {
+      "sha256": "d5af3a75d67eab04e17439c1e73c0c073f6d5e85dbad03bddf35f9ef2c300cb0",
+      "bytes": 884
+    }
+  },
+  "finalist_score_checks": {
+    "scope": "CROSS_MODEL_OWN_FINALISTS_NOT_COMMON_POOL_RANK_AGREEMENT",
+    "lambda_r": 0.8,
+    "candidate_rows": 903,
+    "maximum_abs_search_objective_minus_j_trade": 0.0,
+    "maximum_abs_native_objective_identity_error": 0.0,
+    "maximum_abs_audited_objective_identity_error": 1.1102230246251565e-16,
+    "native_best_to_worst": [
+      "GENCO G500",
+      "GENCO G100 -> R400",
+      "GENCO G100 -> W400"
+    ],
+    "audited_best_to_worst": [
+      "GENCO G100 -> R400",
+      "GENCO G100 -> W400",
+      "GENCO G500"
+    ],
+    "reference": "Economic Reference A replaces predicted dispatch at fixed topology/service",
+    "qualification": "K2 pools depend on each evaluator; this is not a common-decision rank test"
+  },
+  "pdf_pages": 3,
+  "markdown_words": 1298,
+  "embedded_images_by_page": [
+    1,
+    1,
+    1
+  ],
+  "missing_local_links": [],
+  "pdf_sha256": "c75b0319cd3061c3b1f2eb65de20024ca89d42b44a8d6b0f5627fe21307d774e",
+  "pdf_visual_review": "All three pages rendered and inspected",
+  "publication_packet_receipt_sha256": "92b5b1721e365284a55dfbc9eb4d54c9e46371ca767ce149830c1cccc39d30da",
+  "new_training": false,
+  "new_model_calls": 0,
+  "new_ac_solves": 0,
+  "targeted_pytest": {
+    "command": "python -m pytest tests/test_submission_evidence.py tests/test_refined_evidence.py -q",
+    "passed": 8,
+    "skipped": 0,
+    "elapsed_seconds": 1.63,
+    "environment": "INDEPENDENT_RESULTS_ENVIRONMENT"
+  },
+  "retained_compact_exports_head_verification": {
+    "commit": "3375872025df24fbe909f13f54f165831e67e319",
+    "files": 4,
+    "all_byte_identical": true
+  },
+  "public_demo_cli_help": "PASS_PUBLIC_GENCO_OUTPUT_EXECUTE_FLAGS",
+  "public_text_checks": {
+    "markdown_files": 21,
+    "broken_local_links": 0,
+    "secret_or_private_account_path_findings": 0
+  }
+}

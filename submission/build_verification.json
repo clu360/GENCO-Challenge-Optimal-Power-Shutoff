@@ -1,8 +1,8 @@
 {
   "pdf_pages": 3,
   "characters_by_page": [
-    2836,
-    2919,
+    2566,
+    2855,
     3658
   ],
   "embedded_images_by_page": [
@@ -11,8 +11,8 @@
     1
   ],
   "missing_local_links": [],
-  "markdown_words": 1344,
-  "pdf_sha256": "5f4ef38b3d3c5361c1c16c1fa25273295df27385a700310814156bfa69bf638e",
-  "data_provenance_sha256": "ec8fbb9e5bd73da469df389b4d1ea425711c5c8a4c0e19de7c25804668848121",
+  "markdown_words": 1298,
+  "pdf_sha256": "c75b0319cd3061c3b1f2eb65de20024ca89d42b44a8d6b0f5627fe21307d774e",
+  "data_provenance_sha256": "4894dae10d3505b323208b59008a67d8f1a73e325deaefcd39839fb3f01c0c94",
   "source_scope": "Adjacent compact data only; no development checkout, private data, PACE, or model execution"
 }

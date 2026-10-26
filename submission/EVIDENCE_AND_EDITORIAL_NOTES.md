@@ -14,6 +14,11 @@ GridSFM/GOC-500 study supplies methodological context and scoped timing evidence
 - Reference A fixes each model's selected topology/service; it optimizes economic
   AC dispatch. The R and W finalists share the same pair. Their risks remain
   above the stored intact baseline.
+- Across these own finalists, G500 has the lowest native J but the highest
+  Reference A J. This changes the cross-model ordering; it is not a common-pool
+  rank-agreement result. Reference A replaces predicted dispatch, and K2 coverage
+  differs by evaluator. GENCO's accepted Phase I search minimizes J directly;
+  its recorded physics penalties are diagnostics, not added search penalties.
 - Reference B maximizes total service and then minimizes cost at that total
   service. It may reallocate served demand. The retained B policy relaxes online
   generator active-power minima to zero; it is not an identical-constraint

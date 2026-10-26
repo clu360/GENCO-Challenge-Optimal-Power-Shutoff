@@ -21,6 +21,10 @@
     {
       "path": "experiments/goc_500/results/rq1/rq1_runtime_summary.json",
       "sha256": "8b4a27df4bc0c05f0da5f2166a9e36540f70452294802bb23453b31569db4aa0"
+    },
+    {
+      "path": "experiments/texas2k/results/stage_m/tables/candidate_results.parquet",
+      "sha256": "293f429c61905be5638269634362e3f78b83a8653c3aee1c069b535746798be0"
     }
   ],
   "selection": "GENCO-OPF final fits, 100 validation cases per G/R/W distribution; three selected Texas decisions; 15 common settings per GOC checkpoint, each model selecting its own decision; separate 54-decision M0 runtime benchmark",
@@ -43,11 +47,31 @@
       "bytes": 884
     }
   },
+  "finalist_score_checks": {
+    "scope": "CROSS_MODEL_OWN_FINALISTS_NOT_COMMON_POOL_RANK_AGREEMENT",
+    "lambda_r": 0.8,
+    "candidate_rows": 903,
+    "maximum_abs_search_objective_minus_j_trade": 0.0,
+    "maximum_abs_native_objective_identity_error": 0.0,
+    "maximum_abs_audited_objective_identity_error": 1.1102230246251565e-16,
+    "native_best_to_worst": [
+      "GENCO G500",
+      "GENCO G100 -> R400",
+      "GENCO G100 -> W400"
+    ],
+    "audited_best_to_worst": [
+      "GENCO G100 -> R400",
+      "GENCO G100 -> W400",
+      "GENCO G500"
+    ],
+    "reference": "Economic Reference A replaces predicted dispatch at fixed topology/service",
+    "qualification": "K2 pools depend on each evaluator; this is not a common-decision rank test"
+  },
   "figure_files": {
     "figures/01_workflow.pdf": "b5e44950bae4f137e59264db34bf246b8c9b700d76a013682cb3eea6d8f6164a",
     "figures/01_workflow.png": "ec8c46fda25d7b9dc375acf43437b3db2759e8dd74724b5a59fadc357dcabac8",
-    "figures/02_texas_evidence.pdf": "389b094505c239ab104005226b2faf3597ffc45d6da526e7dc10c3c66a5c5f87",
-    "figures/02_texas_evidence.png": "01a8fcc5b9cd1364f3012b8fbe7bfe7463eb4ce9c15e37d7f04b0a71acdcea12",
+    "figures/02_texas_evidence.pdf": "44ecd694402950394a000a458694e72afc325482116da34dec076b59e8603721",
+    "figures/02_texas_evidence.png": "a57afc194d4b6240bcfe8c9e53f4c0d7d23b343e98c9e744806070ce1a016746",
     "figures/03_goc_evidence.pdf": "5a2660b7c63f834194616d64a62cf2cbbcc05010ddc82fddeaeebd7793cd4f14",
     "figures/03_goc_evidence.png": "a182d921a95d3d8187fc3394cab450db456fd26850b0b9702270984624c3213d"
   }

@@ -5,6 +5,22 @@ The three-page [PDF](GENCO_Challenge_Submission.pdf) and equivalent
 and physical verification, with wildfire-aware OPS as the application.
 Texas/GENCO is the main experiment; GOC-500/GridSFM is the precursor.
 
+To run **an actual GENCO prediction on public inputs**, first install the
+[pinned CPU model runtime](../docs/installation.md#official-cpu-model-runtime)
+and acquire the public weights with `python scripts/download_models.py`.
+From the repository root:
+
+```sh
+genco-ops public-genco --output outputs/public_genco --execute
+```
+
+This successful IEEE14 compatibility example has
+[executed notebook outputs](../notebooks/04_public_genco_ieee14.ipynb) and an
+[execution receipt](../artifacts/reproduction_verification.json). It is separate
+from regenerating figures from saved results below. Full Texas2k numerical
+reproduction requires the exact private electrical inputs; see the
+[reproduction guide](../docs/reproduction.md).
+
 From the repository root, in the results environment:
 
 ```sh
@@ -38,8 +54,4 @@ Exact modified Texas electrical inputs remain private. Figure attachments and th
 when posting to Hugging Face; relative local image paths alone will not render
 in a Community discussion. No discussion is posted by this build process.
 
-For real model execution, use the four notebooks and
-[reproduction guide](../docs/reproduction.md), including the public IEEE14
-GENCO example. That example is a compatibility demonstration; full Texas
-performance requires the exact private electrical inputs. Generating this PDF
-does not qualify the full historical campaigns as recomputed.
+Generating this PDF does not qualify the full historical campaigns as recomputed.

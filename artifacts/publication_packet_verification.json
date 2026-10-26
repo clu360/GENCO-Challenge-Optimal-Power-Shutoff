@@ -1,7 +1,7 @@
 {
   "status": "PASS_EXTRACTED_PACKET_STANDALONE_REBUILD",
-  "packet_bytes": 1231114,
-  "packet_sha256": "deb2e0971458e6be8aeef9cb5eccf6b6c01878e2739056896d04fdacdc32aeec",
+  "packet_bytes": 1239569,
+  "packet_sha256": "5f8ad9efc7350599b830788b616416fd53c56dc102a0a511fe3deeb0c639ed88",
   "packet_members": 22,
   "all_packet_member_hashes_verified": true,
   "original_development_data_required": false,
@@ -22,8 +22,8 @@
   "build": {
     "pdf_pages": 3,
     "characters_by_page": [
-      2836,
-      2919,
+      2566,
+      2855,
       3658
     ],
     "embedded_images_by_page": [
@@ -32,9 +32,9 @@
       1
     ],
     "missing_local_links": [],
-    "markdown_words": 1344,
-    "pdf_sha256": "44d89fb30a1cc4c92814f2ddeadff2026409ffab356f08d18c7efcb2ecec8075",
-    "data_provenance_sha256": "ec8fbb9e5bd73da469df389b4d1ea425711c5c8a4c0e19de7c25804668848121",
+    "markdown_words": 1298,
+    "pdf_sha256": "88336c12cfcab1601abec4daf40cdf67fb667017497f799c6c6e0878ea22df22",
+    "data_provenance_sha256": "4894dae10d3505b323208b59008a67d8f1a73e325deaefcd39839fb3f01c0c94",
     "source_scope": "Adjacent compact data only; no development checkout, private data, PACE, or model execution"
   }
 }

@@ -1,5 +1,13 @@
 # Verification and remaining boundaries
 
+The final editorial follow-up makes G500's native-score advantage and its
+reversal after AC recovery explicit in Figure 2. The comparison uses each
+model's own finalist, not a common-candidate rank test. All 903 retained GENCO
+candidate rows confirm that its Phase I search merit equals J; recorded physics
+diagnostics are separate. The underlying result values are unchanged. See the
+[editorial verification](../artifacts/editorial_refinement_verification.json)
+for the numerical identities, rendered three-page layout, and packet rebuild.
+
 The current refinement uses an independent GitHub clone in a short directory,
 with separate Python 3.12 results-only and pinned CPU-model environments. Package
 imports resolve inside that checkout. Candidate release files are copied into

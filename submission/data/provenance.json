@@ -21,6 +21,10 @@
     {
       "path": "experiments/goc_500/results/rq1/rq1_runtime_summary.json",
       "sha256": "8b4a27df4bc0c05f0da5f2166a9e36540f70452294802bb23453b31569db4aa0"
+    },
+    {
+      "path": "experiments/texas2k/results/stage_m/tables/candidate_results.parquet",
+      "sha256": "293f429c61905be5638269634362e3f78b83a8653c3aee1c069b535746798be0"
     }
   ],
   "selection": "GENCO-OPF final fits, 100 validation cases per G/R/W distribution; three selected Texas decisions; 15 common settings per GOC checkpoint, each model selecting its own decision; separate 54-decision M0 runtime benchmark",
@@ -42,5 +46,25 @@
       "sha256": "d5af3a75d67eab04e17439c1e73c0c073f6d5e85dbad03bddf35f9ef2c300cb0",
       "bytes": 884
     }
+  },
+  "finalist_score_checks": {
+    "scope": "CROSS_MODEL_OWN_FINALISTS_NOT_COMMON_POOL_RANK_AGREEMENT",
+    "lambda_r": 0.8,
+    "candidate_rows": 903,
+    "maximum_abs_search_objective_minus_j_trade": 0.0,
+    "maximum_abs_native_objective_identity_error": 0.0,
+    "maximum_abs_audited_objective_identity_error": 1.1102230246251565e-16,
+    "native_best_to_worst": [
+      "GENCO G500",
+      "GENCO G100 -> R400",
+      "GENCO G100 -> W400"
+    ],
+    "audited_best_to_worst": [
+      "GENCO G100 -> R400",
+      "GENCO G100 -> W400",
+      "GENCO G500"
+    ],
+    "reference": "Economic Reference A replaces predicted dispatch at fixed topology/service",
+    "qualification": "K2 pools depend on each evaluator; this is not a common-decision rank test"
   }
 }

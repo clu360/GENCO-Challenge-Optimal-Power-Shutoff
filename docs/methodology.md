@@ -75,9 +75,13 @@ environmental score is not a calibrated ignition probability. This extends the
 risk representation of the original OPS formulation, not its exact reproduction.
 
 The reported tradeoff is `J = lambda * R_norm + (1-lambda) * L_shed`.
-Declared physics/model penalties contribute to the evaluators' search merit
-separately from this reported quantity. A lower plotted J is not an AC-feasibility
-certificate, and architectures' raw training losses are not comparable metrics.
+The accepted Texas GENCO Phase I search optimizes this J directly. Its recorded
+physics/PAC diagnostics are not added to the search merit: `search_objective`,
+`j_trade` and `j_total` are equal in that path. Other evaluators retain their
+separately declared scoring policies. The historical metric key
+`j_trade_lambda_0p5` receives the actual lambda argument, 0.8 in Phase I; its
+name does not mean that a 0.5 risk weight was used. A lower plotted J is not an
+AC-feasibility certificate, and architectures' raw losses are not comparable metrics.
 
 Texas Phase I uses lambda 0.8, K0 + 50 K1 + up to 250 K2, five ranked K1 parents,
 the original eligibility/tie/deduplication rules, and at most twenty actual alpha
