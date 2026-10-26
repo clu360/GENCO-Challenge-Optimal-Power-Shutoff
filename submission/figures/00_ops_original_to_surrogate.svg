@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="360" viewBox="0 0 1120 360">
+<rect width="1120" height="360" rx="14" fill="#f8fafc"/>
+<text x="32" y="35" font-size="20" font-weight="700" fill="#12334d" font-family="Arial,sans-serif">Optimal Power Shutoff: what is being optimized?</text>
+<rect x="28" y="58" width="530" height="258" rx="18" fill="#f4f0dc" stroke="#dfd09d"/>
+<text x="50" y="93" font-size="12" letter-spacing="1" font-weight="700" fill="#817242" font-family="Arial,sans-serif">ORIGINAL OPS TRADEOFF</text>
+<text x="50" y="136" font-size="21" font-weight="700" fill="#12334d" font-family="Arial,sans-serif">Maximize served demand − wildfire exposure</text>
+<text x="50" y="178" font-size="15" fill="#364657" font-family="Arial,sans-serif">Which components remain energized?</text>
+<text x="50" y="204" font-size="15" fill="#364657" font-family="Arial,sans-serif">How much demand is served?</text>
+<text x="50" y="230" font-size="15" fill="#364657" font-family="Arial,sans-serif">What generation and power flows are feasible?</text>
+<text x="50" y="285" font-size="12" fill="#756b50" font-family="Arial,sans-serif">Rhodes, Ntaimo &amp; Roald (2021): integrated DC-based OPS formulation</text>
+<path d="M580 185 H625" stroke="#168b97" stroke-width="4" stroke-linecap="round"/>
+<path d="M613 175 L628 185 L613 195" fill="none" stroke="#168b97" stroke-width="4" stroke-linecap="round"/>
+<rect x="656" y="58" width="435" height="258" rx="18" fill="#e6f3f4" stroke="#a9d6da"/>
+<text x="678" y="93" font-size="12" letter-spacing="1" font-weight="700" fill="#147783" font-family="Arial,sans-serif">OUR SCREEN, REFINE, VERIFY INTERFACE</text>
+<text x="678" y="130" font-size="20" font-weight="700" fill="#12334d" font-family="Arial,sans-serif">Minimize risk + unserved demand</text>
+<text x="678" y="168" font-size="15" fill="#364657" font-family="Arial,sans-serif">Propose candidate line-status decisions (z)</text>
+<text x="678" y="195" font-size="15" fill="#364657" font-family="Arial,sans-serif">Optimize selected service controls (α)</text>
+<text x="678" y="222" font-size="15" fill="#364657" font-family="Arial,sans-serif">Evaluate states with GENCO / GridSFM</text>
+<text x="678" y="249" font-size="15" fill="#364657" font-family="Arial,sans-serif">Audit finalists using nonlinear AC references</text>
+<text x="678" y="285" font-size="12" fill="#256e76" font-family="Arial,sans-serif">The foundation model is an evaluator, not an AC feasibility certificate</text>
+</svg>
