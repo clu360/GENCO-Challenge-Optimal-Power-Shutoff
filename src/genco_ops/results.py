@@ -6,12 +6,13 @@ from pathlib import Path
 from .reporting_metrics import empirical_frontier,topology_incumbent
 
 
-def recompute_retained_decision(root,regime):
+def recompute_retained_decision(root,regime,*,family='genco_opf'):
     """Check a stored finalist from derived branch diagnostics; no new prediction."""
     from .objectives import compute_r_norm,compute_l_shed,compute_j_trade
-    if regime not in ('G500','G100_to_R400','G100_to_W400'):
-        raise ValueError('unknown completed GENCO regime')
-    path=Path(root)/'experiments/texas2k/results/stage_m/retained_decisions'/(regime+'.json')
+    if regime not in ('G500','G100_to_R400','G100_to_W400') or family not in ('genco_opf','opengridsfm'):
+        raise ValueError('unknown completed model regime')
+    name=regime if family=='genco_opf' else family+'_'+regime
+    path=Path(root)/'experiments/texas2k/results/stage_m/retained_decisions'/(name+'.json')
     record=json.loads(path.read_text())
     mappings={name:{int(k):float(v) for k,v in record[name].items()}
         for name in ('alpha','p_env','pd_normalized_weights','native_loading','exact_a_loading')}

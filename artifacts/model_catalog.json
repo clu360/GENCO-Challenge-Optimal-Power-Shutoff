@@ -268,9 +268,11 @@
       "demo_input_sha256": "87bfbac62880854deaf51b217aab36fac8b17dd1403be6687e763742ea6256b1",
       "input_distribution": "PRIVATE_PENDING_REDISTRIBUTION_REVIEW",
       "scientific_certification": "PASS",
-      "ops": "PENDING",
+      "ops": "PASS",
       "parent_checkpoint_sha256": "e45ed36e3956eeb7750d2e396737e0cc3ccd58990aae84b65a6af9d1fdad06d5",
-      "selected_epoch": 19
+      "selected_epoch": 19,
+      "ac_references": "PASS",
+      "branch_verification": "artifacts/native_branch_G100_to_R400_v155.json"
     },
     "texas2k.opengridsfm.G100_to_W400": {
       "family": "opengridsfm",

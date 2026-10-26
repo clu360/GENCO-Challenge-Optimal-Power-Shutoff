@@ -26,5 +26,5 @@ are represented by recorded Stage L results, not bundled as new fine-tunes.
 
 Original research checkpoint: `346058115d35b3da234146067e675f31e74d5fae`.
 
-Native G500: certified PASS; native final OPS/AC: pending. Phase II held.
+Native G500: certified PASS; native final OPS/AC: 1/3 incorporated; reporting gate pending. Phase II held.
 CPU loader/parity evidence and separate fresh-checkout evidence must not be conflated.

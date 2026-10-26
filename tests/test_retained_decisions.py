@@ -14,3 +14,14 @@ def test_retained_physical_risk_service_and_line_ids(regime):
         assert result[name]==pytest.approx(row[name],rel=1e-10,abs=1e-10)
     assert result['offline_branch_ids']==list(map(int,row['topology_key'].split(';')))
     assert result['fresh_ops'] is False
+
+
+def test_every_published_native_finalist_recomputes_from_retained_state():
+    table=pd.read_csv(ROOT/'experiments/texas2k/results/stage_m/tables/finalist_native_and_exact.csv')
+    for row in table.loc[table.family.eq('opengridsfm')].itertuples():
+        regime=row.model.removeprefix('OpenGridSFM ').replace(' -> ','_to_')
+        result=recompute_retained_decision(ROOT,regime,family='opengridsfm')
+        for name in ('native_r','a_r','shed','native_j','a_j'):
+            assert result[name]==pytest.approx(getattr(row,name),rel=1e-10,abs=1e-10)
+        assert result['offline_branch_ids']==list(map(int,row.topology_key.split(';')))
+        assert result['fresh_inference'] is False and result['fresh_ac_audit'] is False

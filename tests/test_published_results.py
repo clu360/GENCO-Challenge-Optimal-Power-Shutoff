@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 import numpy as np
 import pandas as pd
@@ -13,14 +14,17 @@ def test_texas_search_accounting_and_reference_identity(tmp_path):
     tables=ROOT/'experiments/texas2k/results/stage_m/tables'
     candidates=pd.read_parquet(tables/'candidate_results.parquet')
     calls=pd.read_parquet(tables/'continuous_evaluations.parquet')
-    assert len(candidates)==903 and len(calls)==18060
+    coverage=json.loads((ROOT/'artifacts/release_coverage.json').read_text())['completed']
+    searches=coverage['GENCO_full_searches']+coverage.get('OpenGridSFM_full_searches',0)
+    assert 3<=searches<=6
+    assert len(candidates)==301*searches and len(calls)==6020*searches
     assert candidates.k.le(2).all()
     assert candidates.groupby('model').size().eq(301).all()
     assert calls.groupby(['model','topology_key']).size().eq(20).all()
     exact=pd.read_csv(tables/'finalist_native_and_exact.csv')
     np.testing.assert_allclose(exact.a_j,.8*exact.a_r+.2*exact.shed,rtol=1e-12,atol=1e-12)
     result=regenerate(ROOT,'texas2k',tmp_path)
-    assert result['completed_searches']==3
+    assert result['completed_searches']==searches
     regenerated=pd.read_csv(tmp_path/'regenerated_reference_summary.csv')
     pd.testing.assert_frame_equal(regenerated,exact)
 

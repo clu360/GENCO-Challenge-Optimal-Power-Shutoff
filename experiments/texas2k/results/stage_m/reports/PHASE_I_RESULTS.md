@@ -11,10 +11,19 @@ Certified training fits: 8/8. Training completion does not certify downstream va
 | GENCO G100 -> R400 | 117;281 | 1.45001 | 0.000486234 | 1.08904 | 0.871331 | 326415 | 1 | 1.09629 | 318552 |
 | GENCO G100 -> W400 | 117;281 | 1.51118 | 0.000546406 | 1.08906 | 0.871357 | 326325 | 1 | 1.09629 | 318552 |
 | GENCO G500 | 117;1548 | 1.27011 | 0.00269693 | 1.16414 | 0.931855 | 296511 | 1 | 1.17187 | 296967 |
+| OpenGridSFM G100 -> R400 | 45;766 | 1.10303 | 0 | 1.08426 | 0.867408 | 302088 | 1 | 1.10015 | 295177 |
 
 Reference A is economic AC-OPF at the selected topology and fixed load-service commands, not wildfire-aware reoptimization. B1 certifies maximum fixed-topology service; B2 minimizes economic cost at that service. Local solves do not prove global optimality.
 
 All available GENCO A risks exceed the stored baseline of1. Sequential R/W select the same two physical lines, while G500 selects a different second line. These exact decisions do not establish a below-baseline wildfire benefit. Native eligibility and lower training loss are not physical-feasibility certificates.
+
+## OpenGridSFM Audited Outcomes
+
+| model | topology_key | native_r | a_r | delta_r_a | shed | a_j | native_overloaded_lines |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| OpenGridSFM G100 -> R400 | 45;766 | 1.10303 | 1.08426 | -0.0187724 | 0 | 0.867408 | 10 |
+
+The native model selects its own K2 trajectory, not the GENCO trajectory. Risk discrepancies can have either sign; smaller predicted risk is not necessarily smaller AC-recovered risk. Every published native AC-A risk remains above the authoritative stored baseline of1. B1 recovers essentially full service within solver tolerance; B2 economic states and risk diagnostics are distinct from the fixed-service economic A states. This is one exploratory scenario and one lambda, not evidence of general model superiority.
 
 The report reproduces Stage L empirical-frontier, incumbent, rank-correlation/Jaccard, geographic projection and AC-minus-native discrepancy conventions. Only lambda0.8 was searched: no multi-lambda, global Pareto, broad-generalization or statistical-superiority claim is made.
 
@@ -27,6 +36,7 @@ Validation histories and per-record metrics are development evidence. Native mod
 | GENCO G100 -> R400 | 301 | 289 | 3162.57 | 10.6769 | 0.533843 |
 | GENCO G100 -> W400 | 301 | 289 | 3392.02 | 11.4516 | 0.572582 |
 | GENCO G500 | 301 | 289 | 3271.22 | 11.0244 | 0.551222 |
+| OpenGridSFM G100 -> R400 | 301 | 301 | 1998.97 | 6.63773 | 0.331886 |
 
 Timing is logical recorded evaluator time, not queue time or a controlled architecture-only speed comparison. Inferno billing is not inferred from these numbers.
 
@@ -68,6 +78,9 @@ G100 is the intermediate lineage checkpoint, not a fourth final OPS representati
 | v070.opengridsfm.G100_to_W400.s0.validation | G | 100 | 0.0403625 | 690.118 | 1.00225 |
 | v070.opengridsfm.G100_to_W400.s0.validation | O | 100 | 0.0422018 | 721.044 | 1.04326 |
 | v070.opengridsfm.G100_to_W400.s0.validation | R | 100 | 0.040645 | 843.165 | 1.16777 |
+| v070.opengridsfm.G500.s0.validation | G | 100 | 0.0403625 | 515.027 | 0.991397 |
+| v070.opengridsfm.G500.s0.validation | O | 100 | 0.0422018 | 1307.1 | 1.73112 |
+| v070.opengridsfm.G500.s0.validation | R | 100 | 0.040645 | 1070.44 | 1.69322 |
 
 The validation table compares physical diagnostics on shared distribution assignments; raw GENCO and native losses/selection scores are architecture-specific. Training PASS is not operational feasibility. GENCO sequential adaptation improves some voltage diagnostics but can worsen balance residuals relative to G500; inspect the retained per-record distributions rather than treating one scalar loss as sufficient. No released-base validation is fabricated where it was not evaluated on this saved split.
 
@@ -92,17 +105,17 @@ The validation table compares physical diagnostics on shared distribution assign
 | v070.opengridsfm.G100.s0 | native_fit | PASS | None |
 | v070.opengridsfm.G100.s0.validation | native_evaluation | PASS | 14404784 |
 | v070.opengridsfm.G100_to_R400.s0 | native_fit | PASS | None |
-| v070.opengridsfm.G100_to_R400.s0.phase_i.ops | ops_trajectory | SUBMITTED | 14406004 |
-| v070.opengridsfm.G100_to_R400.s0.phase_i.refs | ops_references | PENDING | None |
+| v070.opengridsfm.G100_to_R400.s0.phase_i.ops | ops_trajectory | PASS | 14406004 |
+| v070.opengridsfm.G100_to_R400.s0.phase_i.refs | ops_references | PASS | 14430963 |
 | v070.opengridsfm.G100_to_R400.s0.validation | native_evaluation | PASS | 14404786 |
 | v070.opengridsfm.G100_to_W400.s0 | native_fit | PASS | None |
-| v070.opengridsfm.G100_to_W400.s0.phase_i.ops | ops_trajectory | SUBMITTED | 14407728 |
-| v070.opengridsfm.G100_to_W400.s0.phase_i.refs | ops_references | PENDING | None |
+| v070.opengridsfm.G100_to_W400.s0.phase_i.ops | ops_trajectory | PASS | 14407728 |
+| v070.opengridsfm.G100_to_W400.s0.phase_i.refs | ops_references | PASS | 14441412 |
 | v070.opengridsfm.G100_to_W400.s0.validation | native_evaluation | PASS | 14406007 |
 | v070.opengridsfm.G500.s0 | native_fit | PASS | 14403492 |
-| v070.opengridsfm.G500.s0.phase_i.ops | ops_trajectory | PENDING | None |
-| v070.opengridsfm.G500.s0.phase_i.refs | ops_references | PENDING | None |
-| v070.opengridsfm.G500.s0.validation | native_evaluation | SUBMITTED | 14419514 |
+| v070.opengridsfm.G500.s0.phase_i.ops | ops_trajectory | PASS | 14423205 |
+| v070.opengridsfm.G500.s0.phase_i.refs | ops_references | PASS | 14442714 |
+| v070.opengridsfm.G500.s0.validation | native_evaluation | PASS | 14419514 |
 
 Full request/artifact hashes, failure evidence and resume state remain in protected private archives. The standalone release must sanitize personal/cluster paths separately; this research inventory preserves original evidence without rewriting receipts. Pending native OPS/reference outcomes are not zeros or extrapolations.
 
