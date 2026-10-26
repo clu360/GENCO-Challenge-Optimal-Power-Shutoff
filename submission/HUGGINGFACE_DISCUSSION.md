@@ -12,6 +12,15 @@ Wildfire-aware **Optimal Power Shutoff (OPS)** aims to reduce exposure from ener
 
 **Our central question is not only whether a model predicts a grid state accurately, but whether its predictions lead to better *AC-verified operational decisions*.** We first established the workflow on GOC-500 using **GridSFM**, then transferred it to a modified Texas2k system using **GENCO-OPF**, real weather-derived exposure, and grid-to-task fine-tuning.
 
+Before using a learned evaluator, the **original OPS formulation** from Rhodes et al. weighs **served demand against wildfire exposure** while enforcing component and power-flow constraints. Our computationally bounded version expresses the same central preference as
+```text
+Minimize  J = λR × normalized wildfire exposure + (1 − λR) × load shedding
+Decisions: line status z; requested load service α; generation response under the evaluator's control contract
+```
+The original OPS co-optimizes network decisions and operational recourse using a DC formulation. **Our application differs:** we first propose topologies, then use a learned electrical-state evaluator with a bounded load-service search, and finally run nonlinear AC audits. This is a *screen-and-verify heuristic*, not a claim of replacing the exact constrained OPS formulation.
+
+![Original OPS formulation versus our surrogate-assisted screening](https://raw.githubusercontent.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/main/submission/figures/00_ops_original_to_surrogate.svg)
+
 ![Surrogate-assisted OPS and AC-verification workflow](https://raw.githubusercontent.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/main/submission/figures/01_workflow.png)
 
 The current evaluator screens candidate topologies with at most **two planned shutoffs**, followed by a bounded five-load-control search with up to **20 model objective calls per topology**. Exact AC Reference A fixes topology and requested service, then optimizes economic dispatch. Reference B1/B2 asks how much service that topology can physically deliver, followed by an economic tie-break. These are **audits of selected solutions**, not global optimality certificates or risk-constrained corrective OPF.
@@ -30,6 +39,14 @@ Fine-tuning convergence is recorded across ten epochs of additional intact-versu
 
 ![GOC-500 fine-tuning agreement and measured screening speed](https://raw.githubusercontent.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/main/submission/figures/03_goc_evidence.png)
 
+### A concrete OPS result under designed hazard: J-S1
+
+The J-S1 diagnostic assigns elevated exposure to a target line whose removal has relatively low expected service consequence. On the **surrogate-evaluated** J-S1 risk–service frontier, the released GridSFM has normalized risk near **0.47** with zero shedding, while intact-adapted M2 reaches roughly **0.42** with negligible shedding. This illustrates the opportunity for **selected K≤2 de-energizations** to reduce the *predicted* exposure in controlled scenarios. It is **not** a certified exact-AC reduction, nor does the gap isolate topology choice from model calibration and load-service recourse.
+
+![J-S1 GridSFM native risk–service comparison](https://raw.githubusercontent.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/main/submission/figures/05_goc_j_s1_pareto_illustration.svg)
+
+*J-S1 diagram: presentation-level visual redraw of the supplied empirical frontier. For exact evaluated values, use the [retained GOC Pareto evidence](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/blob/main/experiments/goc_500/results/refined_study/derived/evaluated_native_pareto_frontiers.parquet). The controlled diagnostic should not be interpreted as an AC-feasibility certificate.*
+
 The strongest lesson came from comparing model predictions with **exact AC-recovered decisions**. For M2 versus M0, mean state NRMSE fell **42%** and absolute risk discrepancy fell **76%**, yet mean AC-audited OPS objective improved by only **about 1.1%**; M1 attained the best mean audited objective. Thus, substantial prediction gains did not translate proportionally into decision gains. The completed GOC study also includes [empirical risk–service frontiers](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/tree/main/experiments/goc_500/results/refined_study/derived), fixed-decision reference comparisons, and a 525-solve warm-start study.
 
 **Computational evidence:** on **54 matched fixed decisions**, released GridSFM achieved a **3.59× paired-median complete state-evaluation speedup** versus AC-OPF/IPOPT on the tested CPU environment (95% bootstrap interval **3.48–3.68**). A separate warm-start comparison showed only modest solver-time benefits. These are *specific evaluation boundaries*, not whole-OPS or GENCO/Texas2k acceleration figures.
@@ -39,6 +56,8 @@ The strongest lesson came from comparing model predictions with **exact AC-recov
 We then moved to **modified Texas2k (2,751 buses, 5,344 branches)**, using operating **Scenario 16** and the weather-derived **June 23, 2023, 4:00 PM CDT** wildfire-exposure snapshot. Unlike the designed GOC diagnostics, the geographic exposure is not constructed to guarantee an obvious or favorable shutoff decision. Our loading-dependent risk is an **exposure proxy**, not a calibrated ignition probability, and the synthetic electrical network is not a utility operating study.
 
 The Stage K comparison screened candidate states with **GridSFM, DC, and exact AC**. Its smoke-benchmark-based extrapolation estimated **4.34 hours of serial GridSFM screening on V100 versus 51.47 hours for AC on CPU**, approximately **11.9×** for the tested configuration. This is a **projected hardware-dependent screening comparison**, not a measured GENCO speedup or full end-to-end OPS advantage.
+
+**The contrast with J-S1 is central:** in our GOC diagnostic, high-risk line selection offered clear *surrogate-evaluated* risk reductions at very limited shedding. In the geographic Texas2k snapshot, taking out two lines by itself is not enough to ensure a risk reduction under exact AC conditions. Meaningful decreases in the historical DC/AC comparisons are accompanied by much more aggressive **continuous load-service and dispatch recourse**.
 
 More importantly, **the continuous operating decision often dominates the result in this scenario**. At λR = 0.8, historical DC and AC selected operating points achieved audited normalized risks **0.488 and 0.474**, but with **43.76% and 34.61% load shedding** respectively. Their Reference B recovery can restore essentially full service, although the risk increases to **1.100 and 1.084**. Consequently, opening attractive lines is not sufficient: how generation and service are reoptimized under exact physics matters greatly. These historical methods have broader dispatch and service recourse than our GENCO-OPF wrapper, so this is not a hardware- or control-matched ranking.
 
@@ -78,7 +97,7 @@ The difference from GOC-500 is revealing. In constructed diagnostics, selected t
 
 ## 4. What this opens up
 
-**Near term:** screen a much larger set of candidate topology decisions cheaply, use GENCO to shortlist promising choices, then solve **risk-aware AC recourse** only for the finalists and rerank using exact outcomes. This is a *proposed extension*, not the method that generated the reported results. Evaluate decision recall, ranking disagreement, AC objective gaps, service recovery, and *whole-workflow* runtime against DC/AC benchmarks at matched control budgets.
+**Near term:** Because the Texas experiments reveal the limits of extensive continuous surrogate optimization at each topology, we propose separating broad discrete screening from accurate physical recourse: screen a much larger set of candidate topology decisions cheaply, use GENCO to shortlist promising choices, then solve **risk-aware AC recourse** only for the finalists and rerank using exact outcomes. This is a *proposed extension*, not the method that generated the reported results. Evaluate decision recall, ranking disagreement, AC objective gaps, service recovery, and *whole-workflow* runtime against DC/AC benchmarks at matched control budgets.
 
 **Adaptation study:** expand grid-only and task-only learning curves, test how many intact versus contingency samples to allocate, and examine transfer as planned shutoff budgets move beyond K≤2 to K=5, 10, or 20. These are prospective investigations, not security guarantees.
 
