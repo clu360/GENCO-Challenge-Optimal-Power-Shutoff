@@ -2,6 +2,8 @@
 
 Phase I is incomplete unless its separate scientific completion gate has passed. Phase II is held.
 
+Certified training fits: 8/8. Training completion does not certify downstream validation, OPS or exact AC references.
+
 ## Exact Audited Decisions
 
 | model | topology_key | native_r | shed | a_r | a_j | a_cost | maximum_service_fraction | b_r | b_cost |
@@ -39,6 +41,7 @@ Timing is logical recorded evaluator time, not queue time or a controlled archit
 | v070.opengridsfm.G100.s0 | 100 | 100 | 4 | 2000 | NVIDIA H200 | 1138.55 | CURRENT_PROCESS_ONLY_NOT_TOTAL_RESUME_WALL |
 | v070.opengridsfm.G100_to_R400.s0 | 400 | 500 | 19 | 8000 | NVIDIA H200 | 2872.98 | CURRENT_PROCESS_ONLY_NOT_TOTAL_RESUME_WALL |
 | v070.opengridsfm.G100_to_W400.s0 | 400 | 500 | 19 | 8000 | NVIDIA H200 | 2367.5 | CURRENT_PROCESS_ONLY_NOT_TOTAL_RESUME_WALL |
+| v070.opengridsfm.G500.s0 | 500 | 500 | 19 | 10000 | NVIDIA H100 80GB HBM3 | 0.971361 | CURRENT_PROCESS_ONLY_NOT_TOTAL_RESUME_WALL |
 
 G100 is the intermediate lineage checkpoint, not a fourth final OPS representative. Each sequential final has100 Grid plus400 task examples; the task-stage optimizer counter does not include the G100 parent updates. The accepted master pools contain500 G,400 R and400 W training examples and100 validation examples per distribution. Membership is not inferred from optimizer-step counts. Resume/current-attempt wall times are not falsely presented as whole-run totals.
 
@@ -96,10 +99,10 @@ The validation table compares physical diagnostics on shared distribution assign
 | v070.opengridsfm.G100_to_W400.s0.phase_i.ops | ops_trajectory | SUBMITTED | 14407728 |
 | v070.opengridsfm.G100_to_W400.s0.phase_i.refs | ops_references | PENDING | None |
 | v070.opengridsfm.G100_to_W400.s0.validation | native_evaluation | PASS | 14406007 |
-| v070.opengridsfm.G500.s0 | native_fit | PENDING | 14403492 |
+| v070.opengridsfm.G500.s0 | native_fit | PASS | 14403492 |
 | v070.opengridsfm.G500.s0.phase_i.ops | ops_trajectory | PENDING | None |
 | v070.opengridsfm.G500.s0.phase_i.refs | ops_references | PENDING | None |
-| v070.opengridsfm.G500.s0.validation | native_evaluation | PENDING | None |
+| v070.opengridsfm.G500.s0.validation | native_evaluation | SUBMITTED | 14419514 |
 
 Full request/artifact hashes, failure evidence and resume state remain in protected private archives. The standalone release must sanitize personal/cluster paths separately; this research inventory preserves original evidence without rewriting receipts. Pending native OPS/reference outcomes are not zeros or extrapolations.
 

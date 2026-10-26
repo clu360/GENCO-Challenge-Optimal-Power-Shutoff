@@ -26,11 +26,16 @@ supplied local model export and run:
 
 ```sh
 genco-ops acquire --bundle /path/to/genco_challenge_models_v149.zip
+genco-ops acquire --bundle /path/to/opengridsfm_G500_v152.zip
 genco-ops infer --model goc500.m1 --output outputs/goc500_inference
 genco-ops ops-demo --model goc500.m1 --output outputs/new_goc500_ops
 ```
 
-The bundle checksum and every member checksum are in `artifacts/model_bundle.json`.
+The primary bundle, G500 supplement and every member checksum are in
+`artifacts/model_bundle.json`. The supplement adds the newly certified native
+G500 checkpoint and its MIT notice without repacking or replacing earlier weights.
+Both archives together provide all current catalog entries; acquisition is explicit,
+local and idempotent. Native G500 validation/OPS/AC work is separate from fit certification.
 A remote download URL is not invented: remote hosting remains a separate release
 action. Models are genuinely included in the separately delivered local export.
 Texas input graphs are not publicly distributed until redistribution rights are

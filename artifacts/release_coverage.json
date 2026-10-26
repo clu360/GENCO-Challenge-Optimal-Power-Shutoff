@@ -2,7 +2,7 @@
   "phase_i_complete": false,
   "phase_ii": "HELD_BY_USER",
   "completed": {
-    "certified_phase_i_fits": 7,
+    "certified_phase_i_fits": 8,
     "GENCO_full_searches": 3,
     "GENCO_reference_tasks": 3
   },
@@ -20,7 +20,7 @@
   "limitations": [
     "Texas electrical/weather input redistribution permission unresolved",
     "Public remote model bundle not yet hosted; checksum-bound local export provided",
-    "Native G500 not yet certified; native full OPS and references pending",
+    "All eight fits certified; native full OPS and references remain pending",
     "Public Texas full computation needs authorized inputs; full CUDA transport has not been independently run",
     "Historical GOC full population/legacy execution are not substituted by the official sample demo"
   ]

@@ -1,6 +1,6 @@
 {
   "format": "PUBLISHED_PHASE_I_CONFIGURATION_V070_EXPORT",
-  "fresh_full_recomputation_status": "EXECUTABLE_REQUIRES_AUTHORIZED_PRIVATE_INPUTS_AND_QUALIFIED_GPU",
+  "fresh_full_recomputation_status": "PUBLIC_TEXAS_INPUTS_UNAVAILABLE_FULL_CUDA_TRANSPORT_UNTESTED",
   "study": "modifiedTexas2k",
   "scenario": 16,
   "lambda_r": 0.8,
@@ -133,8 +133,10 @@
       "n_grid": 500,
       "n_task": 0,
       "total_examples": 500,
-      "status": "PENDING_CERTIFICATION_NOT_ACCEPTED_MODEL",
-      "request_sha256": "04a08addbad1b8dd0a0faec01c440b24d98dfaa2345ec91575f49576cd1a49eb"
+      "status": "PASS",
+      "request_sha256": "04a08addbad1b8dd0a0faec01c440b24d98dfaa2345ec91575f49576cd1a49eb",
+      "selected_checkpoint_sha256": "2e4911c452dd4a2c80e17ab6f7dc5764150ae6615e3a16404ed9fb82bdeee170",
+      "selected_epoch": 19
     }
   ],
   "no_implicit_execution": true,

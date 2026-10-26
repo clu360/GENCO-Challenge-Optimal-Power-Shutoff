@@ -1,5 +1,21 @@
 # Release Verification
 
+## Native G500 Certification Update
+
+The original controller accepted G500's scientific PASS receipt after saved-epoch
+finalization, bringing fit certification to eight of eight. Selected epoch 19 is
+zero-based (the twentieth completed epoch); checkpoint selection remains validation
+only. The unchanged native normalization, precision adapter and canonical-AC target
+acceptance policy are recorded in `artifacts/native_g500_verification.json`.
+The selected weights pass actual official CPU loading and source/staged prediction
+parity on their recorded first validation fixture. H100 fresh-process reload error
+was also zero. No extra training or AC labeling was performed.
+
+The separate 60,987,194-byte G500 supplement preserves the original model archive.
+Its own checksum and exact two-member inventory are in `artifacts/model_bundle.json`.
+The original three GENCO finalists remain byte-identical. Native validation/search/
+reference completion is separate and is not inferred from eight certified fits.
+
 ## Historical GOC Pool Follow-Up
 
 All 30 original frozen GOC pool CSVs now match the retained FT3/FT4 ordered-byte
@@ -95,5 +111,5 @@ gate, full historical recomputation, remote publication, challenge-form submissi
 or full Phase I completion. Public Texas input permission remains unresolved;
 the full CUDA transport has not been independently run. Historical GOC full-data
 execution is separately unavailable, not replaced by the sample. Local model-bundle acquisition is verified;
-no fictitious public asset URL is supplied. Native G500/OPS/AC remain pending and
+no fictitious public asset URL is supplied. Native OPS/AC remain pending and
 Phase II remains held. Pending results will be added in separate verified commits.

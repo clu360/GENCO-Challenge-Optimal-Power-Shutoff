@@ -48,7 +48,10 @@ def verify(root):
 def acquire(root,bundle):
     root=Path(root).resolve()
     plan=json.loads((root/'artifacts/model_bundle.json').read_text())
-    if sha(bundle)!=plan['sha256']:raise ValueError('model bundle checksum mismatch')
+    digest=sha(bundle)
+    matches=[item for item in [plan,*plan.get('supplemental_bundles',[])] if item['sha256']==digest]
+    if len(matches)!=1:raise ValueError('model bundle checksum mismatch or ambiguous manifest')
+    plan=matches[0]
     with zipfile.ZipFile(bundle) as archive:
         if set(archive.namelist())!=set(plan['files']):raise ValueError('model bundle inventory differs')
         for name,item in plan['files'].items():
@@ -57,4 +60,5 @@ def acquire(root,bundle):
             path=checked_path(root,name);path.parent.mkdir(parents=True,exist_ok=True)
             if path.exists() and sha(path)!=item['sha256']:raise ValueError('refuse to replace a different artifact')
             path.write_bytes(data)
-    return dict(status='PASS_ACQUIRED',files=len(plan['files']))
+    return dict(status='PASS_ACQUIRED',files=len(plan['files']),bundle_sha256=digest,
+        bundle_role=plan.get('role','primary'))

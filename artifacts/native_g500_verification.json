@@ -1,0 +1,70 @@
+{
+  "status": "PASS_CERTIFIED_G500_MODEL_NOT_PHASE_I_CLOSURE",
+  "observed_utc": "2026-10-26T00:47:45.176851+00:00",
+  "manifest_sha256": "61c7c4fcbabe791a46b08619039d9a2656c448a751987a60ffc8972fc27c4feb",
+  "execution_receipt_sha256": "1309491c618920e09a442c0fd50e51a2cfc2293286e1979f8cc9860b2f0759b2",
+  "request_file_sha256": "04a08addbad1b8dd0a0faec01c440b24d98dfaa2345ec91575f49576cd1a49eb",
+  "logical_training_request_sha256": "49b3fc54ebc8762131226897321b74996bfd0d69075cdd88bf7db039ae6977c1",
+  "selected_checkpoint_sha256": "2e4911c452dd4a2c80e17ab6f7dc5764150ae6615e3a16404ed9fb82bdeee170",
+  "selected_epoch_zero_based": 19,
+  "completed_epochs": 20,
+  "optimizer_steps": 10000,
+  "changed_tensors": 1221,
+  "fresh_gpu_reload_max_error": 0.0,
+  "selected_validation_score": 0.9077844974625736,
+  "normalization_policy": "PRETRAINED_NATIVE_UNCHANGED",
+  "precision_adapter": "stage_m_exact_impedance_fp64_kcl_v015",
+  "target_acceptance_policy": "CANONICAL_AC_ACCEPTANCE_FP32_DIAGNOSTICS_v132",
+  "local_loader": {
+    "status": "PASS_PORTABLE_CPU_LOADER_PARITY",
+    "task_id": "v070.opengridsfm.G500.s0",
+    "checkpoint_sha256": "2e4911c452dd4a2c80e17ab6f7dc5764150ae6615e3a16404ed9fb82bdeee170",
+    "selected_epoch": 19,
+    "recorded_first_validation_id": "v070.validation.parent0000.v00.G",
+    "fixture_graph_sha256": "28f6a9cb417f7aec08a05c9f3ed70178533dbde685b399fcde3e7b06c162389e",
+    "fresh_process": true,
+    "finite": true,
+    "source_staged_max_abs_error": 0.0,
+    "output_shapes": {
+      "bus": [
+        2751,
+        2
+      ],
+      "generator": [
+        736,
+        2
+      ]
+    },
+    "python": "3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:29:09) [MSC v.1943 64 bit (AMD64)]",
+    "torch": "2.8.0+cpu",
+    "gridsfm": "1.1.0",
+    "official_commit": "1ca775fd436d7ce013a1c0ab946e61ac7ef59ad6",
+    "device": "cpu",
+    "checkpoint_selection": "VALIDATION_ONLY",
+    "cross_gpu_cpu_bitwise_claim": false,
+    "physical_feasibility_certified": false,
+    "new_training": false,
+    "new_ac_labels": false
+  },
+  "supplement": {
+    "role": "certified_g500_supplement",
+    "filename": "opengridsfm_G500_v152.zip",
+    "sha256": "36f6ef4d96e1f733c58f4f2cf5023323ba62f496fea693fe7dffa432cae63553",
+    "bytes": 60987194,
+    "files": {
+      "artifacts/cache/texas2k.opengridsfm.G500.pt": {
+        "sha256": "2e4911c452dd4a2c80e17ab6f7dc5764150ae6615e3a16404ed9fb82bdeee170",
+        "bytes": 60985781
+      },
+      "docs/licenses/GridSFM-MIT.txt": {
+        "sha256": "6b089b203de04ad557c03c7259975f8ed55d08930985e97f670ffbf6b99a99d3",
+        "bytes": 1095
+      }
+    },
+    "scientific_task_id": "v070.opengridsfm.G500.s0",
+    "selected_epoch": 19
+  },
+  "phase_i_complete": false,
+  "phase_ii": "HELD_BY_USER",
+  "genco_finalist_csv_sha256": "5bea795bce8fde615cc673af7ce152679ac189db257ae92d105ecc70bd25c6ed"
+}

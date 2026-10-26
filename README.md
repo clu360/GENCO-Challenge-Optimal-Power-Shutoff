@@ -24,7 +24,7 @@ outcomes, not global optimality or broad generalization claims.
 |---|---|---|---|
 | GOC-500 | Released GridSFM; FT0 smoke; M1; sibling M2/M3 adaptations | Retained Stage J physical evaluations and FT3/FT4 OPS tables | Official sample demo is not the historical test population |
 | Texas2k K/L | Historical DC/AC/GridSFM and three released GENCO branches | Recorded historical tables, separately labeled | Different evaluator/search/control policies; PF redispatch exploration was limited |
-| Texas2k M | GENCO-OPF G500/G100-to-R400/G100-to-W400; certified native models | Three complete GENCO searches and exact A/B audits; available validation | Native G500 certification and native OPS/AC pending; Phase II held |
+| Texas2k M | GENCO-OPF G500/G100-to-R400/G100-to-W400; all eight training fits certified | Three complete GENCO searches and exact A/B audits; available validation | Native OPS/AC pending; Phase II held |
 
 Read [the Phase I report](experiments/texas2k/results/stage_m/reports/PHASE_I_RESULTS.md)
 and [methodology](experiments/texas2k/results/stage_m/reports/METHODOLOGY.md).
@@ -51,8 +51,9 @@ Python environment. PyTorch CPU wheels are installed from the official CPU index
 the matching PyG scatter wheel and exact upstream Git commits are pinned. GridSFM's
 official package lives in the upstream `model/` subdirectory.
 
-Acquire the explicitly supplied model bundle with `genco-ops acquire --bundle
-model_weights.zip`. Select an actual ID from `artifacts/model_catalog.json`, then
+Acquire the primary model bundle and the G500 supplement using the two explicit
+commands in `docs/reproduction.md`. Each has its own immutable checksum; previous
+model exports remain unchanged. Select an actual ID from `artifacts/model_catalog.json`, then
 run `genco-ops infer --model goc500.m1 --output outputs/model_demo`.
 Run `genco-ops ops-demo --model goc500.m1 --output outputs/new_ops_demo`
 for a real bounded CPU search on the official sample: two topologies and eight

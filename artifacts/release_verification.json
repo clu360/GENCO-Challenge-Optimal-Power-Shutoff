@@ -368,5 +368,6 @@
     "Native G500 certification and native OPS/reference work remain queued"
   ],
   "original_executor_followup": "artifacts/published_executor_verification.json",
-  "initial_v149_receipts_retained": true
+  "initial_v149_receipts_retained": true,
+  "native_g500_followup": "artifacts/native_g500_verification.json"
 }

@@ -1,6 +1,6 @@
 {
   "development_base_commit": "fb44ef3ec448c9b99474067e9f08330252cac961",
-  "originating_research_checkpoint_commit": "7c21a2817a81888dc4874edebd9b6351d6b5c0d4",
+  "originating_research_checkpoint_commit": "346058115d35b3da234146067e675f31e74d5fae",
   "files": {
     "src/genco_ops/model_loading.py": {
       "original_relative": "stage_m_fine_tuning/genco_model_loading.py",
@@ -113,16 +113,16 @@
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/fine_tuning_inventory.csv": {
-      "source_sha256": "51505e684703a24ff1a80820fd0e6b83431b6794d1b15d609fb4c365a0344739",
-      "published_sha256": "51505e684703a24ff1a80820fd0e6b83431b6794d1b15d609fb4c365a0344739",
-      "rows": 7,
+      "source_sha256": "08609e871d37cab3020bb835878640d3c371041bfc3dd89454aa4fa31dfe1a64",
+      "published_sha256": "68fafb62413051aecdde736b52358b864ccd5b677031d1fa93dec36b1c1ba941",
+      "rows": 8,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/fine_tuning_inventory.parquet": {
-      "source_sha256": "cff4ca9b287d5b1f0841f46bdbb5b7ee453411e9ea4c1f18e486b0f55f30cc3a",
-      "published_sha256": "cff4ca9b287d5b1f0841f46bdbb5b7ee453411e9ea4c1f18e486b0f55f30cc3a",
-      "rows": 7,
+      "source_sha256": "2927f95537791721fa609ef1946fd71ed58c50147e957e6dffcc7d11ed5bbb33",
+      "published_sha256": "2927f95537791721fa609ef1946fd71ed58c50147e957e6dffcc7d11ed5bbb33",
+      "rows": 8,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
@@ -155,15 +155,15 @@
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/model_task_states.csv": {
-      "source_sha256": "38d172d54a510bccd044f554694446e53439ceaae06120e7a5220893a5426e29",
-      "published_sha256": "8f8bfbeef2798284280f7649c3461b625cf516acc4582cc65918f93732560782",
+      "source_sha256": "cece6ad9a355e9a66c0fddfe424654249217b22d822b28723687f7e4e5976213",
+      "published_sha256": "5f31c4a6646fcbaf4f47baf36d2bd51e42f5188ee9377ca0ff8eb9e116d53658",
       "rows": 28,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/model_task_states.parquet": {
-      "source_sha256": "ac7ac1280a6321d25a0254e34534024a2045e68c4655696605204d725d15bda7",
-      "published_sha256": "ac7ac1280a6321d25a0254e34534024a2045e68c4655696605204d725d15bda7",
+      "source_sha256": "e3cacaa777c24ced06e62d7d06906ac9a044b1358511db2f8d69533bded643e0",
+      "published_sha256": "e3cacaa777c24ced06e62d7d06906ac9a044b1358511db2f8d69533bded643e0",
       "rows": 28,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"

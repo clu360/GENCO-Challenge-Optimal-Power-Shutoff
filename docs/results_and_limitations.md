@@ -8,8 +8,9 @@ two select the same outage pair but different service decisions. All comparisons
 must retain that selected decision and audit role, not treat A as the native
 wildfire-aware solution. Native and exact values are separate table columns.
 
-Seven of eight Phase I fits are certified. Native G500 has saved epochs but is
-not yet certified; the native final OPS/reference branches are pending. Pending
+All eight Phase I training fits are certified. Native G500's saved epochs were
+finalized without retraining, and the selected checkpoint passes genuine loading
+and fresh-process parity. The native final OPS/reference branches are pending. Pending
 is not a zero value or a scientific failure. These outputs will be incorporated
 through later, separately verified commits. Phase I is not declared complete.
 

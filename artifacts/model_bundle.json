@@ -54,5 +54,25 @@
     "docs/licenses/GridSFM-MIT.txt": {
       "sha256": "6b089b203de04ad557c03c7259975f8ed55d08930985e97f670ffbf6b99a99d3"
     }
-  }
+  },
+  "supplemental_bundles": [
+    {
+      "role": "certified_g500_supplement",
+      "filename": "opengridsfm_G500_v152.zip",
+      "sha256": "36f6ef4d96e1f733c58f4f2cf5023323ba62f496fea693fe7dffa432cae63553",
+      "bytes": 60987194,
+      "files": {
+        "artifacts/cache/texas2k.opengridsfm.G500.pt": {
+          "sha256": "2e4911c452dd4a2c80e17ab6f7dc5764150ae6615e3a16404ed9fb82bdeee170",
+          "bytes": 60985781
+        },
+        "docs/licenses/GridSFM-MIT.txt": {
+          "sha256": "6b089b203de04ad557c03c7259975f8ed55d08930985e97f670ffbf6b99a99d3",
+          "bytes": 1095
+        }
+      },
+      "scientific_task_id": "v070.opengridsfm.G500.s0",
+      "selected_epoch": 19
+    }
+  ]
 }
