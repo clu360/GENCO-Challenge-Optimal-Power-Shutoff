@@ -15,58 +15,58 @@
       "sha256": "8ef6fe336b57835622cb39a97884fe24faaafd31444396c605cfa43508131139"
     },
     "experiments/texas2k/results/stage_m/tables/candidate_results.parquet": {
-      "source_sha256": "e1bbe48cc15f48347765c667d22198fe278add711aa1c354f4333eff99d1a8d9",
-      "published_sha256": "777054825902d65bbdb6069a14bb38b127407d8e0047857415bebc4eaa74236e",
-      "rows": 1204,
+      "source_sha256": "a2eed10c4fee5974d011fd4060d46cf79bdaab8def314e410cbef118d2c988bc",
+      "published_sha256": "40ebec739d5fc0165456644f303819a753faf032101a7cea8391027cf9eb612a",
+      "rows": 1505,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/candidate_results_summary.csv": {
-      "source_sha256": "c353e5d341ea86ba3c5fc0debd456fb9176b8377a46f35b6608bc50ecacb9da8",
-      "published_sha256": "5c1e99d287cb7a197e774f41ce4ee211d7b74f2c272a0d1a431cba700792683c",
-      "rows": 1204,
+      "source_sha256": "5672e68dde63a132d5b15fa3fae03bc004844b79546e7e7e4a6069d93adba960",
+      "published_sha256": "b226b9a2fb55c3763fda81aaad13e2498160d8563961a08c674fd6b1a3001b28",
+      "rows": 1505,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/candidate_statuses.csv": {
-      "source_sha256": "9ca88250ff51e6fa11e833b49db9288ff42c698da07fcf28bfa59bb6438bfccd",
-      "published_sha256": "d1f327f6f475cc574273a0f8884f3a0ecfbc121c3981dc077ca5bed0b77d34e4",
-      "rows": 7,
+      "source_sha256": "8a55497bf4f16089ee52e894233fd696a1f306c67ba49566c75109648f801545",
+      "published_sha256": "8fb45fb3cc4e76b78ee157f9850784f59979dc48e5bdfaf830bb847ac32c1f62",
+      "rows": 8,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/candidate_statuses.parquet": {
-      "source_sha256": "dadfc41d4d9d2925cafb949cb0e297022ef3652f89fcc0a1508444ecbfa935f8",
-      "published_sha256": "dadfc41d4d9d2925cafb949cb0e297022ef3652f89fcc0a1508444ecbfa935f8",
-      "rows": 7,
+      "source_sha256": "364d8fab339c7304bb349b830b2709e55ea4925cd1007a5c5d55aaf44ffa0faf",
+      "published_sha256": "364d8fab339c7304bb349b830b2709e55ea4925cd1007a5c5d55aaf44ffa0faf",
+      "rows": 8,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/continuous_budget_summary.csv": {
-      "source_sha256": "414149a08aadcc124ca23f6058369038b86571665ee327724f5c4b2f8839908f",
-      "published_sha256": "53c97e989adc05f51aba16df7dd1609f026c60d3b8b1d61c8b3bc24e6ac56e79",
-      "rows": 80,
+      "source_sha256": "9be97e893aec882a065b7df1f02eb73369d26c15eebae3068fd9367e34012f31",
+      "published_sha256": "35b58bfa941dc2f6a9335ae0bb6128e97ef25205a4a5d71b02f91b7d8b854c2b",
+      "rows": 100,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/continuous_budget_summary.parquet": {
-      "source_sha256": "62404cde2097df41fca79c211b21114a624987a40ef9d6d10ae93d4fdb6a4444",
-      "published_sha256": "62404cde2097df41fca79c211b21114a624987a40ef9d6d10ae93d4fdb6a4444",
-      "rows": 80,
+      "source_sha256": "ba558f4e8f6bac74c5057b65133fa7916ea2d67c8afad698bc20cd61f5777761",
+      "published_sha256": "ba558f4e8f6bac74c5057b65133fa7916ea2d67c8afad698bc20cd61f5777761",
+      "rows": 100,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/continuous_evaluations.parquet": {
-      "source_sha256": "1a24389c3f34e33de49504fa656aaa11617742f511550dfd7cb5f78592b496a1",
-      "published_sha256": "1a24389c3f34e33de49504fa656aaa11617742f511550dfd7cb5f78592b496a1",
-      "rows": 24080,
+      "source_sha256": "e155435c14a9bd57eff1b3695707a19c4c1ef3b3e824a3ee9588e5c7e88de4d6",
+      "published_sha256": "e155435c14a9bd57eff1b3695707a19c4c1ef3b3e824a3ee9588e5c7e88de4d6",
+      "rows": 30100,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/continuous_evaluations_summary.csv": {
-      "source_sha256": "a0a5ea2eab93cdecd8c62038d7d5825a4b85d70cbed5a882447b3aa3842780a2",
-      "published_sha256": "051c5bbc8cd250a96afedfd96e5d438b723de7b82abe3a5641647c8b2c42a5cc",
-      "rows": 24080,
+      "source_sha256": "c9421a335210bd33becb81e627443e479ed48fb49f4f8f2edf636a3c783cbfa1",
+      "published_sha256": "fca3698e9e9fb57dce1cbb863160298c600904a944c112335a8988d0e2ee9aca",
+      "rows": 30100,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
@@ -85,30 +85,30 @@
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/finalist_native_and_exact.csv": {
-      "source_sha256": "c716ad89c2d9dff4dda41b4c55ab0021818ed3f81a8d66fe1c5297ec991f6035",
-      "published_sha256": "0140fafa54d5976913b32abdf1864bbce0d96713933873f0689c893954aa509c",
-      "rows": 4,
+      "source_sha256": "401091452bf6e7c1104c7c5e37ba5f404ce35b56fd1722ef3fd04820821149b9",
+      "published_sha256": "42cce6ba2c7873f2d5b76b7ceb6abed7a4c5fc7e2b4a6f36b97c69f3882c1451",
+      "rows": 5,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/finalist_native_and_exact.parquet": {
-      "source_sha256": "39ae3f5b565d64177fd536a0664df93db1cc5733c1b12d2ff6ed7c75a0159c25",
-      "published_sha256": "39ae3f5b565d64177fd536a0664df93db1cc5733c1b12d2ff6ed7c75a0159c25",
-      "rows": 4,
+      "source_sha256": "89dd9b8c11392166e0fb49a7212ba702668976115c452067d0607ce2bdabd985",
+      "published_sha256": "89dd9b8c11392166e0fb49a7212ba702668976115c452067d0607ce2bdabd985",
+      "rows": 5,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/finalists.csv": {
-      "source_sha256": "4de63e657e70d0f34e6870103518d32a82efa32cc1e0e4bdc460edda2d17be5b",
-      "published_sha256": "503588847177361ebaef509e4d4af5d2fc2822dfe2fa88e7e9ba6d2c19c51c17",
-      "rows": 4,
+      "source_sha256": "90fda8fbf3cb071a78b5444bbaca456039e7cb793c62039a5baf9fffc5b98202",
+      "published_sha256": "146b84f87b274aa190cab836996192ea6785640e8b3a9f6e75a71ef1951ee769",
+      "rows": 5,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/finalists.parquet": {
-      "source_sha256": "46ebb66593574c6a8bb37c6dfcf4afc7cb4ecfb0a86bc67074d574b3274fc2e4",
-      "published_sha256": "7055b7e6b778c75771650e63fccaa9f2a88ab99be376d7ea086abefc14f88ade",
-      "rows": 4,
+      "source_sha256": "d3258b883e6290e79320a266f707ec67887a60faf6978d4f195f9965aaaed3a6",
+      "published_sha256": "04e5cff64d1a05ee6daff8f0825e11a479a500211f1aac44ba7a8c6311c18764",
+      "rows": 5,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
@@ -127,30 +127,30 @@
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/k1_parents.csv": {
-      "source_sha256": "6a08b3c184cab65296017d5c51814890afad1684220f352a793de7a4db79b65b",
-      "published_sha256": "7988e2402df2ebd50b979d0805d5ae259f85f6ecd848ddcafad8996a99dca4e9",
-      "rows": 20,
+      "source_sha256": "219dc15d8359d6fce96013a805d19ff69960a26a7ef8c3741555c4f7a5416f57",
+      "published_sha256": "761b3e41f133e3706a345cf70e951ff6d288462e2eb63b20d630c9a2f5850ba7",
+      "rows": 25,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/k1_parents.parquet": {
-      "source_sha256": "9775fb50387a3d5ccb2f9013ceb386f16e63ae67070e484d3cc1d40ba999f93e",
-      "published_sha256": "d4da84c18c4bafdb48bdf085ca23a1cb1b5d60173a7b7d2a59ae85b9d9faf621",
-      "rows": 20,
+      "source_sha256": "445f8b8cdb9f642014c214180debb3bb20569adb5fa5e5a9d4812d81fce5f29c",
+      "published_sha256": "0a2e82a9f13313be3cb234b25eee73d1f4a39c503690f9b7c3007f44e74b99af",
+      "rows": 25,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/k2_provenance.csv": {
-      "source_sha256": "114ec91359e3045391bb0c4de3041fcb924e4cf928abcd0138a7e17ca87b3ec2",
-      "published_sha256": "c08b385b7c3682a3eed4f55776c9db5f9ec69c8c5a56bc09882447e355350cad",
-      "rows": 1000,
+      "source_sha256": "ec8f295d560a701b23b9857592fd35312df1fe19df0077d8760ff7bdddf10f48",
+      "published_sha256": "4d711ca1985d72410b43a8770c8b3fef37ae4e3cdd78e61e16c5bec0bf84a069",
+      "rows": 1250,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/k2_provenance.parquet": {
-      "source_sha256": "7071754fb616a3e82b41e8682e1bf301e3236fc2ee0748545ad8a1f8c821aed2",
-      "published_sha256": "7071754fb616a3e82b41e8682e1bf301e3236fc2ee0748545ad8a1f8c821aed2",
-      "rows": 1000,
+      "source_sha256": "92c58ed1c86ac856e6107229144f0f0f1bef76decf0749ec40f4bb0d85206d55",
+      "published_sha256": "92c58ed1c86ac856e6107229144f0f0f1bef76decf0749ec40f4bb0d85206d55",
+      "rows": 1250,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
@@ -169,30 +169,30 @@
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/native_nondominated_candidates.csv": {
-      "source_sha256": "d0a0d6840a04c3a8e33a68bb9969caa1a965a4bd5677eabff553e6409606a1d6",
-      "published_sha256": "6727ead2196dc0124dfc5167f7124e0c0934362abcf165dfd519b2f9372da5a9",
-      "rows": 23,
+      "source_sha256": "a5100ac2b0ade458b548042a1d7301b6431bdac4fe1e01c0ecc81316c68ef97d",
+      "published_sha256": "90e941e0ddaf701c755b3e47bd963f97c6f5f087e11a1cb79d808d56a32ac77f",
+      "rows": 25,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/native_nondominated_candidates.parquet": {
-      "source_sha256": "48eb3364bb53d7aa493066383d9d31aff5e9800dec068340151cd5fe57bba3f5",
-      "published_sha256": "7928cef7b0a58c1f146ebd36103c10563577efa9a39a1920cd5f29e61fce5791",
-      "rows": 23,
+      "source_sha256": "45f286de90e04d8859c3fcb1f479103cca42970096d678041c05493b8985bda3",
+      "published_sha256": "dedb4a429f23d5e4314f00ce03ef8518335cfd64c2a0b23af3541615a48883eb",
+      "rows": 25,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/overloaded_lines.csv": {
-      "source_sha256": "02983448174245862bc5c06671c2c75289c20c42ab31a83c54a4e5968961d26d",
-      "published_sha256": "1bbc6ceb05d1e1d92c15239efb5dbcf912fb706f7884a9b1a06a0542ac90712d",
-      "rows": 4,
+      "source_sha256": "55360bebd35fcf53d19e361a9b47e2fc7583b339fd86e6cc5bb42519f18b1a47",
+      "published_sha256": "9b7808d9431cf23355578b466f2a3f14ed976c7eaad5bb9279fdbdbc577dc205",
+      "rows": 5,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/overloaded_lines.parquet": {
-      "source_sha256": "bdbaa926366a044596bff3da1b164c3a6209374657ef360023bb34cbbf622266",
-      "published_sha256": "bdbaa926366a044596bff3da1b164c3a6209374657ef360023bb34cbbf622266",
-      "rows": 4,
+      "source_sha256": "36de4c38ae0b6276a155c677adf7c1c564a43c540b1befbd2f342e899a486195",
+      "published_sha256": "36de4c38ae0b6276a155c677adf7c1c564a43c540b1befbd2f342e899a486195",
+      "rows": 5,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
@@ -211,86 +211,86 @@
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/retained_state_recomputation.csv": {
-      "source_sha256": "40a9542a33397bb416539f81863a9773478caf3bbbf33fa1bab49472f2e798f9",
-      "published_sha256": "2973abc81f3e9fc303c2f04fb210869a650387c6cd337f3e565d37698eb958ff",
-      "rows": 4,
+      "source_sha256": "eb1258f695096f1ef766630195804356406e0e784b5740f98d1fbadc9baa9732",
+      "published_sha256": "4cbad6a22db810cc2db57e6db6e71670c43c6d5b7dc170c9c90bfa751638f291",
+      "rows": 5,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/retained_state_recomputation.parquet": {
-      "source_sha256": "ed05c48841c2fe4c73cf7b152cd0e1a75f6a832d633caa7ffa25c90c71966550",
-      "published_sha256": "ed05c48841c2fe4c73cf7b152cd0e1a75f6a832d633caa7ffa25c90c71966550",
-      "rows": 4,
+      "source_sha256": "721f0ee04beb5153c4fd6d51774c00149aeda31d17efef7a3a562094e391ae06",
+      "published_sha256": "721f0ee04beb5153c4fd6d51774c00149aeda31d17efef7a3a562094e391ae06",
+      "rows": 5,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/runtime_summary.csv": {
-      "source_sha256": "a23fb10bd1a491ee91022f6f58aa4d1af9ba4d0295d6f7af1258f96e9a3a1015",
-      "published_sha256": "0043313a17737eec6d648a7532180ef28eb1503eec7946c524e6a79e60263cc1",
-      "rows": 4,
+      "source_sha256": "bdb58509c94f30e4c0e9bfdaf566b8df2b65ba7ca8fefc48d8805baf4dc21701",
+      "published_sha256": "916340dac6995cc553ec943527e34839db706429f86c4ebf77e2ce761ee18ac5",
+      "rows": 5,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/runtime_summary.parquet": {
-      "source_sha256": "0b8c99099e525a83402a4319a57940601505af40f6b463d438277e617d927c00",
-      "published_sha256": "0b8c99099e525a83402a4319a57940601505af40f6b463d438277e617d927c00",
-      "rows": 4,
+      "source_sha256": "3ef293857eb2f8381f585c7ec785ab7060942fa8bdbfd5704329e20f2e579776",
+      "published_sha256": "3ef293857eb2f8381f585c7ec785ab7060942fa8bdbfd5704329e20f2e579776",
+      "rows": 5,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/selected_opened_lines.csv": {
-      "source_sha256": "1d9d74e17d318e6940be57ca0043dc7bf5f6c8d98ec3e419bfee6afce4900012",
-      "published_sha256": "1ade62bea9ab5cd40c3d4d2f2295f250eecbec280193808ab611003fe222d6f9",
-      "rows": 8,
+      "source_sha256": "7734888d33106497b0cd0e9541cf6f2550e50276bbbd248a54e34aad321f6862",
+      "published_sha256": "cb450d871254ef9db536eb84391b696075c56ee675ba1adfe9541dd82a1df13e",
+      "rows": 10,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/selected_opened_lines.parquet": {
-      "source_sha256": "79a6abf36012163b3d4cf76a329dc1af791014e34153ce982c88edfda82b5ca2",
-      "published_sha256": "79a6abf36012163b3d4cf76a329dc1af791014e34153ce982c88edfda82b5ca2",
-      "rows": 8,
+      "source_sha256": "6056c2c723ccaf33839b7068786438e98a7fafef97c88da70c43a3636ebf7012",
+      "published_sha256": "6056c2c723ccaf33839b7068786438e98a7fafef97c88da70c43a3636ebf7012",
+      "rows": 10,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/stage_k_l_m_lambda08_context.csv": {
-      "source_sha256": "5d52474c92e46762485fa0ce281ca83a1a6aa6f61cc260de671768ca2cd70947",
-      "published_sha256": "8eaafc106ea1034a1ded223b80cbe7c152f10f9ffd144aedbdbff0def9e7f854",
-      "rows": 10,
+      "source_sha256": "dddd03bb09502682d99e258e1d0b88aac74d05ffd268ba4460c806ac805c37cd",
+      "published_sha256": "61f2306ed6174f56e8b489d285ed3020f9f991c00801c10f3e470ecbe02f3afc",
+      "rows": 11,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/stage_k_l_m_lambda08_context.parquet": {
-      "source_sha256": "f2e9dccfab0ee6e2215e6073c337500b1c6a17cc74818d3993bcf2fc9d0c03ed",
-      "published_sha256": "f2e9dccfab0ee6e2215e6073c337500b1c6a17cc74818d3993bcf2fc9d0c03ed",
-      "rows": 10,
+      "source_sha256": "105933250620e12298034adf2362af7855dc2e09c8ccc556cbdac6cecba7f428",
+      "published_sha256": "105933250620e12298034adf2362af7855dc2e09c8ccc556cbdac6cecba7f428",
+      "rows": 11,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/topology_convergence.csv": {
-      "source_sha256": "84237163089cea5884ba14650b78996f5b047c663ed866f4953d08eb62bc8fb2",
-      "published_sha256": "afd7f4101b657dc186033db2d342d184c3a0a2bb4154fb4fbee07d33e3c34d30",
-      "rows": 1204,
+      "source_sha256": "d90a2c6920c4283f3845a55603e513eac553c56516e4f8f72aaa24ffcd6937e4",
+      "published_sha256": "b024c5e81f2bd3a6229d7b37dc99e8290f35be1dc09ef68f9406f3d6839bf3f0",
+      "rows": 1505,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/topology_convergence.parquet": {
-      "source_sha256": "db5c2091161afedd3c3b1c9cc8f5f844990c2044ae9748318fabc0697cec76e8",
-      "published_sha256": "db5c2091161afedd3c3b1c9cc8f5f844990c2044ae9748318fabc0697cec76e8",
-      "rows": 1204,
+      "source_sha256": "df7505dc99ff2ab89a3b7afb9cb5c01e774c24b930bb9ec2d8dbf40e0c27e90d",
+      "published_sha256": "df7505dc99ff2ab89a3b7afb9cb5c01e774c24b930bb9ec2d8dbf40e0c27e90d",
+      "rows": 1505,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/topology_divergence.csv": {
-      "source_sha256": "8d3e6247c4818f205cfd8a6ca4d4a63bb2bc171ea0625cb5c1cd83bf078f8d35",
-      "published_sha256": "7a0de4ac09a441b0f7ebfa290d0a9b6fe8db8eaea4aa40bd1dd9be23c70f90b8",
-      "rows": 6,
+      "source_sha256": "3d8610b7f3eb5a9035f9f5de0c7c637b3626817c4bb3e3ed1d85ca9a71c934a7",
+      "published_sha256": "865796be9a431c12aa064d8f136cc388e2e98b60df6f7576eea5845e332fd69c",
+      "rows": 10,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },
     "experiments/texas2k/results/stage_m/tables/topology_divergence.parquet": {
-      "source_sha256": "1ee9871acacb72f2ce9e681a233d4ecbceda44f71e307797e4fd11c2a4f140b3",
-      "published_sha256": "1ee9871acacb72f2ce9e681a233d4ecbceda44f71e307797e4fd11c2a4f140b3",
-      "rows": 6,
+      "source_sha256": "ffd485764d498da2192f960c3f0155b100b7d40d9b1071b27c9de95f2daadeeb",
+      "published_sha256": "ffd485764d498da2192f960c3f0155b100b7d40d9b1071b27c9de95f2daadeeb",
+      "rows": 10,
       "numerical_columns_unchanged": true,
       "sanitization": "Private text locators only; originals retained privately"
     },

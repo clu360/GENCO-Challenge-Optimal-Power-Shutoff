@@ -12,6 +12,7 @@ Certified training fits: 8/8. Training completion does not certify downstream va
 | GENCO G100 -> W400 | 117;281 | 1.51118 | 0.000546406 | 1.08906 | 0.871357 | 326325 | 1 | 1.09629 | 318552 |
 | GENCO G500 | 117;1548 | 1.27011 | 0.00269693 | 1.16414 | 0.931855 | 296511 | 1 | 1.17187 | 296967 |
 | OpenGridSFM G100 -> R400 | 45;766 | 1.10303 | 0 | 1.08426 | 0.867408 | 302088 | 1 | 1.10015 | 295177 |
+| OpenGridSFM G100 -> W400 | 281;850 | 1.00753 | 0.000112819 | 1.0882 | 0.870581 | 330999 | 1 | 1.09288 | 323571 |
 
 Reference A is economic AC-OPF at the selected topology and fixed load-service commands, not wildfire-aware reoptimization. B1 certifies maximum fixed-topology service; B2 minimizes economic cost at that service. Local solves do not prove global optimality.
 
@@ -22,6 +23,7 @@ All available GENCO A risks exceed the stored baseline of1. Sequential R/W selec
 | model | topology_key | native_r | a_r | delta_r_a | shed | a_j | native_overloaded_lines |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | OpenGridSFM G100 -> R400 | 45;766 | 1.10303 | 1.08426 | -0.0187724 | 0 | 0.867408 | 10 |
+| OpenGridSFM G100 -> W400 | 281;850 | 1.00753 | 1.0882 | 0.0806665 | 0.000112819 | 0.870581 | 2 |
 
 The native model selects its own K2 trajectory, not the GENCO trajectory. Risk discrepancies can have either sign; smaller predicted risk is not necessarily smaller AC-recovered risk. Every published native AC-A risk remains above the authoritative stored baseline of1. B1 recovers essentially full service within solver tolerance; B2 economic states and risk diagnostics are distinct from the fixed-service economic A states. This is one exploratory scenario and one lambda, not evidence of general model superiority.
 
@@ -37,6 +39,7 @@ Validation histories and per-record metrics are development evidence. Native mod
 | GENCO G100 -> W400 | 301 | 289 | 3392.02 | 11.4516 | 0.572582 |
 | GENCO G500 | 301 | 289 | 3271.22 | 11.0244 | 0.551222 |
 | OpenGridSFM G100 -> R400 | 301 | 301 | 1998.97 | 6.63773 | 0.331886 |
+| OpenGridSFM G100 -> W400 | 301 | 301 | 2737.63 | 9.09398 | 0.454699 |
 
 Timing is logical recorded evaluator time, not queue time or a controlled architecture-only speed comparison. Inferno billing is not inferred from these numbers.
 

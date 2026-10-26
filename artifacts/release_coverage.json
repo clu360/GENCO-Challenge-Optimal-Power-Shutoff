@@ -5,8 +5,8 @@
     "certified_phase_i_fits": 8,
     "GENCO_full_searches": 3,
     "GENCO_reference_tasks": 3,
-    "OpenGridSFM_full_searches": 1,
-    "OpenGridSFM_reference_tasks": 1
+    "OpenGridSFM_full_searches": 2,
+    "OpenGridSFM_reference_tasks": 2
   },
   "tests": {
     "results_only": "PASS_ISOLATED_39_TESTS_PLUS_2_MODEL_SKIPS",
@@ -30,7 +30,7 @@
   "public_release": false,
   "hosted_verification": "artifacts/hosted_release_verification.json",
   "native_results_state": {
-    "incorporated": 1,
+    "incorporated": 2,
     "required": 3,
     "scientific_completion_gate": "PENDING_REPORTING_RECOVERY",
     "phase_ii": "HELD_BY_USER"

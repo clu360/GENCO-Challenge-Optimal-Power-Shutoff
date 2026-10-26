@@ -24,7 +24,7 @@ outcomes, not global optimality or broad generalization claims.
 |---|---|---|---|
 | GOC-500 | Released GridSFM; FT0 smoke; M1; sibling M2/M3 adaptations | Retained Stage J physical evaluations and FT3/FT4 OPS tables | Official sample demo is not the historical test population |
 | Texas2k K/L | Historical DC/AC/GridSFM and three released GENCO branches | Recorded historical tables, separately labeled | Different evaluator/search/control policies; PF redispatch exploration was limited |
-| Texas2k M | GENCO-OPF and OpenGridSFM; all eight fits certified | Three GENCO and 1 native full searches with exact A/B audits published | Final reporting gate pending; Phase II held |
+| Texas2k M | GENCO-OPF and OpenGridSFM; all eight fits certified | Three GENCO and 2 native full searches with exact A/B audits published | Final reporting gate pending; Phase II held |
 
 Read [the Phase I report](experiments/texas2k/results/stage_m/reports/PHASE_I_RESULTS.md)
 and [methodology](experiments/texas2k/results/stage_m/reports/METHODOLOGY.md).

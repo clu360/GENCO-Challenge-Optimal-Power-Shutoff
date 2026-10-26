@@ -282,9 +282,11 @@
       "demo_input_sha256": "a5b8f0f3f5cc5d543b4fb9d0cd67c5adb0bfbbf2ddd10783957874d246348e6a",
       "input_distribution": "PRIVATE_PENDING_REDISTRIBUTION_REVIEW",
       "scientific_certification": "PASS",
-      "ops": "PENDING",
+      "ops": "PASS",
       "parent_checkpoint_sha256": "e45ed36e3956eeb7750d2e396737e0cc3ccd58990aae84b65a6af9d1fdad06d5",
-      "selected_epoch": 19
+      "selected_epoch": 19,
+      "ac_references": "PASS",
+      "branch_verification": "artifacts/native_branch_G100_to_W400_v155.json"
     },
     "texas2k.genco_opf.base": {
       "family": "genco_opf",
