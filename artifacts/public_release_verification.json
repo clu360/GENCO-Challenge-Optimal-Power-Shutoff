@@ -1,0 +1,29 @@
+{
+  "status": "PASS_ANONYMOUS_PUBLIC_REPOSITORY_AND_MODEL_ACCESS",
+  "observed_utc": "2026-10-26T04:23:16.969726+00:00",
+  "repository": "https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff",
+  "repository_visibility": "public",
+  "anonymous_repository_api_status": 200,
+  "anonymous_readme_status": 200,
+  "release": "https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/tag/phase-i-models-v152",
+  "anonymous_release_metadata_status": 200,
+  "assets": [
+    {
+      "name": "genco_challenge_models_v149.zip",
+      "bytes": 890326503,
+      "digest": "sha256:f15e6d6d21f906b6433e27590b01df831fbbc32c2d1457a7eba0b8fc3004eba7",
+      "anonymous_download_status": 206,
+      "zip_signature_verified": true
+    },
+    {
+      "name": "opengridsfm_G500_v152.zip",
+      "bytes": 60987194,
+      "digest": "sha256:36f6ef4d96e1f733c58f4f2cf5023323ba62f496fea693fe7dffa432cae63553",
+      "anonymous_download_status": 206,
+      "zip_signature_verified": true
+    }
+  ],
+  "anonymous_requests_used_credentials": false,
+  "full_archive_checks": "Previously verified authenticated complete downloads; this check reads only four public ZIP bytes",
+  "private_electrical_inputs_distributed": false
+}

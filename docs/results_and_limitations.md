@@ -58,8 +58,10 @@ economic AC states also have different operating definitions.
 ## What users can reproduce now
 
 Included tables support figure/result regeneration without models or solvers.
-All catalogued weights have checksum-bound acquisition; a fresh independent
-clone actually downloaded and verified both complete archives. The included GOC
+All catalogued weights have public checksum-bound acquisition; a fresh independent
+clone actually downloaded and verified both complete archives before publication.
+[Signed-out access](../artifacts/public_release_verification.json) was subsequently
+verified without distributing private Texas electrical inputs. The included GOC
 sample supports real model inference and a separately identified bounded new
 OPS demonstration. Public IEEE14 supports a real GENCO interface example, with
 no claim of Texas reproduction, adaptation gain or AC feasibility.

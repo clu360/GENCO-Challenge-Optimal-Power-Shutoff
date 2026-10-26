@@ -45,6 +45,10 @@ checkout. Executed source notebooks preserve both the outputs and these limits.
 
 ## Choose a checkpoint and run the supported model path
 
+The repository and model archives are public; the
+[public-access receipt](../artifacts/public_release_verification.json) records
+signed-out access. Exact modified Texas electrical inputs remain private.
+
 In the [CPU model environment](installation.md):
 
 ```sh

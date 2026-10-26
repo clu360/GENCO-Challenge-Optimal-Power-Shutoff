@@ -21,11 +21,16 @@ It checks the release asset's byte count and digest, the complete archive SHA-25
 and every member before installation. Existing matching archives under `dist/`
 or `outputs/downloads/` are reused. Different existing files are not overwritten.
 
-Access follows repository visibility. For private access, use an existing
-authorized Git credential or set `GH_TOKEN`/`GITHUB_TOKEN` in your environment;
-never put a token in a notebook or command argument. Git credential lookup is
-noninteractive. No `gh` installation is required. Credentials are not written
-to acquisition receipts or passed to redirected asset hosts.
+The repository and both model archives are public. Signed-out repository,
+release metadata and four-byte ZIP signature checks passed; see the
+[public-access receipt](../artifacts/public_release_verification.json). No GitHub
+authorization is required to read them. Full archive/member hashes were checked
+on the earlier complete authenticated downloads before publication.
+
+The downloader can also use an existing Git credential or
+`GH_TOKEN`/`GITHUB_TOKEN` when needed. Never put a token in a notebook or command
+argument. Credential lookup is noninteractive; no `gh` installation is required.
+Credentials are not written to receipts or passed to redirected asset hosts.
 
 Local copies of either archive work without network access:
 

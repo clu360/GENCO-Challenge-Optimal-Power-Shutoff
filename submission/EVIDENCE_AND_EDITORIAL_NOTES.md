@@ -33,6 +33,8 @@ The public IEEE14 GENCO demo verifies a runnable interface; it does not replace
 the private Texas electrical case or reproduce its reported performance.
 
 The original GOC report remains unchanged as supplementary detail. Its current
-availability note accompanies it. Repository visibility remains private at this
-cut; public signed-out access is an outstanding publication action. No Hugging
+availability note accompanies it. Code and model archives were made public with
+author approval; anonymous access checks passed on October 26, 2026. The reachable
+Git history and release-member inventory were checked for private inputs before
+publication. Exact Texas electrical inputs remain excluded. No Hugging
 Face discussion or external message has been posted.

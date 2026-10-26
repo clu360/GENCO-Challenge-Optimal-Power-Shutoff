@@ -83,7 +83,19 @@ test counts and input availability describe those dated environments, not the
 current clean-checkout result. No old scientific receipt is rewritten to imply
 that a newly unavailable private-input path passed again.
 
-The GitHub repository and model release remain private. This is not a passed
-public-access gate or a submitted Hugging Face entry. Public visibility requires
-the author's approval and subsequent signed-out link verification. No private
-electrical inputs are included in the candidate public files.
+## Public availability
+
+The author approved public release. The repository and both model archives are
+now public. Anonymous repository, README and release-metadata requests returned
+200; anonymous range requests returned 206 and the expected ZIP signature for
+both archives. Server sizes/digests match the pinned manifest. This signed-out
+check reads four archive bytes; complete archive/member verification was already
+performed during the earlier authenticated downloads.
+
+The [public-access receipt](../artifacts/public_release_verification.json) records
+those distinct checks. The [history audit](../artifacts/history_publication_audit.json)
+checked 19 reachable commits and 330 historical text blobs without finding
+credentials, private account paths or tracked private Texas electrical inputs.
+Its 19 archive-member records contain only weights, the normalizer and notices.
+No private electrical inputs are included in the public source or model archives.
+Public availability is separate from submitting an entry to Hugging Face.

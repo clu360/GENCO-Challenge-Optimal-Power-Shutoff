@@ -2,7 +2,8 @@
 
 Actual catalog entries; no native G500 success is inferred from saved epochs.
 Weights are acquired from the checksum-bound primary archive and G500 supplement.
-Both are delivered locally and as verified private GitHub release assets; access is required.
+Both are available as public checksum-bound GitHub release assets.
+Signed-out access is recorded in `artifacts/public_release_verification.json`.
 Texas demo graphs are private pending source permissions. Historical PF models
 are represented by recorded Stage L results, not bundled as new fine-tunes.
 

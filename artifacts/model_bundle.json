@@ -1,7 +1,7 @@
 {
   "sha256": "f15e6d6d21f906b6433e27590b01df831fbbc32c2d1457a7eba0b8fc3004eba7",
   "bytes": 890326503,
-  "distribution": "VERIFIED_AUTHENTICATED_PRIVATE_GITHUB_RELEASE",
+  "distribution": "VERIFIED_PUBLIC_GITHUB_RELEASE",
   "files": {
     "artifacts/cache/texas2k.genco_opf.G100.pt": {
       "sha256": "d952811fc2fd329d2ab7c076987dec094c99c6b89036e3053b818afbcc0c4adb"
@@ -74,11 +74,12 @@
       "scientific_task_id": "v070.opengridsfm.G500.s0",
       "selected_epoch": 19,
       "download_url": "https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/download/phase-i-models-v152/opengridsfm_G500_v152.zip",
-      "access": "AUTHENTICATED_PRIVATE_GITHUB_RELEASE"
+      "access": "HOSTED_PUBLIC_GITHUB_RELEASE"
     }
   ],
   "download_url": "https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/download/phase-i-models-v152/genco_challenge_models_v149.zip",
-  "access": "AUTHENTICATED_PRIVATE_GITHUB_RELEASE",
+  "access": "HOSTED_PUBLIC_GITHUB_RELEASE",
   "filename": "genco_challenge_models_v149.zip",
-  "role": "primary"
+  "role": "primary",
+  "public_access_verification": "artifacts/public_release_verification.json"
 }

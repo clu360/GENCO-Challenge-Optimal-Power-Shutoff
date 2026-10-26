@@ -14,8 +14,8 @@ small official IEEE14 example are included. The official source and all 750
 fingerprints for the GOC held-out population are documented, but full population
 recovery and historical OPS/AC recomputation have not been reverified here.
 
-Repository/model access currently requires authorization. A public challenge
-submission must use links verified without account access. The three-page entry
+Code and checkpoint archives are public; anonymous access was verified on
+October 26, 2026. Exact modified Texas electrical inputs remain private. The three-page entry
 distinguishes completed GENCO experiments, the earlier GridSFM study, and the
 proposed shortlist-based risk-aware AC refinement. The proposed refinement is
 not part of the completed experiments.

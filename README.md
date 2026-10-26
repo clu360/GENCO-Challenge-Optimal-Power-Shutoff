@@ -143,8 +143,9 @@ refinement remain proposed experiments.
 The [three-page submission](submission/SUBMISSION.md),
 [PDF](submission/GENCO_Challenge_Submission.pdf), and
 [standalone publication builder](submission/README.md) use included compact
-evidence. Repository and model downloads currently require access to the private
-GitHub repository; public availability must be confirmed before challenge review.
+evidence. Code and checkpoint archives are public, with
+[anonymous access verified](artifacts/public_release_verification.json).
+Exact modified Texas electrical inputs remain private.
 
 ## Extend the workflow
 

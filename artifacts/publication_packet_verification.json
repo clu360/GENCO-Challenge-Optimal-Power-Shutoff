@@ -1,7 +1,7 @@
 {
   "status": "PASS_EXTRACTED_PACKET_STANDALONE_REBUILD",
-  "packet_bytes": 1231017,
-  "packet_sha256": "f438c75b9b67a48934772c84a7901f29a12f2fac5b75ca4cbbfda727564d7b99",
+  "packet_bytes": 1231114,
+  "packet_sha256": "deb2e0971458e6be8aeef9cb5eccf6b6c01878e2739056896d04fdacdc32aeec",
   "packet_members": 22,
   "all_packet_member_hashes_verified": true,
   "original_development_data_required": false,
@@ -24,7 +24,7 @@
     "characters_by_page": [
       2836,
       2919,
-      3650
+      3658
     ],
     "embedded_images_by_page": [
       1,
@@ -32,8 +32,8 @@
       1
     ],
     "missing_local_links": [],
-    "markdown_words": 1343,
-    "pdf_sha256": "23816dd6d7eafc46e6f3e3905a975b88d7f88e5f4f7619df556c62e873df37fb",
+    "markdown_words": 1344,
+    "pdf_sha256": "44d89fb30a1cc4c92814f2ddeadff2026409ffab356f08d18c7efcb2ecec8075",
     "data_provenance_sha256": "ec8fbb9e5bd73da469df389b4d1ea425711c5c8a4c0e19de7c25804668848121",
     "source_scope": "Adjacent compact data only; no development checkout, private data, PACE, or model execution"
   }

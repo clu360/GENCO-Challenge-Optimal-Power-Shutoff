@@ -1,6 +1,6 @@
 {
   "schema": "GENCO_REFINEMENT_VERIFICATION_V1",
-  "status": "PASS_BOUNDED_REPRODUCTION_AND_STANDALONE_PUBLICATION",
+  "status": "PASS_PUBLIC_ARTIFACTS_BOUNDED_REPRODUCTION_AND_STANDALONE_PUBLICATION",
   "observed_utc": "2026-10-26T04:13:00.738646+00:00",
   "scientific_evidence_cut": "2026-10-25",
   "results_only_suite": {
@@ -40,8 +40,8 @@
   "texas_unavailable_numerical_modes": 8,
   "publication_packet": {
     "status": "PASS_EXTRACTED_PACKET_STANDALONE_REBUILD",
-    "packet_bytes": 1231017,
-    "packet_sha256": "f438c75b9b67a48934772c84a7901f29a12f2fac5b75ca4cbbfda727564d7b99",
+    "packet_bytes": 1231114,
+    "packet_sha256": "deb2e0971458e6be8aeef9cb5eccf6b6c01878e2739056896d04fdacdc32aeec",
     "packet_members": 22,
     "all_packet_member_hashes_verified": true,
     "original_development_data_required": false,
@@ -64,7 +64,7 @@
       "characters_by_page": [
         2836,
         2919,
-        3650
+        3658
       ],
       "embedded_images_by_page": [
         1,
@@ -72,8 +72,8 @@
         1
       ],
       "missing_local_links": [],
-      "markdown_words": 1343,
-      "pdf_sha256": "23816dd6d7eafc46e6f3e3905a975b88d7f88e5f4f7619df556c62e873df37fb",
+      "markdown_words": 1344,
+      "pdf_sha256": "44d89fb30a1cc4c92814f2ddeadff2026409ffab356f08d18c7efcb2ecec8075",
       "data_provenance_sha256": "ec8fbb9e5bd73da469df389b4d1ea425711c5c8a4c0e19de7c25804668848121",
       "source_scope": "Adjacent compact data only; no development checkout, private data, PACE, or model execution"
     }
@@ -81,17 +81,19 @@
   "linked_receipts": {
     "artifacts/acquisition_verification.json": "7ca3a2dd93868085e598560b113b15c4cf32bf9ee25e97ad7f7c93b7671ab3fd",
     "artifacts/reproduction_verification.json": "7d26a242da573021210eb72bbc8a65a43f22808833f219a81dfe37b642d165cc",
-    "artifacts/publication_packet_verification.json": "70152cae7338f7bdbc6124094f8a55e6e0e9c36e0411d0790db0d6be05119a5c"
+    "artifacts/publication_packet_verification.json": "fe48bf58aaa6799a7cb30d304ba416ae6808eca7b1f3eb2be893ba8a26dafbd5",
+    "artifacts/public_release_verification.json": "b168be5029e2d487364a98c9e4a4813b7defa4c9254e4ab67b6b12a14f407926"
   },
-  "repository_visibility": "private",
+  "repository_visibility": "public",
   "private_electrical_inputs_distributed": false,
   "full_historical_campaign_recomputed": false,
   "fresh_training": false,
   "fresh_ac_solves": 0,
   "remaining_boundaries": [
-    "Public visibility and signed-out link verification require author approval",
     "Exact modified Texas electrical inputs unavailable in independent checkout",
     "GOC official-source750population recovery/replay not executed",
     "Native GridSFM OPS/AC pending in publication cut; Phase II held"
-  ]
+  ],
+  "repository_visibility_at_bounded_test_cut": "private",
+  "public_visibility_authorized_by_author": true
 }

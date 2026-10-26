@@ -17,8 +17,8 @@
       "bytes": 11558
     },
     "README.md": {
-      "sha256": "525663c9cfa0ca0db8522b0743adf83689e41575d286fc6cd9cbc3f1f86f8f1e",
-      "bytes": 8450
+      "sha256": "6a8bb37c19c893d8117af5a726e867a7361bb49dc14c79ecd9bc930cdad54071",
+      "bytes": 8471
     },
     "THIRD_PARTY_NOTICES.md": {
       "sha256": "ca93ba8f0fab935b9f75b88d9a5f00dda57db166193c05a3c2a2404f43a9828c",
@@ -32,13 +32,17 @@
       "sha256": "952f4119aad3fd26b9660b6eb408572acc9d98100f48d9fe22f96455e985d90f",
       "bytes": 8816
     },
+    "artifacts/history_publication_audit.json": {
+      "sha256": "0f8a4b34c08efe8b69ee4ac311596fc4fa454499fe7d0f830b9ebfa0e1008bae",
+      "bytes": 632
+    },
     "artifacts/hosted_release_verification.json": {
       "sha256": "435f8053b69cd995df731494737dc32cdbad88207075cc4624ad1c5e7a2d09ef",
       "bytes": 13722
     },
     "artifacts/model_bundle.json": {
-      "sha256": "da1ba03c58a5e303eaff7297d390e9653c69361edd65acc06f523d3eb238f7a8",
-      "bytes": 3764
+      "sha256": "3cb2d79e158e0c251715f6104af2a1630f5df7d04523bcc3b6d17f87dfdf9f43",
+      "bytes": 3812
     },
     "artifacts/model_catalog.json": {
       "sha256": "5c9e1bd195ba18a46455dca8d4eef9d8fbc490428fdfdc47b2d0d1aa628dd3e5",
@@ -52,8 +56,12 @@
       "sha256": "89a695b2226ecf1743185261ba046593aa16191cefe4509779d159482a2ed730",
       "bytes": 1369
     },
+    "artifacts/public_release_verification.json": {
+      "sha256": "b168be5029e2d487364a98c9e4a4813b7defa4c9254e4ab67b6b12a14f407926",
+      "bytes": 1251
+    },
     "artifacts/publication_packet_verification.json": {
-      "sha256": "70152cae7338f7bdbc6124094f8a55e6e0e9c36e0411d0790db0d6be05119a5c",
+      "sha256": "fe48bf58aaa6799a7cb30d304ba416ae6808eca7b1f3eb2be893ba8a26dafbd5",
       "bytes": 1372
     },
     "artifacts/published_executor_verification.json": {
@@ -61,12 +69,12 @@
       "bytes": 12978
     },
     "artifacts/refinement_verification.json": {
-      "sha256": "88434501551ddd4941d59f9608c236ad7b7c512d61f698c3486aff9bc04bdd99",
-      "bytes": 3962
+      "sha256": "c398d0747549de223c8433aa043a470a3cf21ea94fe76ce9ba4f5282bc17528e",
+      "bytes": 4124
     },
     "artifacts/release_coverage.json": {
-      "sha256": "c7910a9b19e811a4c2269cc6dcd90ca008bfe6bedaabd330855689783da0b729",
-      "bytes": 2264
+      "sha256": "508b23df027f21e847502d257b5fc0679cd1c0a6227f50e1d2a9dc8689038593",
+      "bytes": 2337
     },
     "artifacts/reproduction_verification.json": {
       "sha256": "7d26a242da573021210eb72bbc8a65a43f22808833f219a81dfe37b642d165cc",
@@ -80,9 +88,13 @@
       "sha256": "afc05b9575b9a868f6094c528ae76128ae5c506e4e728f005d3e1f1405593539",
       "bytes": 45011
     },
+    "docs/MODEL_RELEASE_NOTES.md": {
+      "sha256": "15f680227caf48f85d181a9aa419aedecfb6e6b688b5f1f464754ef9d5eb06a5",
+      "bytes": 1832
+    },
     "docs/artifacts.md": {
-      "sha256": "f9c15dae4dd07e6f7372ce02641133c4c8c4ffce1810be8270644d2b02166119",
-      "bytes": 5801
+      "sha256": "5ed9871a539666ece9af0b727a4b8490fa4e8f9c5b3a0e1f96fcff296efcc0fc",
+      "bytes": 6106
     },
     "docs/installation.md": {
       "sha256": "47a8c4381d1e3b4d88775d41c7ce71f8ffc7a468954a9a56d45b530108ae702b",
@@ -101,16 +113,16 @@
       "bytes": 8372
     },
     "docs/model_catalog.md": {
-      "sha256": "36f5e97b4c29961260b08a4ad8d43bb56eb0c0232669e80c2b54dbd94d151441",
-      "bytes": 2564
+      "sha256": "f84c1d094b65ca776138ff08eafefa0a22d429f1f0334b69b45ecd0be9f1e47a",
+      "bytes": 2617
     },
     "docs/reproduction.md": {
-      "sha256": "68afc7a4f0f981176a399e663abeb507f57152539e5222792963f05e3868e0d8",
-      "bytes": 8855
+      "sha256": "ff961a95a28c47469071d488bda5bd5c485ca97cf46e9803af1d2a186424ead1",
+      "bytes": 9063
     },
     "docs/results_and_limitations.md": {
-      "sha256": "c0b90caa42f805ca7c9550cce8255d9ddb167b5b1978e10a02718221959361ce",
-      "bytes": 5615
+      "sha256": "f3321b43b70a71e6274f5e0f07cd3ceb4d3eceb96920efd56ba29f753472e76b",
+      "bytes": 5790
     },
     "environments/julia/Manifest.toml": {
       "sha256": "309c3d5d3ffd2f457d7bacd2fc43f15886676d989c49ee6e3bf10764e7f1f977",
@@ -1269,27 +1281,27 @@
       "bytes": 8367
     },
     "submission/EVIDENCE_AND_EDITORIAL_NOTES.md": {
-      "sha256": "90b5cc9d618685edda476db51589fb270b799da49fd81bc7559dcc5fb603e2e0",
-      "bytes": 2480
+      "sha256": "cf0e8e07754e133789a6bfff7703bc68764a554215fdeb3d2cc29c22ceb53a68",
+      "bytes": 2635
     },
     "submission/GENCO_Challenge_Submission.pdf": {
-      "sha256": "a33aafd6a3e850aad2da85b2cbcd1594fe4a61dd5cc4be295479318fbeaa50b8",
-      "bytes": 391092
+      "sha256": "5f4ef38b3d3c5361c1c16c1fa25273295df27385a700310814156bfa69bf638e",
+      "bytes": 391070
     },
     "submission/README.md": {
-      "sha256": "402174cd58031efce868646d13fbb63f3b5c9a1e88328f9fef2353d64dfa4609",
-      "bytes": 2292
+      "sha256": "c7a0521ae03f42c4ed2ac94e05493e722af4d59672354067c1f903b668c28d1c",
+      "bytes": 2393
     },
     "submission/SUBMISSION.md": {
-      "sha256": "dfacc8a4113892d1c713df7792b39865a8ddea48477d892da07a00bc2f53f8f6",
-      "bytes": 10183
+      "sha256": "34f76e0355b6373ba0e31deee10f3d521ab05592b9b3def3d1ebf168561fc881",
+      "bytes": 10191
     },
     "submission/build_submission.py": {
       "sha256": "a670c737384100784dbb25b6a7bedcbfc17b1c7c1cb92e9bf9fe8c68ae8019dd",
       "bytes": 13379
     },
     "submission/build_verification.json": {
-      "sha256": "2746b8321c562c4f64257181f2cd53b718203777724cecbc4edca47327b95ef2",
+      "sha256": "ec3859ad0ee2977318114ad544fc76b80ca125baba820b93b11161f9228f385d",
       "bytes": 501
     },
     "submission/data/goc_agreement.csv": {
@@ -1345,8 +1357,8 @@
       "bytes": 96731
     },
     "submission/supplementary/AVAILABILITY_NOTE.md": {
-      "sha256": "6e8b28cb2a9d69e2cd4cc0caff6cdac1f778d52077836c0ded97eb764f84a0d4",
-      "bytes": 1321
+      "sha256": "fbd6380416d608ce214509f89cb42577fd1be64688e5c4d567d1c5f954d916af",
+      "bytes": 1332
     },
     "submission/supplementary/GOC500_technical_report.pdf": {
       "sha256": "161bbea2ecb9dd88d99c17f81948e81f8c6e67a9230321e6b3b77637366fdf60",

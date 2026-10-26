@@ -1,0 +1,18 @@
+{
+  "status": "PASS_HISTORY_AUDIT",
+  "reachable_commits": 19,
+  "reachable_objects": 676,
+  "reachable_blobs": 457,
+  "historical_text_blobs_scanned": 330,
+  "binary_blobs": 127,
+  "unique_historical_paths": 354,
+  "suspicious_tracked_names": [],
+  "historical_text_findings": [],
+  "model_archive_member_records": 19,
+  "unique_model_archive_members": 18,
+  "unexpected_archive_members": [],
+  "elapsed_seconds": 2.4690000000009604,
+  "history_mutated": false,
+  "checked_date": "2026-10-26",
+  "scope": "All reachable history before the repository visibility changed to public; no history mutation performed"
+}

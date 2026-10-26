@@ -31,9 +31,10 @@ older workshop and availability wording is addressed in the
 [availability note](supplementary/AVAILABILITY_NOTE.md); the original report has
 not been silently altered.
 
-Repository visibility is private at this verification cut. Public access must
-be confirmed before publishing the challenge entry. Do not present private
-URLs as publicly accessible. Figure attachments and the PDF must be uploaded
+Repository and checkpoint downloads are public. Anonymous repository, README,
+release-metadata, and ZIP-access checks passed on October 26, 2026; the
+[receipt](../artifacts/public_release_verification.json) records their scope.
+Exact modified Texas electrical inputs remain private. Figure attachments and the PDF must be uploaded
 when posting to Hugging Face; relative local image paths alone will not render
 in a Community discussion. No discussion is posted by this build process.
 

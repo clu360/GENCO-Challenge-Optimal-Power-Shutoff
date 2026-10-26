@@ -25,14 +25,16 @@
   },
   "limitations": [
     "Exact modified Texas electrical inputs remain private; public weather-derived exposure is included",
-    "Repository and verified model archives remain private; public visibility and signed-out verification require approval",
     "All eight fits certified; native full OPS and references remain pending in publication cut",
     "Full CUDA Texas and independent Julia AC numerical replay were not performed",
     "Historical GOC full-population recovery and OPS baseline/PAC inputs are not replaced by sample demos"
   ],
-  "private_source_and_models_hosted": true,
-  "public_release": false,
+  "private_source_and_models_hosted": false,
+  "public_release": true,
   "hosted_verification": "artifacts/hosted_release_verification.json",
   "current_execution_receipt": "artifacts/reproduction_verification.json",
-  "refinement_receipt": "artifacts/refinement_verification.json"
+  "refinement_receipt": "artifacts/refinement_verification.json",
+  "public_source_and_models_hosted": true,
+  "public_access_verification": "artifacts/public_release_verification.json",
+  "history_publication_audit": "artifacts/history_publication_audit.json"
 }
