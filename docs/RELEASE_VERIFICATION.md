@@ -1,5 +1,21 @@
 # Release Verification
 
+## Phase I Scientific Closure â€” October 26, 2026
+
+The original scientific gate and controller execution receipt pass after the
+authorized report-only recovery 14465507. The portable report/gate/figures are
+SHA-verified. The completion certificate records eight fit/validation bindings,
+six 301-state searches and six AC audits; published scientific values and model
+weights are unchanged. Phase II remains held. Earlier verification cuts below
+are preserved history, including the reporting interruption and earlier private
+visibility. The current update changes completion documentation and portable
+evidence plus the regenerated completion flag only; it does not certify previously
+unsupported reproduction modes. Current isolated checks pass 42 tests and all
+three notebooks, including an explicitly unavailable public Texas numerical
+demo. The result notebook reports phase_i_complete=true and six searches.
+See artifacts/phase_i_completion_verification.json for the actual command receipts.
+
+
 ## Private GitHub Delivery
 
 Source and the two licensed model archives are hosted in the existing private

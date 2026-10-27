@@ -67,7 +67,7 @@ def regenerate(root,study,output):
         save('exact_reference_a',fig)
         exact.to_csv(output/'regenerated_reference_summary.csv',index=False)
         summary=dict(study=study,completed_searches=len(labels),candidate_rows=len(candidates),
-                     lambda_values=sorted(candidates.lambda_r.unique().tolist()),phase_i_complete=False)
+                     lambda_values=sorted(candidates.lambda_r.unique().tolist()),phase_i_complete=json.loads((root/'artifacts/release_coverage.json').read_text())['phase_i_complete'])
     else:
         data=pd.read_csv(root/'experiments/goc_500/results/ft6_test_metrics.csv')
         fig,axes=plt.subplots(1,3,figsize=(15,5))

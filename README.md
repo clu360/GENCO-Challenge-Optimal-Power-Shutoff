@@ -7,7 +7,9 @@ not pooled error benchmarks.
 **Completed-results export with bounded numerical demos.** Completed GENCO results
 and certified native models are included through a checksum-bound local export.
 See `docs/RELEASE_VERIFICATION.md` for clean-checkout evidence and explicit
-unsupported modes. This is not a challenge-form submission or full Phase I closure.
+unsupported modes. Phase I scientific closure is verified; Phase II remains held.
+This is not a challenge-form submission. See the
+[completion certificate](experiments/texas2k/results/stage_m/reports/PHASE_I_COMPLETION.md).
 
 ## Completed Findings
 
@@ -25,13 +27,14 @@ Their AC-A risks are 1.082281 (G500), 1.084259 (G100-to-R400) and 1.088199
 (G100-to-W400), again above the stored baseline. They select different two-line
 outages, not the GENCO search trajectories. Retained-state checks reconstruct all
 six finalists within 1e-10 without fresh inference or AC solves. The final
-controller reporting gate is still separate from these accepted outcomes.
+original controller reporting gate also passed after the authorized reporting-only
+recovery. Phase I is scientifically complete; Phase II remains held.
 
 | Study | Models | Published evidence | Current limitations |
 |---|---|---|---|
 | GOC-500 | Released GridSFM; FT0 smoke; M1; sibling M2/M3 adaptations | Retained Stage J physical evaluations and FT3/FT4 OPS tables | Official sample demo is not the historical test population |
 | Texas2k K/L | Historical DC/AC/GridSFM and three released GENCO branches | Recorded historical tables, separately labeled | Different evaluator/search/control policies; PF redispatch exploration was limited |
-| Texas2k M | GENCO-OPF and OpenGridSFM; all eight fits certified | Three GENCO and 3 native full searches with exact A/B audits published | Final report preempted; retry budget exhausted; Phase II held |
+| Texas2k M | GENCO-OPF and OpenGridSFM; all eight fits certified | Three GENCO and 3 native full searches with exact A/B audits published | Original completion gate PASS; Phase II held |
 
 Read [the Phase I report](experiments/texas2k/results/stage_m/reports/PHASE_I_RESULTS.md)
 and [methodology](experiments/texas2k/results/stage_m/reports/METHODOLOGY.md).

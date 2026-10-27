@@ -10,9 +10,11 @@ wildfire-aware solution. Native and exact values are separate table columns.
 
 All eight Phase I training fits are certified. Native G500's saved epochs were
 finalized without retraining, and the selected checkpoint passes genuine loading
-and fresh-process parity. The native final OPS/reference branches are pending. Pending
-is not a zero value or a scientific failure. These outputs will be incorporated
-through later, separately verified commits. Phase I is not declared complete.
+and fresh-process parity. All three native OPS/reference branches were incorporated
+through separately verified commits. The original scientific reporting gate passed
+on job 14465507, completing Phase I. Eight fit/validation tasks, six full searches
+and six exact-reference outcomes are accepted. Phase II remains held until a new
+user instruction. See the published Phase I completion certificate.
 
 The official GOC-500 sample supports a bounded new numerical demonstration. It
 does not establish reproduction of the historical held-out population. Stage J

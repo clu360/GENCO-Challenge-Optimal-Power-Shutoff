@@ -41,8 +41,8 @@
       "bytes": 12619
     },
     "artifacts/release_coverage.json": {
-      "sha256": "16536fc9e1ae6355dbb49253bd71fea4a41745a99d87210dbfa0c257bc358007",
-      "bytes": 1837
+      "sha256": "990a829bbeeca5107cf8c81b95407ba0d4d6b37f2fae2d60c5c36e12e5b082cb",
+      "bytes": 1970
     },
     "artifacts/source_provenance.json": {
       "sha256": "16861e9a748034939e26352654330328d4f6e2d612bc9369d0f7f1bf6568331e",
@@ -69,8 +69,8 @@
       "bytes": 7397
     },
     "docs/results_and_limitations.md": {
-      "sha256": "a8fa51432a6554847c6fb82e80aa7eb871cf1a85e5145501089baea28b9802c7",
-      "bytes": 1920
+      "sha256": "44777932c87f509b0de0bfa805214a4bad84767ced1bc72842ef6228e372a45a",
+      "bytes": 2074
     },
     "environments/julia/Manifest.toml": {
       "sha256": "309c3d5d3ffd2f457d7bacd2fc43f15886676d989c49ee6e3bf10764e7f1f977",
@@ -665,8 +665,8 @@
       "bytes": 4983
     },
     "experiments/texas2k/results/stage_m/reports/PHASE_I_RESULTS.md": {
-      "sha256": "481fa0cd824f223407207ae3733b0d783818fb6ec2673af95cacc30bebd5ad9c",
-      "bytes": 11063
+      "sha256": "76909e6b29c1125e67aa4600ff2c995d614bc193198c6f080028f67a8c3e1e11",
+      "bytes": 11268
     },
     "experiments/texas2k/results/stage_m/retained_decisions/G100_to_R400.json": {
       "sha256": "3cd79092de760ae63356b41506346b2ed7cd51614dc72d84f36b9f3f64a59104",
@@ -881,8 +881,8 @@
       "bytes": 615
     },
     "README.md": {
-      "sha256": "9ef5035cf1bdc91b571cd9de963feca0c94307de389364e4fc9644e3a70afb84",
-      "bytes": 5950
+      "sha256": "e11d499b39a60d97193ac96bad92bb4ad5015c2866d88085d2c15313cbab57e2",
+      "bytes": 6151
     },
     "scripts/ac_audit.py": {
       "sha256": "809f81fa5197be6973eb6d29e8ec721e18c6c77b032df4d1da2bcf59b7a95fd6",
@@ -1057,8 +1057,8 @@
       "bytes": 1367
     },
     "src/genco_ops/results.py": {
-      "sha256": "d121e31f11c8c30d168cece6f5b6b5b951bc5c201aa8d7195aa006c42400eb2a",
-      "bytes": 5210
+      "sha256": "1502e470cf2a1af9078ed5def041ce388a275743e8df696b27c412b9fa7eec3a",
+      "bytes": 5289
     },
     "tests/test_ac_audit_contract.py": {
       "sha256": "2dc4947f3e39e262ed4df3bd366fdce297f5b35e2747c294c5e10aa20f157c8a",
@@ -1081,8 +1081,8 @@
       "bytes": 5927
     },
     "tests/test_published_results.py": {
-      "sha256": "fb2e17808498c83c1ea8106b1ed93d11ad36db32ba4be5cea2b12f7b524a4881",
-      "bytes": 1615
+      "sha256": "3e42c371c0198916e7510274f32ddc2784076a0b4b477929f01352d6562fbfff",
+      "bytes": 2196
     },
     "tests/test_retained_decisions.py": {
       "sha256": "dbaf86e98601673d962a81f96b2294c4ebb8ca3e94d6d4752d8b55e03a9eca03",
@@ -1091,9 +1091,41 @@
     "THIRD_PARTY_NOTICES.md": {
       "sha256": "e353f5a0548bac053bf07653c6293bbf70ea1f57fee01afd3e28d8ac333faed4",
       "bytes": 2253
+    },
+    "experiments/texas2k/results/stage_m/provenance/completion_v159/PHASE_I_RESULTS.md": {
+      "sha256": "e4fd6f498111cb57ef2a6e60b6814990bc91795d26f72e62c3506f97f360e4be",
+      "bytes": 871
+    },
+    "experiments/texas2k/results/stage_m/provenance/completion_v159/SCIENTIFIC_COMPLETION_VERIFICATION.json": {
+      "sha256": "d7b974083ac441b91a073fe1dfe027b2d301ea295200ee10d3a420a9ab7eded4",
+      "bytes": 4834
+    },
+    "experiments/texas2k/results/stage_m/provenance/completion_v159/phase_gate.json": {
+      "sha256": "4d96bb126c4bfda7bcebef2261027d869cd3c35a652aee7b812ef4a3efae4a52",
+      "bytes": 41119
+    },
+    "experiments/texas2k/results/stage_m/provenance/completion_v159/phase_i_comparison.csv": {
+      "sha256": "012ad60f08477463afb5b19d182a1ba83faae0129daab9039b82e90c83f46bbd",
+      "bytes": 1232
+    },
+    "experiments/texas2k/results/stage_m/provenance/completion_v159/phase_i_risk_service.pdf": {
+      "sha256": "1fb5b7bc9a808e15426c4fd50b156ccde3782bd9d9d265761ff3f4893adedd4e",
+      "bytes": 18347
+    },
+    "experiments/texas2k/results/stage_m/provenance/completion_v159/phase_i_risk_service.png": {
+      "sha256": "86c7450d0cd8ae41408387284152fc715d543ca37f2272230fb0465784327383",
+      "bytes": 30270
+    },
+    "experiments/texas2k/results/stage_m/reports/PHASE_I_COMPLETION.md": {
+      "sha256": "25ef65d7e15a80cba29e90dec9d2bfddeceddcf03bd8e576f4ce8058d24ccf28",
+      "bytes": 3023
+    },
+    "artifacts/phase_i_completion_verification.json": {
+      "sha256": "5e9cb213b88a9078ea749d6aed0045ca3c932c19c8f6ac8961efe58b3b9c3a2b",
+      "bytes": 7767
     }
   },
-  "phase_i_complete": false,
+  "phase_i_complete": true,
   "phase_ii": "HELD_BY_USER",
   "excluded_from_self_hash": [
     "artifacts/inventory.json",

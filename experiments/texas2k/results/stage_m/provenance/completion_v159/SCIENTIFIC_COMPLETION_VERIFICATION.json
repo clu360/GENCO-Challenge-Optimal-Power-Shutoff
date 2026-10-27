@@ -1,0 +1,137 @@
+{
+  "status": "PASS_ORIGINAL_SCIENTIFIC_GATE_AND_PUBLICATION_CONSISTENCY",
+  "gate": "PHASE_I_RESULTS_COMPLETE",
+  "phase_i_complete": true,
+  "phase_ii": "HELD_BY_USER",
+  "report_job_id": "14465507",
+  "report_exit_code": "0:0",
+  "controller_tasks_pass": 762,
+  "predecessor_counts": {
+    "diagnostics": 8,
+    "fits": 8,
+    "labels": 600,
+    "ops": 6,
+    "references": 6
+  },
+  "bound_dependency_files": 90127,
+  "checkpoint_selections_match_all_eight": true,
+  "all_six_finalists_match": true,
+  "maximum_absolute_published_metric_difference": 4.1145472445824893e-17,
+  "full_searches": 6,
+  "states_per_search": 301,
+  "scientific_claim": "SINGLE_PARENT_EXPLORATORY_NOT_CONFIRMATORY",
+  "scientific_jobs_rerun": 0,
+  "jobs_submitted": 0,
+  "remote_verification": {
+    "required_cases": 1600,
+    "required_split_distribution_counts": {
+      "train.G": 500,
+      "train.R": 400,
+      "train.W": 400,
+      "validation.G": 100,
+      "validation.R": 100,
+      "validation.W": 100
+    },
+    "diagnostics": [
+      {
+        "task_id": "v070.genco_opf.G100.s0.validation",
+        "checkpoint_sha256": "d952811fc2fd329d2ab7c076987dec094c99c6b89036e3053b818afbcc0c4adb",
+        "records": 300,
+        "distribution_counts": {
+          "G": 100,
+          "O": 100,
+          "R": 100
+        },
+        "evaluation_sha256": "1aa2bf94326c038a145ebb42ce0db5231bb7eb9bbab70e3b51b6f5ecca521af4"
+      },
+      {
+        "task_id": "v070.genco_opf.G100_to_R400.s0.validation",
+        "checkpoint_sha256": "e64b22da3c8fa92a6c959f355e269e815d2c422bc3809fefa33db47ab11c8bcd",
+        "records": 300,
+        "distribution_counts": {
+          "G": 100,
+          "O": 100,
+          "R": 100
+        },
+        "evaluation_sha256": "c59cf7ff49e2b56137aa5fa9841bd8dca90bb67360121c4b68bfdf6c1dc4b810"
+      },
+      {
+        "task_id": "v070.genco_opf.G100_to_W400.s0.validation",
+        "checkpoint_sha256": "b4af8c9e6383ff75168b08967a0d7c125653b5dbc432328b53912e7b9aa3da74",
+        "records": 300,
+        "distribution_counts": {
+          "G": 100,
+          "O": 100,
+          "R": 100
+        },
+        "evaluation_sha256": "cc44083f5753d11a70fe303df4160382946f835eaeaa8350259b59df9cb9673a"
+      },
+      {
+        "task_id": "v070.genco_opf.G500.s0.validation",
+        "checkpoint_sha256": "1e664defde395b77b97e4829bf8e22c3828cbb05da87082aab4b3916a4411ad4",
+        "records": 300,
+        "distribution_counts": {
+          "G": 100,
+          "O": 100,
+          "R": 100
+        },
+        "evaluation_sha256": "fa9f9ab198d6e64f011de4d218a559aa6781dfce05c711717bd5421ab11b9b79"
+      },
+      {
+        "task_id": "v070.opengridsfm.G100.s0.validation",
+        "checkpoint_sha256": "e45ed36e3956eeb7750d2e396737e0cc3ccd58990aae84b65a6af9d1fdad06d5",
+        "records": 300,
+        "distribution_counts": {
+          "G": 100,
+          "O": 100,
+          "R": 100
+        },
+        "evaluation_sha256": "0af9ffe02b109704b2d3caf02478af3a7d29edb5ebd8134178efc6498d53496b"
+      },
+      {
+        "task_id": "v070.opengridsfm.G100_to_R400.s0.validation",
+        "checkpoint_sha256": "0ce7ad4538598f439fff4b59a72e33272f1de193ecaa3dae521c0e3eaceb0cbd",
+        "records": 300,
+        "distribution_counts": {
+          "G": 100,
+          "O": 100,
+          "R": 100
+        },
+        "evaluation_sha256": "4cd514e0aad5a826933a3ca4862a560fce9b3433e559e3da93d6c034473adddb"
+      },
+      {
+        "task_id": "v070.opengridsfm.G100_to_W400.s0.validation",
+        "checkpoint_sha256": "406bb6e4c23c42f1bdf1a682e4213bb64f5fe71f105feebf54b8c6f06508ae0e",
+        "records": 300,
+        "distribution_counts": {
+          "G": 100,
+          "O": 100,
+          "R": 100
+        },
+        "evaluation_sha256": "aa26c7e66e81b0b6e99a2f9192e4a98ba064cb30201bc6fd04387c0e44aec28b"
+      },
+      {
+        "task_id": "v070.opengridsfm.G500.s0.validation",
+        "checkpoint_sha256": "2e4911c452dd4a2c80e17ab6f7dc5764150ae6615e3a16404ed9fb82bdeee170",
+        "records": 300,
+        "distribution_counts": {
+          "G": 100,
+          "O": 100,
+          "R": 100
+        },
+        "evaluation_sha256": "220ad032b0081b55e6d1063f19c72779af6ccb7063f264fcebbf9e1ddcb39b42"
+      }
+    ],
+    "sample_plan_sha256": "e7bef359418f26d514a26a1a671886cb3583b1a7bcb6e8689e60401b66ad213b"
+  },
+  "gate_sha256": "4d96bb126c4bfda7bcebef2261027d869cd3c35a652aee7b812ef4a3efae4a52",
+  "execution_receipt_sha256": "dab4a999dd012741350edb13e0da5b910148794fa1bd0919a6bf2ee1a2f8f12f",
+  "transport": {
+    "status": "VERIFIED",
+    "archive_sha256": "71289e44407b49fcbcf8c1690c764a2298ad8e0e8edf2a25b553363c6d722d60",
+    "archive_bytes": 10194504,
+    "verified_files": 15,
+    "observed_utc": "2026-10-27T03:12:49.237302+00:00",
+    "manifest_sha256": "61c7c4fcbabe791a46b08619039d9a2656c448a751987a60ffc8972fc27c4feb"
+  }
+}

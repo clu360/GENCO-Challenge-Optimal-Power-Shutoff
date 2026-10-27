@@ -1,6 +1,9 @@
-# Stage M Phase I Results: Verified Completed Subset
+# Stage M Phase I Results: Verified Complete
 
-Phase I is incomplete unless its separate scientific completion gate has passed. Phase II is held.
+Phase I is scientifically complete. The original PHASE_I_RESULTS_COMPLETE gate
+passed on reporting job 14465507. Eight fits/validations, six full searches and
+six designated AC audits are accepted. Phase II remains held. See
+[closure verification](PHASE_I_COMPLETION.md). Earlier dated observations are history.
 
 Certified training fits: 8/8. Training completion does not certify downstream validation, OPS or exact AC references.
 

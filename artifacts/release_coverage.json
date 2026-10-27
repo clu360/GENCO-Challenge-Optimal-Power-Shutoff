@@ -1,5 +1,5 @@
 {
-  "phase_i_complete": false,
+  "phase_i_complete": true,
   "phase_ii": "HELD_BY_USER",
   "completed": {
     "certified_phase_i_fits": 8,
@@ -33,9 +33,10 @@
   "native_results_state": {
     "incorporated": 3,
     "required": 3,
-    "scientific_completion_gate": "PAUSED_REPORTING_RETRIES_EXHAUSTED",
+    "scientific_completion_gate": "PASS_PHASE_I_RESULTS_COMPLETE",
     "phase_ii": "HELD_BY_USER"
   },
   "repository_visibility_observed": "public",
-  "visibility_changed_by_this_update": false
+  "visibility_changed_by_this_update": false,
+  "phase_i_completion_evidence": "experiments/texas2k/results/stage_m/provenance/completion_v159/SCIENTIFIC_COMPLETION_VERIFICATION.json"
 }
