@@ -41,8 +41,10 @@ and [methodology](experiments/texas2k/results/stage_m/reports/METHODOLOGY.md).
 Model/data channels and completion states are machine-readable in
 `artifacts/model_catalog.json`. Large weights are delivered through a checksum-bound
 model archives, not ordinary Git objects. The verified
-[private source/model release](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/tag/phase-i-models-v152)
-requires repository access. Its visibility has not been changed to public.
+[source/model release](https://github.com/clu360/GENCO-Challenge-Optimal-Power-Shutoff/releases/tag/phase-i-models-v152)
+is publicly accessible under the owner's current repository settings. This
+update did not change visibility. Both model archives retain their original
+checksums; raw Texas inputs remain private.
 
 ## Results-Only Use
 
